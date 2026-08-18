@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.food-box {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 25px;
+
+  border: 2px solid #222;
+  border-radius: 8px;
+
+  background-color: white;
+}
+
+/* Header */
+
+.food-header {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+/* Food Box Image */
+.food-header img {
+  width: 100%;
+  height: 400px;
+
+  object-fit: fill;
+
+  /* border-radius: 50%; */
+  border: 2px solid #ddd;
+}
+
+/* Rating */
+.rating {
+  font-size: 18px;
+}
+
+/* Search */
+
+.food-search {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.food-search input {
+  width: 100%;
+  height: 45px;
+
+  padding: 0 45px 0 15px;
+
+  border: 1px solid #777;
+  border-radius: 5px;
+
+  font-size: 16px;
+}
+
+.search-icon {
+  position: absolute;
+
+  right: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 25px;
+}
+
+/* Filter Buttons */
+
+.food-filter-buttons {
+  display: flex;
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.food-filterbtn {
+  padding: 8px 15px;
+
+  border: 1px solid #555;
+  border-radius: 5px;
+
+  background-color: white;
+
+  cursor: pointer;
+}
+
+.food-filterbtn:hover {
+  background-color: #eee;
+}
+
+/* Food List */
+
+.food-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+/* Food Card */
+
+.food-card {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 180px;
+
+  padding: 20px;
+
+  border: 2px solid #555;
+  border-radius: 8px;
+}
+
+/* Left */
+
+.food-details {
+  width: 55%;
+}
+
+.food-details h3 {
+  margin-bottom: 12px;
+
+  font-size: 22px;
+}
+
+.food-details p {
+  margin: 6px 0;
+
+  font-size: 15px;
+}
+
+/* Right */
+
+.food-image-container {
+  width: 180px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  position: relative;
+}
+
+.food-image {
+  width: 150px;
+  height: 120px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+/* ADD button */
+
+.add-btn {
+  width: 90px;
+
+  margin-top: -15px;
+
+  padding: 7px 15px;
+
+  background-color: white;
+
+  border: 1px solid green;
+  border-radius: 5px;
+
+  color: green;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.add-btn:hover {
+  background-color: green;
+  color: white;
+}

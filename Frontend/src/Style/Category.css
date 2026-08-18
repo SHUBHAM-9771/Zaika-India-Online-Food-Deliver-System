@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Parent */
+.veg-filter {
+  width: 100%;
+}
+
+/* Full screen overlay */
+.veg-filter__overlay {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  z-index: 1000;
+}
+
+/* Actual modal */
+.veg-filter__modal {
+  width: 40%;
+  max-width: 500px;
+  min-width: 300px;
+
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  overflow: hidden;
+}
+
+/* Header */
+.veg-filter__header {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.veg-filter__header .veg-filter__title {
+  font-size: larger;
+  font-weight: 600;
+  color: black;
+}
+
+/* Close button */
+.veg-filter__close-btn {
+  color: black;
+
+  font-size: xx-large;
+  font-weight: 400;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+/* Body */
+.veg-filter__body {
+  width: 100%;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  padding: 15px;
+
+  color: black;
+  font-size: larger;
+  font-weight: 600;
+}
+
+/* Option */
+.veg-filter__option {
+  color: black;
+}
+
+/* Footer */
+.veg-filter__footer {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 5px;
+
+  border-top: 1px solid #ddd;
+
+  padding: 10px;
+}
+
+/* Buttons */
+.veg-filter__btn {
+  padding: 8px 15px;
+
+  border: none;
+
+  background-color: blue;
+  color: white;
+
+  border-radius: 8px;
+
+  font-size: large;
+
+  cursor: pointer;
+}
+
+.veg-filter__btn:hover {
+  background-color: darkblue;
+}
+ 

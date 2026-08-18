@@ -1,0 +1,234 @@
+/* =========================================
+   COMMON OVERLAY
+========================================= */
+
+.overlay,
+.popup1 {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+/* =========================================
+   COMMON POPUP
+========================================= */
+
+.popup,
+.reg-popup {
+  width: 360px;
+  background: #fff;
+
+  border-radius: 10px;
+  padding: 20px;
+
+  position: relative;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.popup-content,
+.popup-content1 {
+  text-align: center;
+}
+
+.popup-content h1,
+.popup-content1 h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.popup-content p,
+.popup-content1 p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-btn,
+.close-btn1 {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  cursor: pointer;
+  color: #444;
+}
+
+.close-btn:hover,
+.close-btn1:hover {
+  color: red;
+}
+
+/* =========================================
+   TEXT BUTTON
+========================================= */
+
+.text-btn {
+  border: none;
+  background: transparent;
+
+  color: green;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-left: 5px;
+}
+
+.text-btn:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.link {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  margin: 20px 0;
+}
+
+.link img {
+  width: 34px;
+  height: 34px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.link img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================================
+   INPUT
+========================================= */
+
+.Input {
+  margin-bottom: 15px;
+}
+
+.Input input {
+  width: 100%;
+  height: 44px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  outline: none;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  font-size: 14px;
+}
+
+.Input input:focus {
+  border-color: green;
+}
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.Input p {
+  color: red;
+  font-size: 12px;
+
+  margin-top: 4px;
+  margin-left: 2px;
+}
+
+/* =========================================
+   FORGOT PASSWORD
+========================================= */
+
+.forget {
+  text-align: right;
+
+  color: green;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  margin-bottom: 15px;
+}
+
+.forget:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn,
+.reg-log {
+  width: 100%;
+  height: 45px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: green;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn:hover,
+.reg-log:hover {
+  background: darkgreen;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 480px) {
+  .popup,
+  .reg-popup {
+    width: 90%;
+    padding: 18px;
+  }
+
+  .popup-content h1,
+  .popup-content1 h2 {
+    font-size: 24px;
+  }
+
+  .btn,
+  .reg-log {
+    height: 42px;
+  }
+}

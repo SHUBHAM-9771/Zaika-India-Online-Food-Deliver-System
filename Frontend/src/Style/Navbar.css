@@ -1,0 +1,119 @@
+ * {
+    margin: 0;
+    padding : 0;
+ }
+
+ 
+.cointaine{
+    position: sticky;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid;
+    padding: 10px 0;
+    padding-right: 20px;
+    z-index:999;
+     background:#FFE0B2;
+    border-color:#FFB300;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+}
+
+.nav-link{
+    display:flex;
+    gap:20px;
+}
+
+.nav-link li{
+    list-style:none;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.nav-button{
+    display:flex;
+    gap:10px;
+}
+
+.darks{
+    width:35px;
+    height:35px;
+    border: 2px solid orange;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    background:transparent;
+}
+
+.log{
+    width:90px;
+    height:35px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
+}
+
+
+@media screen and (max-width: 600px) {
+    .cointaine {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .cointaine img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  .nav-link li {
+    font-size: 10px;
+    list-style: none;
+  }
+
+  .nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+
+  .log {
+    width: 50px;
+    height: 25px;
+    font-size: 8px;
+    margin-right: 20px; 
+    border: 2px solid black;
+  }
+
+
+
+
+  .user-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;               
+    border: none;             
+    background-color: #eee;   
+    cursor: pointer;
+   }
+}

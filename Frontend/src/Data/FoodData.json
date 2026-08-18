@@ -1,0 +1,3452 @@
+[
+    {
+        "id": 1,
+        "img": "/food_Litti Chokha.png",
+        "state": "Bihar",
+        "foods": 
+        [
+            {
+            "id": 101,
+            "name": "Litti Chokha",
+            "price": 180,
+            "originalPrice": 220,
+            "rating": 4.1,
+            "foodType": "veg",
+            "description": "Authentic Bihari Delight",
+            "img": "/food_Litti Chokha.png",
+            "items": 
+            [
+                {
+                    "id": 10001,
+                    "name": "Litti Chokha Special",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "bestsellers" : "best",
+                    "description": "Traditional Bihari litti",
+                    "img": "/Litti_Chokha_food1.jpg"
+                },
+                {
+                    "id": 10002,
+                    "name": "Litti with Mutton",
+                    "price": 150,
+                    "originalPrice": 180,
+                    "foodType": "nonveg",
+                    "bestsellers" : "best",
+                    "description": "Litti with Mutton",
+                    "img": "/Litti_Chokha_food2.png"
+                },
+                {
+                    "id": 10003,
+                    "name": "Litti Chokha with chole ki sabji",
+                    "price": 180,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Litti with chokha and sides",
+                    "img": "/Litti_Chokha_food3.png"
+                },
+                {
+                    "id": 10004,
+                    "name": "Sattu paratha",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Litti filled with sattu",
+                    "img": "/Litti_Chokha_food4.png"
+                },
+                {
+                    "id": 10005,
+                    "name": "Litti with chicken",
+                    "price": 140,
+                    "originalPrice": 170,
+                    "foodType": "nonveg",
+                    "description": "Stuffed traditional litti",
+                    "img": "/Litti_Chokha_food5.png"
+                },
+                {
+                    "id": 10006,
+                    "name": "Boil Litti Chokha with curd",
+                    "price": 250,
+                    "originalPrice": 300,
+                    "foodType": "veg",
+                    "bestsellers" : "best",
+                    "description": "Family size litti chokha",
+                    "img": "/Litti_Chokha_food6.png"
+                }
+            ]
+            },
+            {
+                "id": 102,
+                "name": "Khaja",
+                "price": 50,
+                "originalPrice": 210,
+                "rating": 4.4,
+                "foodType": "veg",
+                "description": "Crispy Sweet Layers",
+                "img": "/bih_Khaja.jpeg",
+                "items": 
+                [
+                    {
+                        "id": 10201,
+                        "name": "Plain Khaja",
+                        "price": 80,
+                        "originalPrice": 100,
+                        "foodType": "veg",
+                        "description": "Crispy traditional Khaja",
+                        "img": "/Khaja_item1.png"
+                    },
+                    {
+                        "id": 10202,
+                        "name": "Sweet Khaja",
+                        "price": 100,
+                        "originalPrice": 130,
+                        "foodType": "veg",
+                        "description": "Sweet crispy Khaja",
+                        "img": "/Khaja_item2.png"
+                    },
+                    {
+                        "id": 10203,
+                        "name": "Namkin Khaja",
+                        "price": 120,
+                        "originalPrice": 150,
+                        "foodType": "veg",
+                        "description": "Special crispy Khaja",
+                        "img": "/Khaja_item3.png"
+                    },
+                    {
+                        "id": 10204,
+                        "name": "sugger less khaja",
+                        "price": 150,
+                        "originalPrice": 180,
+                        "foodType": "veg",
+                        "description": "Fresh Khaja box",
+                        "img": "/Khaja_item4.png"
+                    },
+                    {
+                        "id": 10205,
+                        "name": "Khaja Family Pack",
+                        "price": 200,
+                        "originalPrice": 250,
+                        "foodType": "veg",
+                        "description": "Family size Khaja pack",
+                        "img": "/Khaja_item5.png"
+                    },
+                    {
+                        "id": 10206,
+                        "name": "Premium Khaja",
+                        "price": 250,
+                        "originalPrice": 300,
+                        "foodType": "veg",
+                        "description": "Premium quality Khaja",
+                        "img": "/Khaja_item6.png"
+                    },
+                    {
+                        "id": 10207,
+                        "name": "Dry Fruit Khaja",
+                        "price": 280,
+                        "originalPrice": 350,
+                        "foodType": "veg",
+                        "description": "Khaja with dry fruits",
+                        "img": "/Khaja_item7.png"
+                    }
+                ]
+            },
+            {
+                "id": 103,
+                "name": "Dal Chawal",
+                "price": 120,
+                "originalPrice": 150,
+                "rating": 4.9,
+                "foodType": "veg",
+                "description": "Traditional Dal Chawal",
+                "img": "/bih_dal chawal.jpeg",
+                "items": [
+                    {
+                        "id": 10301,
+                        "name": "Dal Chawal Special",
+                        "price": 120,
+                        "originalPrice": 150,
+                        "foodType": "veg",
+                        "description": "Traditional dal with steamed rice",
+                        "img": "/bih_dal chawal.jpeg"
+                    },
+                    {
+                        "id": 10302,
+                        "name": "Dal Chawal with palak ki sag",
+                        "price": 140,
+                        "originalPrice": 180,
+                        "foodType": "veg",
+                        "description": "Dal with special tadka and rice",
+                        "img": "/Dal Chawal_item2.png"
+                    },
+                    {
+                        "id": 10303,
+                        "name": "Jeera Rice with Dal",
+                        "price": 150,
+                        "originalPrice": 190,
+                        "foodType": "veg",
+                        "description": "Jeera rice served with dal",
+                        "img": "/Dal Chawal_item3.png"
+                    },
+                    {
+                        "id": 10304,
+                        "name": "Dal Chawal Combo with sabji ",
+                        "price": 180,
+                        "originalPrice": 220,
+                        "foodType": "veg",
+                        "description": "Dal chawal with side dishes",
+                        "img": "/Dal Chawal_item4.png"
+                    },
+                    {
+                        "id": 10305,
+                        "name": "chawal with fish",
+                        "price": 160,
+                        "originalPrice": 200,
+                        "foodType": "veg",
+                        "description": "Dal fry served with rice",
+                        "img": "/Dal Chawal_item5.png"
+                    },
+                    {
+                        "id": 10306,
+                        "name": "Chawal with chiken and salad",
+                        "price": 250,
+                        "originalPrice": 300,
+                        "foodType": "veg",
+                        "description": "Family size dal chawal pack",
+                        "img": "/Dal Chawal_item6.png"
+                    },
+                    {
+                        "id": 10307,
+                        "name": "chawal with mutton",
+                        "price": 220,
+                        "originalPrice": 280,
+                        "foodType": "veg",
+                        "description": "Special Bihari style dal chawal",
+                        "img": "/Dal Chawal_item7.png"
+                    },
+                    {
+                        "id": 10308,
+                        "name": "chawal with combo mutton fish and chiken and salad",
+                        "price": 220,
+                        "originalPrice": 280,
+                        "foodType": "veg",
+                        "description": "Special Bihari style dal chawal",
+                        "img": "/Dal Chawal_item8.png"
+                    }
+                ]
+            },
+            {
+                "id": 104,
+                "name": "Thekua",
+                "price": 140,
+                "originalPrice": 230,
+                "rating": 4.5,
+                "foodType": "veg",
+                "description": "Traditional Festive Sweet",
+                "img": "/Thekua.jpeg",
+                "items": [ 
+                    {
+                    "id": 10401,
+                    "name": "Thekua Special",
+                    "price": 80,
+                    "originalPrice": 100,
+                    "foodType": "veg",
+                    "description": "Traditional Bihari sweet",
+                    "img": "/Thekua.jpeg"
+                    },
+                    {
+                    "id": 10402,
+                    "name": "Ghee Thekua",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Crispy Thekua made with ghee",
+                    "img": "/Thekua_item2.png"
+                    },
+                    {
+                    "id": 10403,
+                    "name": "GUR Thekua",
+                    "price": 90,
+                    "originalPrice": 120,
+                    "foodType": "veg",
+                    "description": "Sweet Thekua made with jaggery",
+                    "img": "/Thekua_item3.png"
+                    },
+                    {
+                    "id": 10404,
+                    "name": "maida flavour ka thekua",
+                    "price": 110,
+                    "originalPrice": 140,
+                    "foodType": "veg",
+                    "description": "Thekua with coconut flavour",
+                    "img": "/Thekua_item4.png"
+                    },
+                    {
+                    "id": 10405,
+                    "name": "Dry Fruit Thekua",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Thekua with dry fruits",
+                    "img": "/Thekua_item5.png"
+                    },
+                    {
+                    "id": 10406,
+                    "name": "Classic Thekua",
+                    "price": 70,
+                    "originalPrice": 100,
+                    "foodType": "veg",
+                    "description": "Classic homemade Thekua",
+                    "img": "/Thekua_item6.png"
+                    } 
+                ]
+            },     
+            {
+                "id": 106,
+                "name": "Makhana Kheer",
+                "price": 210,
+                "originalPrice": 350,
+                "rating": 4.2,
+                "foodType": "veg",
+                "description": "Creamy Nut Dessert",
+                "img": "/bih_Makhana Kheer.jpeg",
+                "items": [
+                    {
+                    "id": 10601,
+                    "name": "Classic Makhana Kheer",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Creamy makhana kheer",
+                    "img": ""
+                    },
+                    {
+                    "id": 10602,
+                    "name": "Dry Fruit Makhana Kheer",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Makhana kheer with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 10603,
+                    "name": "Ghee fry Makhana",
+                    "price": 180,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Kesar flavoured creamy kheer",
+                    "img": ""
+                    },
+                    {
+                    "id": 10604,
+                    "name": "Badam Makhana Kheer",
+                    "price": 160,
+                    "originalPrice": 200,
+                    "foodType": "veg",
+                    "description": "Rich kheer with almonds",
+                    "img": ""
+                    },
+                    {
+                    "id": 10605,
+                    "name": "Pista Makhana Kheer",
+                    "price": 170,
+                    "originalPrice": 210,
+                    "foodType": "veg",
+                    "description": "Creamy kheer with pistachios",
+                    "img": ""
+                    },
+                    {
+                    "id": 10606,
+                    "name": "Special Makhana Kheer",
+                    "price": 200,
+                    "originalPrice": 250,
+                    "foodType": "veg",
+                    "description": "Special creamy makhana dessert",
+                    "img": ""
+                    },
+                    {
+                    "id": 10607,
+                    "name": "Royal Makhana Kheer",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "veg",
+                    "description": "Premium makhana kheer with dry fruits",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 107,
+                "name": "Jalebi",
+                "price": 170,
+                "originalPrice": 250,
+                "rating": 4.5,
+                "foodType": "veg",
+                "description": "Hot Crispy Sweet",
+                "img": "/bih_Jalebi.jpeg",
+                "items": [
+                    {
+                    "id": 10701,
+                    "name": "Classic Jalebi",
+                    "price": 60,
+                    "originalPrice": 80,
+                    "foodType": "veg",
+                    "description": "Hot and crispy traditional jalebi",
+                    "img": ""
+                    },
+                    {
+                    "id": 10702,
+                    "name": "Rabri Jalebi",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Crispy jalebi served with creamy rabri",
+                    "img": ""
+                    },
+                    {
+                    "id": 10703,
+                    "name": "Desi Ghee Jalebi",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Jalebi prepared with desi ghee",
+                    "img": ""
+                    },
+                    {
+                    "id": 10704,
+                    "name": "Imarti",
+                    "price": 90,
+                    "originalPrice": 120,
+                    "foodType": "veg",
+                    "description": "Traditional crispy Indian sweet",
+                    "img": ""
+                    },
+                    {
+                    "id": 10705,
+                    "name": "Mini Jalebi",
+                    "price": 70,
+                    "originalPrice": 100,
+                    "foodType": "veg",
+                    "description": "Small crispy jalebi bites",
+                    "img": ""
+                    },
+                    {
+                    "id": 10706,
+                    "name": "Special Jalebi",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Special hot and crispy jalebi",
+                    "img": ""
+                    },
+                    {
+                    "id": 10707,
+                    "name": "Jalebi Rabri Combo",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Hot jalebi served with rich rabri",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+            "id": 108,
+            "name": "Champaran Muttan",
+            "price": 1000,
+            "originalPrice": 1200,
+            "rating": 4.4,
+            "foodType": "nonveg",
+            "description": "Authentic Champaran Mutton",
+            "img": "../src/assets/Images/bih_1.jpeg",
+            "items": [
+                {
+                "id": 10801,
+                "name": "Champaran Mutton",
+                "price": 350,
+                "originalPrice": 420,
+                "foodType": "nonveg",
+                "description": "Traditional Champaran style mutton",
+                "img": ""
+                },
+                {
+                "id": 10802,
+                "name": "Handi Mutton",
+                "price": 400,
+                "originalPrice": 480,
+                "foodType": "nonveg",
+                "description": "Slow cooked spicy mutton",
+                "img": ""
+                },
+                {
+                "id": 10803,
+                "name": "Mutton Curry",
+                "price": 320,
+                "originalPrice": 400,
+                "foodType": "nonveg",
+                "description": "Rich and spicy mutton curry",
+                "img": ""
+                },
+                {
+                "id": 10804,
+                "name": "Mutton Handi Special",
+                "price": 450,
+                "originalPrice": 550,
+                "foodType": "nonveg",
+                "description": "Special handi cooked mutton",
+                "img": ""
+                },
+                {
+                "id": 10805,
+                "name": "Mutton Masala",
+                "price": 380,
+                "originalPrice": 460,
+                "foodType": "nonveg",
+                "description": "Spicy mutton masala",
+                "img": ""
+                },
+                {
+                "id": 10806,
+                "name": "Champaran Mutton Family Pack",
+                "price": 700,
+                "originalPrice": 850,
+                "foodType": "nonveg",
+                "description": "Family size Champaran mutton",
+                "img": ""
+                },
+                {
+                "id": 10807,
+                "name": "Champaran Mutton Special",
+                "price": 500,
+                "originalPrice": 600,
+                "foodType": "nonveg",
+                "description": "Special traditional mutton preparation",
+                "img": ""
+                }
+            ]
+            }
+        ]
+    },
+
+    {
+        "id" : 2,
+        "img" : "/Uttar Pradesh_Mathura Peda.png",
+        "state" : "Uttar Pradesh",
+        "foods": 
+        [
+            {
+                "id": 201,
+                "name": "Tunday Kebab",
+                "price": 310,
+                "originalPrice": 380,
+                "rating": 4.8,
+                "foodType": "nonveg",
+                "description": "Famous Lucknow Kebab",
+                "img": "../src/assets/Images/Uttar Pradesh_Tunday Kebab.png",
+                "items": [
+                    {
+                    "id": 20101,
+                    "name": "Classic Tunday Kebab",
+                    "price": 180,
+                    "originalPrice": 220,
+                    "foodType": "nonveg",
+                    "description": "Famous soft Lucknow kebab",
+                    "img": ""
+                    },
+                    {
+                    "id": 20102,
+                    "name": "Tunday Kebab Special",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "nonveg",
+                    "description": "Special Lucknow style kebab",
+                    "img": ""
+                    },
+                    {
+                    "id": 20103,
+                    "name": "Chicken Tunday Kebab",
+                    "price": 240,
+                    "originalPrice": 300,
+                    "foodType": "nonveg",
+                    "description": "Soft chicken kebab",
+                    "img": ""
+                    },
+                    {
+                    "id": 20104,
+                    "name": "Mutton Tunday Kebab",
+                    "price": 260,
+                    "originalPrice": 320,
+                    "foodType": "nonveg",
+                    "description": "Traditional mutton kebab",
+                    "img": ""
+                    },
+                    {
+                    "id": 20105,
+                    "name": "Kebab Roll",
+                    "price": 190,
+                    "originalPrice": 240,
+                    "foodType": "nonveg",
+                    "description": "Tunday kebab wrapped in a roll",
+                    "img": ""
+                    },
+                    {
+                    "id": 20106,
+                    "name": "Kebab Platter",
+                    "price": 350,
+                    "originalPrice": 420,
+                    "foodType": "nonveg",
+                    "description": "Special kebab platter",
+                    "img": ""
+                    },
+                    {
+                    "id": 20107,
+                    "name": "Tunday Family Pack",
+                    "price": 450,
+                    "originalPrice": 550,
+                    "foodType": "nonveg",
+                    "description": "Family pack of delicious kebabs",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 202,
+                "name": "Awadhi Biryani",
+                "price": 460,
+                "originalPrice": 540,
+                "rating": 4.7,
+                "foodType": "nonveg",
+                "description": "Royal Mughlai Rice",
+                "img": "../src/assets/Images/Uttar Pradesh_Awadhi Biryani.png",
+                "items": [
+                    {
+                    "id": 20201,
+                    "name": "Chicken Awadhi Biryani",
+                    "price": 280,
+                    "originalPrice": 340,
+                    "foodType": "nonveg",
+                    "description": "Aromatic Lucknow-style chicken biryani",
+                    "img": ""
+                    },
+                    {
+                    "id": 20202,
+                    "name": "Mutton Awadhi Biryani",
+                    "price": 350,
+                    "originalPrice": 420,
+                    "foodType": "nonveg",
+                    "description": "Rich and flavorful mutton biryani",
+                    "img": ""
+                    },
+                    {
+                    "id": 20203,
+                    "name": "Awadhi Biryani Special",
+                    "price": 320,
+                    "originalPrice": 390,
+                    "foodType": "nonveg",
+                    "description": "Special royal Awadhi biryani",
+                    "img": ""
+                    },
+                    {
+                    "id": 20204,
+                    "name": "Egg Awadhi Biryani",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "nonveg",
+                    "description": "Aromatic biryani with boiled eggs",
+                    "img": ""
+                    },
+                    {
+                    "id": 20205,
+                    "name": "Chicken Biryani Combo",
+                    "price": 350,
+                    "originalPrice": 420,
+                    "foodType": "nonveg",
+                    "description": "Chicken biryani with raita and salad",
+                    "img": ""
+                    },
+                    {
+                    "id": 20206,
+                    "name": "Mutton Biryani Family Pack",
+                    "price": 650,
+                    "originalPrice": 780,
+                    "foodType": "nonveg",
+                    "description": "Family size mutton biryani",
+                    "img": ""
+                    },
+                    {
+                    "id": 20207,
+                    "name": "Royal Awadhi Biryani",
+                    "price": 450,
+                    "originalPrice": 550,
+                    "foodType": "nonveg",
+                    "description": "Premium royal-style Awadhi biryani",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 203,
+                "name": "Baati Chokha",
+                "price": 350,
+                "originalPrice": 400,
+                "rating": 4.5,
+                "foodType": "veg",
+                "description": "Traditional Village Meal",
+                "img": "../src/assets/Images/Uttar Pradesh_Baati Chokha.png",
+                "items": [
+                    {
+                    "id": 20301,
+                    "name": "Dal",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional Dal",
+                    "img": ""
+                    },
+                    {
+                    "id": 20302,
+                    "name": "Chokha",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Roasted Potato and Brinjal Chokha",
+                    "img": ""
+                    },
+                    {
+                    "id": 20303,
+                    "name": "Baati",
+                    "price": 150,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Traditional Rajasthani-style Baked Baati",
+                    "img": ""
+                    },
+                    {
+                    "id": 20304,
+                    "name": "Dal Baati Combo",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "veg",
+                    "description": "Baati served with dal and chokha",
+                    "img": ""
+                    },
+                    {
+                    "id": 20305,
+                    "name": "Ghee Baati",
+                    "price": 180,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Baati served with pure ghee",
+                    "img": ""
+                    },
+                    {
+                    "id": 20306,
+                    "name": "Masala Chokha",
+                    "price": 130,
+                    "originalPrice": 160,
+                    "foodType": "veg",
+                    "description": "Spicy roasted vegetable chokha",
+                    "img": ""
+                    },
+                    {
+                    "id": 20307,
+                    "name": "Complete Baati Chokha Thali",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Complete traditional Baati Chokha meal",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                    "id": 204,
+                    "name": "Agra Petha",
+                    "price": 230,
+                    "originalPrice": 280,
+                    "rating": 4.4,
+                    "foodType": "veg",
+                    "description": "Soft Crystal Sweet",
+                    "img": "../src/assets/Images/Uttar Pradesh_Agra Petha.png",
+                    "items": [
+                        {
+                        "id": 20401,
+                        "name": "Agra Petha Plain",
+                        "price": 100,
+                        "originalPrice": 130,
+                        "foodType": "veg",
+                        "description": "Soft and juicy Agra Petha",
+                        "img": ""
+                        },
+                        {
+                        "id": 20402,
+                        "name": "Kesar Petha",
+                        "price": 140,
+                        "originalPrice": 180,
+                        "foodType": "veg",
+                        "description": "Sweet petha with kesar flavour",
+                        "img": ""
+                        },
+                        {
+                        "id": 20403,
+                        "name": "Angoori Petha",
+                        "price": 160,
+                        "originalPrice": 200,
+                        "foodType": "veg",
+                        "description": "Small juicy petha pieces",
+                        "img": ""
+                        },
+                        {
+                        "id": 20404,
+                        "name": "Chocolate Petha",
+                        "price": 180,
+                        "originalPrice": 220,
+                        "foodType": "veg",
+                        "description": "Chocolate flavoured petha",
+                        "img": ""
+                        },
+                        {
+                        "id": 20405,
+                        "name": "Dry Fruit Petha",
+                        "price": 200,
+                        "originalPrice": 250,
+                        "foodType": "veg",
+                        "description": "Petha topped with dry fruits",
+                        "img": ""
+                        },
+                        {
+                        "id": 20406,
+                        "name": "Kesar Angoori Petha",
+                        "price": 220,
+                        "originalPrice": 270,
+                        "foodType": "veg",
+                        "description": "Kesar flavoured angoori petha",
+                        "img": ""
+                        },
+                        {
+                        "id": 20407,
+                        "name": "Agra Petha Family Pack",
+                        "price": 300,
+                        "originalPrice": 380,
+                        "foodType": "veg",
+                        "description": "Family pack of traditional Agra Petha",
+                        "img": ""
+                        }
+                    ]
+            },
+            {
+                    "id": 205,
+                    "name": "Mathura Peda",
+                    "price": 320,
+                    "originalPrice": 380,
+                    "rating": 4.3,
+                    "foodType": "veg",
+                    "description": "Rich Milk Sweet",
+                    "img": "../src/assets/Images/Uttar Pradesh_Mathura Peda.png",
+                    "items": [
+                        {
+                        "id": 20501,
+                        "name": "Plain Mathura Peda",
+                        "price": 120,
+                        "originalPrice": 150,
+                        "foodType": "veg",
+                        "description": "Traditional Mathura milk peda",
+                        "img": ""
+                        },
+                        {
+                        "id": 20502,
+                        "name": "Kesar Peda",
+                        "price": 150,
+                        "originalPrice": 190,
+                        "foodType": "veg",
+                        "description": "Rich peda with kesar flavour",
+                        "img": ""
+                        },
+                        {
+                        "id": 20503,
+                        "name": "Elaichi Peda",
+                        "price": 140,
+                        "originalPrice": 180,
+                        "foodType": "veg",
+                        "description": "Milk peda with cardamom flavour",
+                        "img": ""
+                        },
+                        {
+                        "id": 20504,
+                        "name": "Dry Fruit Peda",
+                        "price": 180,
+                        "originalPrice": 230,
+                        "foodType": "veg",
+                        "description": "Peda topped with dry fruits",
+                        "img": ""
+                        },
+                        {
+                        "id": 20505,
+                        "name": "Mawa Peda",
+                        "price": 170,
+                        "originalPrice": 210,
+                        "foodType": "veg",
+                        "description": "Rich and creamy mawa peda",
+                        "img": ""
+                        },
+                        {
+                        "id": 20506,
+                        "name": "Kesar Dry Fruit Peda",
+                        "price": 220,
+                        "originalPrice": 280,
+                        "foodType": "veg",
+                        "description": "Kesar peda with dry fruits",
+                        "img": ""
+                        },
+                        {
+                        "id": 20507,
+                        "name": "Mathura Peda Family Pack",
+                        "price": 300,
+                        "originalPrice": 380,
+                        "foodType": "veg",
+                        "description": "Family pack of traditional Mathura Peda",
+                        "img": ""
+                        }
+                    ]
+            },
+            {
+                    "id": 206,
+                    "name": "Shahi Tukda",
+                    "price": 230,
+                    "originalPrice": 300,
+                    "rating": 4.4,
+                    "foodType": "veg",
+                    "description": "Royal Bread Dessert",
+                    "img": "../src/assets/Images/Uttar Pradesh_Shahi Tukda.png",
+                    "items": [
+                        {
+                        "id": 20601,
+                        "name": "Classic Shahi Tukda",
+                        "price": 120,
+                        "originalPrice": 150,
+                        "foodType": "veg",
+                        "description": "Traditional bread dessert with rich milk",
+                        "img": ""
+                        },
+                        {
+                        "id": 20602,
+                        "name": "Kesar Shahi Tukda",
+                        "price": 150,
+                        "originalPrice": 190,
+                        "foodType": "veg",
+                        "description": "Shahi Tukda with kesar flavour",
+                        "img": ""
+                        },
+                        {
+                        "id": 20603,
+                        "name": "Dry Fruit Shahi Tukda",
+                        "price": 180,
+                        "originalPrice": 230,
+                        "foodType": "veg",
+                        "description": "Rich bread dessert topped with dry fruits",
+                        "img": ""
+                        },
+                        {
+                        "id": 20604,
+                        "name": "Rabri Shahi Tukda",
+                        "price": 200,
+                        "originalPrice": 250,
+                        "foodType": "veg",
+                        "description": "Shahi Tukda served with creamy rabri",
+                        "img": ""
+                        },
+                        {
+                        "id": 20605,
+                        "name": "Mawa Shahi Tukda",
+                        "price": 170,
+                        "originalPrice": 220,
+                        "foodType": "veg",
+                        "description": "Soft bread dessert with rich mawa",
+                        "img": ""
+                        },
+                        {
+                        "id": 20606,
+                        "name": "Kesar Dry Fruit Shahi Tukda",
+                        "price": 220,
+                        "originalPrice": 280,
+                        "foodType": "veg",
+                        "description": "Kesar flavoured Shahi Tukda with dry fruits",
+                        "img": ""
+                        },
+                        {
+                        "id": 20607,
+                        "name": "Shahi Tukda Family Pack",
+                        "price": 300,
+                        "originalPrice": 380,
+                        "foodType": "veg",
+                        "description": "Family pack of traditional Shahi Tukda",
+                        "img": ""
+                        }
+                    ]
+            }
+        ]
+    },
+    {
+        "id" : 3, 
+        "img" : "src/assets/Images/food_Amritsari Fish.png",
+        "state" : "Punjab",
+       "foods": [
+        {
+            "id": 301,
+            "name": "Dal Makhani",
+            "price": 490,
+            "originalPrice": 300,
+            "rating": 3.8,
+            "foodType": "veg",
+            "description": "Creamy Punjabi Dal",
+            "img": "../src/assets/Images/Punjab_Dal Makhani.png"
+        },
+        {
+            "id": 302,
+            "name": "Chole Bhature",
+            "price": 370,
+            "originalPrice": 240,
+            "rating": 4.7,
+            "foodType": "veg",
+            "description": "Spicy Chickpea Combo",
+            "img": "../src/assets/Images/Punjab_Chole Bhature.png"
+        },
+        {
+            "id": 303,
+            "name": "Amritsari Fish",
+            "price": 610,
+            "originalPrice": 430,
+            "rating": 4.8,
+            "foodType": "nonveg",
+            "description": "Crispy Fried Fish",
+            "img": "../src/assets/Images/food_Amritsari Fish.png"
+        },
+        {
+            "id": 304,
+            "name": "Missi Roti",
+            "price": 210,
+            "originalPrice": 120,
+            "rating": 4.4,
+            "foodType": "veg",
+            "description": "Healthy Gram Bread",
+            "img": "../src/assets/Images/Punjab_ Missi Roti.png"
+        },
+        {
+            "id": 305,
+            "name": "Pinni",
+            "price": 300,
+            "originalPrice": 160,
+            "rating": 4.1,
+            "foodType": "veg",
+            "description": "Traditional Winter Sweet",
+            "img": "../src/assets/Images/Punjab_ Pinni.png"
+        },
+        {
+            "id": 306,
+            "name": "Kada Prasad",
+            "price": 250,
+            "originalPrice": 170,
+            "rating": 4.5,
+            "foodType": "veg",
+            "description": "Sacred Wheat Halwa",
+            "img": "../src/assets/Images/Punjab_Kada Prasad.png"
+        }
+        ]
+    },
+
+    {
+        "id" : 4,
+        "img" : "src/assets/Images/Ben_Begun Bharta.jpeg",
+        "state" : "West Bengal",
+        "foods": 
+        [
+            {
+                "id": 401,
+                "name": "Begun Bharta",
+                "price": 180,
+                "originalPrice": 230,
+                "rating": 3.5,
+                "foodType": "veg",
+                "description": "Roasted Brinjal Curry",
+                "img": "../src/assets/Images/Ben_Begun Bharta.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 40101,
+                    "name": "Classic Begun Bharta",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional roasted brinjal curry",
+                    "img": ""
+                    },
+                    {
+                    "id": 40102,
+                    "name": "Masala Begun Bharta",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Spicy roasted brinjal preparation",
+                    "img": ""
+                    },
+                    {
+                    "id": 40103,
+                    "name": "Mustard Begun Bharta",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Roasted brinjal with mustard flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 40104,
+                    "name": "Garlic Begun Bharta",
+                    "price": 160,
+                    "originalPrice": 200,
+                    "foodType": "veg",
+                    "description": "Roasted brinjal with garlic and spices",
+                    "img": ""
+                    },
+                    {
+                    "id": 40105,
+                    "name": "Smoky Begun Bharta",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Smoky roasted brinjal curry",
+                    "img": ""
+                    },
+                    {
+                    "id": 40106,
+                    "name": "Bengali Special Begun Bharta",
+                    "price": 200,
+                    "originalPrice": 250,
+                    "foodType": "veg",
+                    "description": "Authentic Bengali style Begun Bharta",
+                    "img": ""
+                    },
+                    {
+                    "id": 40107,
+                    "name": "Begun Bharta Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Family pack of traditional Begun Bharta",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 402,
+                "name": "Mutton Curry",
+                "price": 380,
+                "originalPrice": 450,
+                "rating": 4.8,
+                "foodType": "nonveg",
+                "description": "Authentic Bengali Curry",
+                "img": "../src/assets/Images/Ban_Mutton Curry.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 40201,
+                    "name": "Classic Bengali Mutton Curry",
+                    "price": 320,
+                    "originalPrice": 400,
+                    "foodType": "nonveg",
+                    "description": "Traditional Bengali style mutton curry",
+                    "img": ""
+                    },
+                    {
+                    "id": 40202,
+                    "name": "Spicy Mutton Curry",
+                    "price": 350,
+                    "originalPrice": 430,
+                    "foodType": "nonveg",
+                    "description": "Spicy and flavorful Bengali mutton curry",
+                    "img": ""
+                    },
+                    {
+                    "id": 40203,
+                    "name": "Bengali Kosha Mutton",
+                    "price": 420,
+                    "originalPrice": 500,
+                    "foodType": "nonveg",
+                    "description": "Slow cooked rich and spicy mutton",
+                    "img": ""
+                    },
+                    {
+                    "id": 40204,
+                    "name": "Mutton Curry Special",
+                    "price": 390,
+                    "originalPrice": 480,
+                    "foodType": "nonveg",
+                    "description": "Special Bengali style mutton preparation",
+                    "img": ""
+                    },
+                    {
+                    "id": 40205,
+                    "name": "Mutton Curry with Potato",
+                    "price": 340,
+                    "originalPrice": 420,
+                    "foodType": "nonveg",
+                    "description": "Classic mutton curry cooked with potatoes",
+                    "img": ""
+                    },
+                    {
+                    "id": 40206,
+                    "name": "Mutton Curry Family Pack",
+                    "price": 480,
+                    "originalPrice": 500,
+                    "foodType": "nonveg",
+                    "description": "Large serving of authentic Bengali mutton curry",
+                    "img": ""
+                    },
+                    {
+                    "id": 40207,
+                    "name": "Bengali Mutton Masala",
+                    "price": 370,
+                    "originalPrice": 460,
+                    "foodType": "nonveg",
+                    "description": "Rich mutton cooked with aromatic Bengali spices",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 403,
+                "name": "Mishti Doi",
+                "price": 140,
+                "originalPrice": 160,
+                "rating": 4.5,
+                "foodType": "veg",
+                "description": "Sweet Yogurt Dessert",
+                "img": "../src/assets/Images/Ben_Mishti Doi.jpeg",
+                "items":
+                [
+                    {
+                    "id": 40301,
+                    "name": "Classic Mishti Doi",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Traditional Bengali sweet yogurt",
+                    "img": ""
+                    },
+                    {
+                    "id": 40302,
+                    "name": "Kesar Mishti Doi",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Sweet yogurt with kesar flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 40303,
+                    "name": "Matka Mishti Doi",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Traditional clay pot sweet yogurt",
+                    "img": ""
+                    },
+                    {
+                    "id": 40304,
+                    "name": "Dry Fruit Mishti Doi",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Sweet yogurt topped with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 40305,
+                    "name": "Mango Mishti Doi",
+                    "price": 160,
+                    "originalPrice": 200,
+                    "foodType": "veg",
+                    "description": "Sweet yogurt with mango flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 40306,
+                    "name": "Rabri Mishti Doi",
+                    "price": 200,
+                    "originalPrice": 250,
+                    "foodType": "veg",
+                    "description": "Creamy mishti doi served with rabri",
+                    "img": ""
+                    },
+                    {
+                    "id": 40307,
+                    "name": "Mishti Doi Family Pack",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "veg",
+                    "description": "Large family pack of Bengali sweet yogurt",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 404,
+                "name": "Rosogolla",
+                "price": 110,
+                "originalPrice": 130,
+                "rating": 4.4,
+                "foodType": "veg",
+                "description": "Soft Syrup Balls",
+                "img": "../src/assets/Images/ben_Rosogolla.jpeg",
+                "items":
+                [
+                    {
+                    "id": 40401,
+                    "name": "Classic Rosogolla",
+                    "price": 80,
+                    "originalPrice": 100,
+                    "foodType": "veg",
+                    "description": "Soft and juicy Bengali rosogolla",
+                    "img": ""
+                    },
+                    {
+                    "id": 40402,
+                    "name": "Kesar Rosogolla",
+                    "price": 110,
+                    "originalPrice": 140,
+                    "foodType": "veg",
+                    "description": "Rosogolla with kesar flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 40403,
+                    "name": "Dry Fruit Rosogolla",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Rosogolla topped with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 40404,
+                    "name": "Chocolate Rosogolla",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Modern chocolate flavoured rosogolla",
+                    "img": ""
+                    },
+                    {
+                    "id": 40405,
+                    "name": "Malai Rosogolla",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Creamy and soft malai rosogolla",
+                    "img": ""
+                    },
+                    {
+                    "id": 40406,
+                    "name": "Kesar Dry Fruit Rosogolla",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Kesar rosogolla topped with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 40407,
+                    "name": "Rosogolla Family Pack",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "veg",
+                    "description": "Family pack of soft Bengali rosogolla",
+                    "img": ""
+                    }
+                ]
+            },  
+            {
+                "id": 405,
+                "name": "Sandesh",
+                "price": 150,
+                "originalPrice": 180,
+                "rating": 4.7,
+                "foodType": "veg",
+                "description": "Fresh Cottage Sweet",
+                "img": "../src/assets/Images/ben_5.jpeg",
+                "items": [
+                    {
+                    "id": 40501,
+                    "name": "Classic Sandesh",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Traditional Bengali cottage cheese sweet",
+                    "img": ""
+                    },
+                    {
+                    "id": 40502,
+                    "name": "Kesar Sandesh",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Soft sandesh with kesar flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 40503,
+                    "name": "Chocolate Sandesh",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Modern chocolate flavoured sandesh",
+                    "img": ""
+                    },
+                    {
+                    "id": 40504,
+                    "name": "Dry Fruit Sandesh",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Sandesh topped with assorted dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 40505,
+                    "name": "Mango Sandesh",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Fresh mango flavoured Bengali sweet",
+                    "img": ""
+                    },
+                    {
+                    "id": 40506,
+                    "name": "Kesar Dry Fruit Sandesh",
+                    "price": 200,
+                    "originalPrice": 250,
+                    "foodType": "veg",
+                    "description": "Kesar sandesh topped with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 40507,
+                    "name": "Sandesh Family Pack",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "veg",
+                    "description": "Family pack of fresh Bengali sandesh",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 406,
+                "name": "Aloo Posto",
+                "price": 180,
+                "originalPrice": 220,
+                "rating": 4.3,
+                "foodType": "veg",
+                "description": "Poppy Potato Curry",
+                "img": "src/assets/Images/ben_6.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 40601,
+                    "name": "Classic Aloo Posto",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Traditional Bengali potato curry with poppy seeds",
+                    "img": ""
+                    },
+                    {
+                    "id": 40602,
+                    "name": "Spicy Aloo Posto",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Spicy Bengali style aloo posto",
+                    "img": ""
+                    },
+                    {
+                    "id": 40603,
+                    "name": "Aloo Posto Special",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Special potato curry cooked with poppy seeds",
+                    "img": ""
+                    },
+                    {
+                    "id": 40604,
+                    "name": "Aloo Posto with Rice",
+                    "price": 200,
+                    "originalPrice": 250,
+                    "foodType": "veg",
+                    "description": "Aloo posto served with steamed rice",
+                    "img": ""
+                    },
+                    {
+                    "id": 40605,
+                    "name": "Mustard Aloo Posto",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Aloo posto with a traditional mustard flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 40606,
+                    "name": "Bengali Aloo Posto Meal",
+                    "price": 240,
+                    "originalPrice": 300,
+                    "foodType": "veg",
+                    "description": "Traditional Bengali meal with aloo posto",
+                    "img": ""
+                    },
+                    {
+                    "id": 40607,
+                    "name": "Aloo Posto Family Pack",
+                    "price": 320,
+                    "originalPrice": 400,
+                    "foodType": "veg",
+                    "description": "Family pack of authentic Bengali aloo posto",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 407,
+                "name": "Basanti Pulao",
+                "price": 280,
+                "originalPrice": 470,
+                "rating": 4.7,
+                "foodType": "veg",
+                "description": "Sweet Saffron Rice",
+                "img": "../src/assets/Images/ben_7.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 40701,
+                    "name": "Classic Basanti Pulao",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional Bengali sweet pulao",
+                    "img": ""
+                    },
+                    {
+                    "id": 40702,
+                    "name": "Kesar Basanti Pulao",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Saffron flavoured sweet pulao",
+                    "img": ""
+                    },
+                    {
+                    "id": 40703,
+                    "name": "Dry Fruit Basanti Pulao",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Sweet pulao topped with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 40704,
+                    "name": "Ghee Basanti Pulao",
+                    "price": 160,
+                    "originalPrice": 210,
+                    "foodType": "veg",
+                    "description": "Rich pulao prepared with ghee",
+                    "img": ""
+                    },
+                    {
+                    "id": 40705,
+                    "name": "Matar Basanti Pulao",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Sweet pulao with green peas",
+                    "img": ""
+                    },
+                    {
+                    "id": 40706,
+                    "name": "Basanti Pulao Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Family pack of traditional Basanti Pulao",
+                    "img": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "img": "/src/assets/Images/del_Chole Bhature.jpeg",
+        "state": "Delhi",
+        "foods":
+        [
+            {
+                "id": 501,
+                "name": "Chole Bhature",
+                "price": 240,
+                "originalPrice": 370,
+                "rating": 4.8,
+                "foodType": "veg",
+                "description": "Delhi Street Special",
+                "img": "../src/assets/Images/del_Chole Bhature.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 50101,
+                    "name": "Classic Chole Bhature",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Classic Delhi style chole with fluffy bhature",
+                    "img": ""
+                    },
+                    {
+                    "id": 50102,
+                    "name": "Amritsari Chole Bhature",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Spicy chole served with Amritsari bhature",
+                    "img": ""
+                    },
+                    {
+                    "id": 50103,
+                    "name": "Paneer Chole Bhature",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Chole bhature served with soft paneer",
+                    "img": ""
+                    },
+                    {
+                    "id": 50104,
+                    "name": "Masala Chole Bhature",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Extra spicy and flavorful masala chole",
+                    "img": ""
+                    },
+                    {
+                    "id": 50105,
+                    "name": "Chole Bhature with Lassi",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Chole bhature served with refreshing lassi",
+                    "img": ""
+                    },
+                    {
+                    "id": 50106,
+                    "name": "Chole Bhature Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Family pack of delicious Delhi style chole bhature",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 502,
+                "name": "Butter Chicken",
+                "price": 430,
+                "originalPrice": 610,
+                "rating": 4.9,
+                "foodType": "nonveg",
+                "description": "Creamy Chicken Curry",
+                "img": "../src/assets/Images/del_2.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 50201,
+                    "name": "Classic Butter Chicken",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "nonveg",
+                    "description": "Creamy tomato based butter chicken",
+                    "img": ""
+                    },
+                    {
+                    "id": 50202,
+                    "name": "Tandoori Butter Chicken",
+                    "price": 320,
+                    "originalPrice": 400,
+                    "foodType": "nonveg",
+                    "description": "Butter chicken prepared with tandoori chicken",
+                    "img": ""
+                    },
+                    {
+                    "id": 50203,
+                    "name": "Kesar Butter Chicken",
+                    "price": 350,
+                    "originalPrice": 430,
+                    "foodType": "nonveg",
+                    "description": "Rich butter chicken with kesar flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 50204,
+                    "name": "Spicy Butter Chicken",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "nonveg",
+                    "description": "Creamy butter chicken with extra spices",
+                    "img": ""
+                    },
+                    {
+                    "id": 50205,
+                    "name": "Butter Chicken Special",
+                    "price": 380,
+                    "originalPrice": 470,
+                    "foodType": "nonveg",
+                    "description": "Special creamy chicken curry",
+                    "img": ""
+                    },
+                    {
+                    "id": 50206,
+                    "name": "Butter Chicken Family Pack",
+                    "price": 600,
+                    "originalPrice": 750,
+                    "foodType": "nonveg",
+                    "description": "Family pack of creamy butter chicken",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 503,
+                "name": "Aloo Tikki",
+                "price": 120,
+                "originalPrice": 210,
+                "rating": 4.6,
+                "foodType": "veg",
+                "description": "Crispy Potato Snack",
+                "img": "../src/assets/Images/del_Aloo Tikki.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 50301,
+                    "name": "Classic Aloo Tikki",
+                    "price": 80,
+                    "originalPrice": 110,
+                    "foodType": "veg",
+                    "description": "Crispy potato tikki with chutney",
+                    "img": ""
+                    },
+                    {
+                    "id": 50302,
+                    "name": "Dahi Aloo Tikki",
+                    "price": 100,
+                    "originalPrice": 140,
+                    "foodType": "veg",
+                    "description": "Aloo tikki topped with creamy curd",
+                    "img": ""
+                    },
+                    {
+                    "id": 50303,
+                    "name": "Chole Aloo Tikki",
+                    "price": 120,
+                    "originalPrice": 160,
+                    "foodType": "veg",
+                    "description": "Crispy tikki served with spicy chole",
+                    "img": ""
+                    },
+                    {
+                    "id": 50304,
+                    "name": "Paneer Aloo Tikki",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Potato tikki stuffed with soft paneer",
+                    "img": ""
+                    },
+                    {
+                    "id": 50305,
+                    "name": "Masala Aloo Tikki",
+                    "price": 90,
+                    "originalPrice": 120,
+                    "foodType": "veg",
+                    "description": "Spicy and crispy masala potato tikki",
+                    "img": ""
+                    },
+                    {
+                    "id": 50306,
+                    "name": "Aloo Tikki Family Pack",
+                    "price": 250,
+                    "originalPrice": 320,
+                    "foodType": "veg",
+                    "description": "Family pack of crispy Aloo Tikki",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 504,
+                "name": "Kathi Roll",
+                "price": 200,
+                "originalPrice": 410,
+                "rating": 4.7,
+                "foodType": "nonveg",
+                "description": "Stuffed Wrap Roll",
+                "img": "../src/assets/Images/del_4.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 50401,
+                    "name": "Classic Chicken Kathi Roll",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "nonveg",
+                    "description": "Spicy chicken wrapped in a soft paratha",
+                    "img": ""
+                    },
+                    {
+                    "id": 50402,
+                    "name": "Egg Chicken Kathi Roll",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "nonveg",
+                    "description": "Chicken and egg stuffed Kathi Roll",
+                    "img": ""
+                    },
+                    {
+                    "id": 50403,
+                    "name": "Double Chicken Kathi Roll",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "nonveg",
+                    "description": "Extra chicken stuffed Kathi Roll",
+                    "img": ""
+                    },
+                    {
+                    "id": 50404,
+                    "name": "Paneer Kathi Roll",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Soft paneer with spicy vegetables",
+                    "img": ""
+                    },
+                    {
+                    "id": 50405,
+                    "name": "Tandoori Chicken Roll",
+                    "price": 190,
+                    "originalPrice": 240,
+                    "foodType": "nonveg",
+                    "description": "Tandoori chicken wrapped in a paratha",
+                    "img": ""
+                    },
+                    {
+                    "id": 50406,
+                    "name": "Kathi Roll Family Pack",
+                    "price": 350,
+                    "originalPrice": 450,
+                    "foodType": "nonveg",
+                    "description": "Family pack of delicious Kathi Rolls",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 505,
+                "name": "Daulat Ki Chaat",
+                "price": 350,
+                "originalPrice": 220,
+                "rating": 4.8,
+                "foodType": "veg",
+                "description": "Winter Foam Dessert",
+                "img": "src/assets/Images/del_5.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 50501,
+                    "name": "Classic Daulat Ki Chaat",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional Delhi style creamy foam dessert",
+                    "img": ""
+                    },
+                    {
+                    "id": 50502,
+                    "name": "Kesar Daulat Ki Chaat",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Creamy dessert with kesar flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 50503,
+                    "name": "Dry Fruit Daulat Ki Chaat",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Daulat Ki Chaat topped with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 50504,
+                    "name": "Rabri Daulat Ki Chaat",
+                    "price": 200,
+                    "originalPrice": 250,
+                    "foodType": "veg",
+                    "description": "Soft creamy foam served with rabri",
+                    "img": ""
+                    },
+                    {
+                    "id": 50505,
+                    "name": "Mawa Daulat Ki Chaat",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Rich creamy dessert with mawa",
+                    "img": ""
+                    },
+                    {
+                    "id": 50506,
+                    "name": "Daulat Ki Chaat Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Family pack of traditional Daulat Ki Chaat",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 506,
+                "name": "Ghevar",
+                "price": 260,
+                "originalPrice": 180,
+                "rating": 4.6,
+                "foodType": "veg",
+                "description": "Traditional Honey Sweet",
+                "img": "src/assets/Images/del_6.jpeg",
+                "items":
+                [
+                    {
+                    "id": 50601,
+                    "name": "Classic Ghevar",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional crispy Ghevar",
+                    "img": ""
+                    },
+                    {
+                    "id": 50602,
+                    "name": "Malai Ghevar",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Ghevar topped with creamy malai",
+                    "img": ""
+                    },
+                    {
+                    "id": 50603,
+                    "name": "Rabri Ghevar",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Ghevar served with rich rabri",
+                    "img": ""
+                    },
+                    {
+                    "id": 50604,
+                    "name": "Kesar Ghevar",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Ghevar with kesar flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 50605,
+                    "name": "Dry Fruit Ghevar",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "veg",
+                    "description": "Ghevar topped with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 50606,
+                    "name": "Ghevar Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Family pack of traditional Ghevar",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 507,
+                "name": "Stuffed Paratha",
+                "price": 430,
+                "originalPrice": 220,
+                "rating": 4.8,
+                "foodType": "veg",
+                "description": "Famous Paratha Meal",
+                "img": "src/assets/Images/del_7.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 50701,
+                    "name": "Aloo Paratha",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Classic potato stuffed paratha",
+                    "img": ""
+                    },
+                    {
+                    "id": 50702,
+                    "name": "Paneer Paratha",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Soft paratha stuffed with paneer",
+                    "img": ""
+                    },
+                    {
+                    "id": 50703,
+                    "name": "Gobi Paratha",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Traditional cauliflower stuffed paratha",
+                    "img": ""
+                    },
+                    {
+                    "id": 50704,
+                    "name": "Onion Paratha",
+                    "price": 110,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Crispy paratha stuffed with onion",
+                    "img": ""
+                    },
+                    {
+                    "id": 50705,
+                    "name": "Mix Veg Paratha",
+                    "price": 160,
+                    "originalPrice": 200,
+                    "foodType": "veg",
+                    "description": "Paratha stuffed with mixed vegetables",
+                    "img": ""
+                    },
+                    {
+                    "id": 50706,
+                    "name": "Stuffed Paratha Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Family pack of assorted stuffed parathas",
+                    "img": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "img": "src/assets/Images/temil_Tirunelveli Halwa.png",
+        "state": "Temil Nadu",
+        "foods": 
+        [
+            {
+                "id": 601,
+                "name": "Tirunelveli Halwa",
+                "price": 330,
+                "originalPrice": 190,
+                "rating": 4.8,
+                "foodType": "veg",
+                "description": "Soft Wheat Halwa",
+                "img": "../src/assets/Images/temil_Tirunelveli Halwa.png",
+                "items": [
+                    {
+                    "id": 60101,
+                    "name": "Classic Tirunelveli Halwa",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional soft wheat halwa",
+                    "img": ""
+                    },
+                    {
+                    "id": 60102,
+                    "name": "Ghee Tirunelveli Halwa",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Rich halwa prepared with ghee",
+                    "img": ""
+                    },
+                    {
+                    "id": 60103,
+                    "name": "Cashew Tirunelveli Halwa",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Soft halwa topped with cashews",
+                    "img": ""
+                    },
+                    {
+                    "id": 60104,
+                    "name": "Kesar Tirunelveli Halwa",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Traditional halwa with kesar flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 60105,
+                    "name": "Dry Fruit Halwa",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "veg",
+                    "description": "Rich wheat halwa with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 60106,
+                    "name": "Tirunelveli Halwa Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Family pack of traditional Tirunelveli Halwa",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+            "id": 602,
+            "name": "Adhirasam",
+            "price": 230,
+            "originalPrice": 140,
+            "rating": 4.7,
+            "foodType": "veg",
+            "description": "Traditional Rice Sweet",
+            "img": "../src/assets/Images/temil_Adhirasam.png",
+            "items": 
+            [
+                {
+                "id": 60201,
+                "name": "Classic Adhirasam",
+                "price": 100,
+                "originalPrice": 130,
+                "foodType": "veg",
+                "description": "Traditional crispy rice sweet",
+                "img": ""
+                },
+                {
+                "id": 60202,
+                "name": "Jaggery Adhirasam",
+                "price": 120,
+                "originalPrice": 150,
+                "foodType": "veg",
+                "description": "Adhirasam prepared with jaggery",
+                "img": ""
+                },
+                {
+                "id": 60203,
+                "name": "Ghee Adhirasam",
+                "price": 140,
+                "originalPrice": 180,
+                "foodType": "veg",
+                "description": "Rich Adhirasam made with ghee",
+                "img": ""
+                },
+                {
+                "id": 60204,
+                "name": "Kesar Adhirasam",
+                "price": 150,
+                "originalPrice": 190,
+                "foodType": "veg",
+                "description": "Adhirasam with kesar flavour",
+                "img": ""
+                },
+                {
+                "id": 60205,
+                "name": "Dry Fruit Adhirasam",
+                "price": 180,
+                "originalPrice": 230,
+                "foodType": "veg",
+                "description": "Adhirasam topped with dry fruits",
+                "img": ""
+                },
+                {
+                "id": 60206,
+                "name": "Adhirasam Family Pack",
+                "price": 280,
+                "originalPrice": 350,
+                "foodType": "veg",
+                "description": "Family pack of traditional Adhirasam",
+                "img": ""
+                }
+            ]
+            },
+            {
+                "id": 603,
+                "name": "Mysore Pak",
+                "price": 380,
+                "originalPrice": 170,
+                "rating": 4.8,
+                "foodType": "veg",
+                "description": "Rich Ghee Sweet",
+                "img": "../src/assets/Images/temil_Mysore Pak.png",
+                "items": 
+                [
+                    {
+                    "id": 60301,
+                    "name": "Classic Mysore Pak",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional soft Mysore Pak",
+                    "img": ""
+                    },
+                    {
+                    "id": 60302,
+                    "name": "Ghee Mysore Pak",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Rich Mysore Pak prepared with ghee",
+                    "img": ""
+                    },
+                    {
+                    "id": 60303,
+                    "name": "Kesar Mysore Pak",
+                    "price": 160,
+                    "originalPrice": 210,
+                    "foodType": "veg",
+                    "description": "Mysore Pak with kesar flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 60304,
+                    "name": "Cashew Mysore Pak",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Mysore Pak topped with cashews",
+                    "img": ""
+                    },
+                    {
+                    "id": 60305,
+                    "name": "Dry Fruit Mysore Pak",
+                    "price": 200,
+                    "originalPrice": 260,
+                    "foodType": "veg",
+                    "description": "Rich sweet with assorted dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 60306,
+                    "name": "Mysore Pak Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Family pack of traditional Mysore Pak",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 604,
+                "name": "Kozhukattai",
+                "price": 240,
+                "originalPrice": 150,
+                "rating": 4.6,
+                "foodType": "veg",
+                "description": "Steamed Rice Dumpling",
+                "img": "../src/assets/Images/temil_Kozhukattai.png",
+                "items": 
+                [
+                    {
+                    "id": 60401,
+                    "name": "Classic Kozhukattai",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Traditional steamed rice dumpling",
+                    "img": ""
+                    },
+                    {
+                    "id": 60402,
+                    "name": "Sweet Kozhukattai",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Sweet dumpling filled with jaggery and coconut",
+                    "img": ""
+                    },
+                    {
+                    "id": 60403,
+                    "name": "Coconut Kozhukattai",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Steamed dumpling with coconut filling",
+                    "img": ""
+                    },
+                    {
+                    "id": 60404,
+                    "name": "Sesame Kozhukattai",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Kozhukattai with sesame and jaggery filling",
+                    "img": ""
+                    },
+                    {
+                    "id": 60405,
+                    "name": "Dry Fruit Kozhukattai",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Rich dumpling filled with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 60406,
+                    "name": "Kozhukattai Family Pack",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "veg",
+                    "description": "Family pack of traditional Kozhukattai",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 605,
+                "name": "Idli",
+                "price": 210,
+                "originalPrice": 120,
+                "rating": 4.8,
+                "foodType": "veg",
+                "description": "Soft Rice Cakes",
+                "img": "../src/assets/Images/temil_Idli.png",
+                "items": 
+                [
+                    {
+                    "id": 60501,
+                    "name": "Classic Idli",
+                    "price": 80,
+                    "originalPrice": 100,
+                    "foodType": "veg",
+                    "description": "Soft and fluffy steamed rice cakes",
+                    "img": ""
+                    },
+                    {
+                    "id": 60502,
+                    "name": "Rava Idli",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Soft steamed semolina idli",
+                    "img": ""
+                    },
+                    {
+                    "id": 60503,
+                    "name": "Kanchipuram Idli",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional spiced South Indian idli",
+                    "img": ""
+                    },
+                    {
+                    "id": 60504,
+                    "name": "Masala Idli",
+                    "price": 110,
+                    "originalPrice": 140,
+                    "foodType": "veg",
+                    "description": "Idli tossed with spicy masala",
+                    "img": ""
+                    },
+                    {
+                    "id": 60505,
+                    "name": "Ghee Idli",
+                    "price": 130,
+                    "originalPrice": 160,
+                    "foodType": "veg",
+                    "description": "Soft idli topped with aromatic ghee",
+                    "img": ""
+                    },
+                    {
+                    "id": 60506,
+                    "name": "Idli Sambar Combo",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Soft idli served with hot sambar and chutney",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 606,
+                "name": "Dosa",
+                "price": 320,
+                "originalPrice": 180,
+                "rating": 4.9,
+                "foodType": "veg",
+                "description": "Crispy South Indian Dosa",
+                "img": "../src/assets/Images/tn_6.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 60601,
+                    "name": "Plain Dosa",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Classic crispy South Indian dosa",
+                    "img": ""
+                    },
+                    {
+                    "id": 60602,
+                    "name": "Masala Dosa",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Crispy dosa filled with spicy potato masala",
+                    "img": ""
+                    },
+                    {
+                    "id": 60603,
+                    "name": "Mysore Masala Dosa",
+                    "price": 160,
+                    "originalPrice": 200,
+                    "foodType": "veg",
+                    "description": "Spicy Mysore-style dosa with potato filling",
+                    "img": ""
+                    },
+                    {
+                    "id": 60604,
+                    "name": "Cheese Dosa",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Crispy dosa topped with melted cheese",
+                    "img": ""
+                    },
+                    {
+                    "id": 60605,
+                    "name": "Paneer Dosa",
+                    "price": 190,
+                    "originalPrice": 240,
+                    "foodType": "veg",
+                    "description": "Dosa stuffed with spicy paneer filling",
+                    "img": ""
+                    },
+                    {
+                    "id": 60606,
+                    "name": "Ghee Roast Dosa",
+                    "price": 170,
+                    "originalPrice": 220,
+                    "foodType": "veg",
+                    "description": "Extra crispy dosa roasted with aromatic ghee",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 607,
+                "name": "Filter Coffee",
+                "price": 200,
+                "originalPrice": 100,
+                "rating": 4.9,
+                "foodType": "veg",
+                "description": "Authentic South Indian Filter Coffee",
+                "img": "../src/assets/Images/tn_7.jpeg",
+                "items":
+                [
+                    {
+                    "id": 60701,
+                    "name": "Classic Filter Coffee",
+                    "price": 80,
+                    "originalPrice": 100,
+                    "foodType": "veg",
+                    "description": "Traditional South Indian filter coffee",
+                    "img": ""
+                    },
+                    {
+                    "id": 60702,
+                    "name": "Strong Filter Coffee",
+                    "price": 90,
+                    "originalPrice": 120,
+                    "foodType": "veg",
+                    "description": "Strong and aromatic filter coffee",
+                    "img": ""
+                    },
+                    {
+                    "id": 60703,
+                    "name": "Cold Filter Coffee",
+                    "price": 110,
+                    "originalPrice": 140,
+                    "foodType": "veg",
+                    "description": "Chilled filter coffee with a creamy taste",
+                    "img": ""
+                    },
+                    {
+                    "id": 60704,
+                    "name": "Ginger Filter Coffee",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Aromatic filter coffee with ginger flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 60705,
+                    "name": "Cardamom Filter Coffee",
+                    "price": 110,
+                    "originalPrice": 140,
+                    "foodType": "veg",
+                    "description": "Traditional coffee with cardamom flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 60706,
+                    "name": "Filter Coffee Combo",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Filter coffee served with a South Indian snack",
+                    "img": ""
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "id" : 7,
+        "img" : "",
+        "state" : "Odisha",
+        "foods": 
+        [
+            {
+                "id": 701,
+                "name": "Dalma",
+                "price": 350,
+                "originalPrice": 220,
+                "rating": 4.8,
+                "foodType": "veg",
+                "description": "Healthy Lentil Curry",
+                "img": "../src/assets/Images/odi_1.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 70101,
+                    "name": "Traditional Dalma",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional Odisha style dalma with lentils and vegetables",
+                    "img": ""
+                    },
+                    {
+                    "id": 70102,
+                    "name": "Vegetable Dalma",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Healthy dalma prepared with mixed vegetables",
+                    "img": ""
+                    },
+                    {
+                    "id": 70103,
+                    "name": "Dalma with Rice",
+                    "price": 160,
+                    "originalPrice": 200,
+                    "foodType": "veg",
+                    "description": "Traditional dalma served with steamed rice",
+                    "img": ""
+                    },
+                    {
+                    "id": 70104,
+                    "name": "Special Odia Dalma",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Special Odia style dalma with aromatic spices",
+                    "img": ""
+                    },
+                    {
+                    "id": 70105,
+                    "name": "Dalma Family Pack",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "veg",
+                    "description": "Large serving of traditional dalma for the family",
+                    "img": ""
+                    },
+                    {
+                    "id": 70106,
+                    "name": "Dalma Combo",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "veg",
+                    "description": "Dalma served with rice, papad and traditional sides",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 702,
+                "name": "Pakhala Bhata",
+                "price": 240,
+                "originalPrice": 150,
+                "rating": 4.7,
+                "foodType": "veg",
+                "description": "Refreshing Rice Meal",
+                "img": "../src/assets/Images/odi_2.jpeg",
+                "items":
+                [
+                    {
+                    "id": 70201,
+                    "name": "Traditional Pakhala",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Traditional fermented rice soaked in water",
+                    "img": ""
+                    },
+                    {
+                    "id": 70202,
+                    "name": "Dahi Pakhala",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Pakhala prepared with curd for a creamy taste",
+                    "img": ""
+                    },
+                    {
+                    "id": 70203,
+                    "name": "Badi Pakhala",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Refreshing pakhala served with crispy badi",
+                    "img": ""
+                    },
+                    {
+                    "id": 70204,
+                    "name": "Pakhala with Aloo Bhaja",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Pakhala served with crispy fried potatoes",
+                    "img": ""
+                    },
+                    {
+                    "id": 70205,
+                    "name": "Pakhala Special",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Special Odisha style pakhala with traditional sides",
+                    "img": ""
+                    },
+                    {
+                    "id": 70206,
+                    "name": "Pakhala Family Combo",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "veg",
+                    "description": "Family serving of pakhala with traditional accompaniments",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 703,
+                "name": "Dahi Bara Aludam",
+                "price": 390,
+                "originalPrice": 180,
+                "rating": 4.8,
+                "foodType": "veg",
+                "description": "Popular Street Snack",
+                "img": "../src/assets/Images/odi_3.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 70301,
+                    "name": "Classic Dahi Bara",
+                    "price": 100,
+                    "originalPrice": 130,
+                    "foodType": "veg",
+                    "description": "Soft bara topped with creamy curd and spices",
+                    "img": ""
+                    },
+                    {
+                    "id": 70302,
+                    "name": "Dahi Bara Aludam Special",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Dahi bara served with spicy aludam",
+                    "img": ""
+                    },
+                    {
+                    "id": 70303,
+                    "name": "Spicy Dahi Bara Aludam",
+                    "price": 140,
+                    "originalPrice": 180,
+                    "foodType": "veg",
+                    "description": "Spicy street-style dahi bara with aludam",
+                    "img": ""
+                    },
+                    {
+                    "id": 70304,
+                    "name": "Sweet Dahi Bara Aludam",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Dahi bara with sweet curd and spicy aludam",
+                    "img": ""
+                    },
+                    {
+                    "id": 70305,
+                    "name": "Cheese Dahi Bara",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Dahi bara topped with cheese and traditional spices",
+                    "img": ""
+                    },
+                    {
+                    "id": 70306,
+                    "name": "Dahi Bara Aludam Family Pack",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "veg",
+                    "description": "Large serving of Odisha-style dahi bara aludam",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 704,
+                "name": "Santula",
+                "price": 270,
+                "originalPrice": 190,
+                "rating": 4.6,
+                "foodType": "veg",
+                "description": "Mixed Vegetable Curry",
+                "img": "../src/assets/Images/odi_4.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 70401,
+                    "name": "Traditional Santula",
+                    "price": 110,
+                    "originalPrice": 140,
+                    "foodType": "veg",
+                    "description": "Traditional Odisha style mixed vegetable curry",
+                    "img": ""
+                    },
+                    {
+                    "id": 70402,
+                    "name": "Santula with Potato",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Healthy vegetable curry with potatoes",
+                    "img": ""
+                    },
+                    {
+                    "id": 70403,
+                    "name": "Mixed Vegetable Santula",
+                    "price": 130,
+                    "originalPrice": 170,
+                    "foodType": "veg",
+                    "description": "Fresh seasonal vegetables cooked with mild spices",
+                    "img": ""
+                    },
+                    {
+                    "id": 70404,
+                    "name": "Special Odia Santula",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Special traditional Santula with aromatic spices",
+                    "img": ""
+                    },
+                    {
+                    "id": 70405,
+                    "name": "Santula Rice Combo",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Santula served with steamed rice",
+                    "img": ""
+                    },
+                    {
+                    "id": 70406,
+                    "name": "Santula Family Pack",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "foodType": "veg",
+                    "description": "Large serving of traditional vegetable Santula",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 705,
+                "name": "Chhena Poda",
+                "price": 410,
+                "originalPrice": 200,
+                "rating": 4.9,
+                "foodType": "veg",
+                "description": "Baked Cottage Sweet",
+                "img": "../src/assets/Images/odi_5.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 70501,
+                    "name": "Classic Chhena Poda",
+                    "price": 120,
+                    "originalPrice": 150,
+                    "foodType": "veg",
+                    "description": "Traditional Odisha baked cottage cheese sweet",
+                    "img": ""
+                    },
+                    {
+                    "id": 70502,
+                    "name": "Kesar Chhena Poda",
+                    "price": 150,
+                    "originalPrice": 190,
+                    "foodType": "veg",
+                    "description": "Chhena Poda with aromatic saffron flavour",
+                    "img": ""
+                    },
+                    {
+                    "id": 70503,
+                    "name": "Dry Fruit Chhena Poda",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "foodType": "veg",
+                    "description": "Baked chhena sweet topped with dry fruits",
+                    "img": ""
+                    },
+                    {
+                    "id": 70504,
+                    "name": "Special Chhena Poda",
+                    "price": 200,
+                    "originalPrice": 250,
+                    "foodType": "veg",
+                    "description": "Rich and soft traditional Chhena Poda",
+                    "img": ""
+                    },
+                    {
+                    "id": 70505,
+                    "name": "Chocolate Chhena Poda",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "foodType": "veg",
+                    "description": "Modern chocolate flavoured Chhena Poda",
+                    "img": ""
+                    },
+                    {
+                    "id": 70506,
+                    "name": "Chhena Poda Family Pack",
+                    "price": 300,
+                    "originalPrice": 380,
+                    "foodType": "veg",
+                    "description": "Large family pack of traditional Chhena Poda",
+                    "img": ""
+                    }
+                ]
+            },
+            {
+                "id": 706,
+                "name": "Chhena Gaja",
+                "price": 250,
+                "originalPrice": 170,
+                "rating": 4.7,
+                "description": "Crunchy Milk Sweet",
+                "img": "src/assets/Images/odi_6.jpeg",
+                "items": 
+                [
+                    {
+                    "id": 70701,
+                    "name": "Chhena Jalebi",
+                    "price": 180,
+                    "originalPrice": 230,
+                    "rating": 4.6,
+                    "description": "Crispy Cottage Cheese Sweet",
+                    "img": "src/assets/Images/odi_7.jpeg"
+                    },
+                    {
+                    "id": 70701,
+                    "name": "Rasabali",
+                    "price": 150,
+                    "originalPrice": 200,
+                    "rating": 4.8,
+                    "description": "Soft Fried Cottage Cheese Sweet",
+                    "img": "src/assets/Images/odi_8.jpeg"
+                    },
+                    {
+                    "id": 70703,
+                    "name": "Khaja",
+                    "price": 120,
+                    "originalPrice": 160,
+                    "rating": 4.7,
+                    "description": "Crispy Layered Sweet",
+                    "img": "src/assets/Images/odi_9.jpeg"
+                    },
+                    {
+                    "id": 70704,
+                    "name": "Poda Pitha",
+                    "price": 200,
+                    "originalPrice": 260,
+                    "rating": 4.5,
+                    "description": "Traditional Baked Rice Cake",
+                    "img": "src/assets/Images/odi_10.jpeg"
+                    },
+                    {
+                    "id": 70705,
+                    "name": "Kheeri",
+                    "price": 100,
+                    "originalPrice": 140,
+                    "rating": 4.6,
+                    "description": "Creamy Traditional Milk Dessert",
+                    "img": "src/assets/Images/odi_11.jpeg"
+                    },
+                    {
+                    "id": 70706,
+                    "name": "Magaja Ladoo",
+                    "price": 260,
+                    "originalPrice": 320,
+                    "rating": 4.8,
+                    "description": "Traditional Gram Flour Ladoo",
+                    "img": "src/assets/Images/odi_12.jpeg"
+                    }
+                ]
+            },
+            {
+                "id": 707,
+                "name": "Rasabali",
+                "price": 330,
+                "originalPrice": 190,
+                "rating": 4.8,
+                "description": "Soft Milk Dessert",
+                "img": "src/assets/Images/odi_7.jpeg",
+                "items": [
+                    {
+                    "id": 70701,
+                    "name": "Khaja",
+                    "price": 180,
+                    "originalPrice": 240,
+                    "rating": 4.7,
+                    "description": "Crispy Layered Sweet",
+                    "img": "src/assets/Images/odi_8.jpeg"
+                    },
+                    {
+                    "id": 70702,
+                    "name": "Chhena Jalebi",
+                    "price": 220,
+                    "originalPrice": 280,
+                    "rating": 4.6,
+                    "description": "Crispy Cottage Cheese Sweet",
+                    "img": "src/assets/Images/odi_9.jpeg"
+                    },
+                    {
+                    "id": 70703,
+                    "name": "Poda Pitha",
+                    "price": 150,
+                    "originalPrice": 210,
+                    "rating": 4.5,
+                    "description": "Traditional Baked Rice Cake",
+                    "img": "src/assets/Images/odi_10.jpeg"
+                    },
+                    {
+                    "id": 70704,
+                    "name": "Chhena Poda",
+                    "price": 280,
+                    "originalPrice": 350,
+                    "rating": 4.9,
+                    "description": "Caramelized Cottage Cheese Cake",
+                    "img": "src/assets/Images/odi_11.jpeg"
+                    },
+                    {
+                    "id": 70705,
+                    "name": "Magaja Ladoo",
+                    "price": 260,
+                    "originalPrice": 320,
+                    "rating": 4.8,
+                    "description": "Traditional Gram Flour Ladoo",
+                    "img": "src/assets/Images/odi_12.jpeg"
+                    },
+                    {
+                    "id": 70706,
+                    "name": "Chhena Gaja",
+                    "price": 200,
+                    "originalPrice": 270,
+                    "rating": 4.7,
+                    "description": "Crunchy Milk Sweet",
+                    "img": "src/assets/Images/odi_13.jpeg"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "img": "src/assets/Images/ker_1.jpeg",
+        "state": "Kerala",
+        "foods":
+         [
+            {
+            "id": 801,
+            "name": "Appam with Stew",
+            "price": 470,
+            "originalPrice": 270,
+            "rating": 4.8,
+            "description": "Soft Appam Curry",
+            "img": "src/assets/Images/ker_1.jpeg"
+            },
+            {
+            "id": 802,
+            "name": "Puttu Kadala Curry",
+            "price": 380,
+            "originalPrice": 250,
+            "rating": 4.7,
+            "description": "Traditional Breakfast Combo",
+            "img": "src/assets/Images/ker_2.jpeg"
+            },
+            {
+            "id": 803,
+            "name": "Malabar Biryani",
+            "price": 570,
+            "originalPrice": 390,
+            "rating": 4.9,
+            "description": "Spicy Chicken Biryani",
+            "img": "src/assets/Images/ker_3.jpeg"
+            },
+            {
+            "id": 804,
+            "name": "Palada Payasam",
+            "price": 290,
+            "originalPrice": 210,
+            "rating": 4.8,
+            "description": "Creamy Rice Dessert",
+            "img": "src/assets/Images/ker_4.jpeg"
+            },
+            {
+            "id": 805,
+            "name": "Kozhikode Halwa",
+            "price": 330,
+            "originalPrice": 190,
+            "rating": 4.6,
+            "description": "Famous Kerala Sweet",
+            "img": "src/assets/Images/ker_5.jpeg"
+            },
+            {
+            "id": 806,
+            "name": "Ada Pradhaman",
+            "price": 430,
+            "originalPrice": 220,
+            "rating": 4.7,
+            "description": "Traditional Payasam Sweet",
+            "img": "src/assets/Images/ker_6.jpeg"
+            }
+         ]
+    },
+    {
+        "id": 9,
+        "img": "src/assets/Images/Madhya Pradesh_Poha Jalebi.png",
+        "state": "Madhya Pradesh",
+        "foods": 
+        [
+            {
+            "id": 901,
+            "name": "Poha Jalebi",
+            "price": 260,
+            "originalPrice": 180,
+            "rating": 4.8,
+            "description": "Breakfast Special Combo",
+            "img": "../src/assets/Images/Madhya Pradesh_Poha Jalebi.png"
+            },
+            {
+            "id": 902,
+            "name": "Dal Bafla",
+            "price": 470,
+            "originalPrice": 270,
+            "rating": 4.7,
+            "description": "Traditional Wheat Meal",
+            "img": "../src/assets/Images/Madhya Pradesh-Dal Bafla.png"
+            },
+            {
+            "id": 903,
+            "name": "Bhutte Ka Kees",
+            "price": 350,
+            "originalPrice": 210,
+            "rating": 4.6,
+            "description": "Creamy Corn Dish",
+            "img": "../src/assets/Images/Madhya Pradesh_Bhutte Ka Kees.png"
+            },
+            {
+            "id": 904,
+            "name": "Mawa Bati",
+            "price": 410,
+            "originalPrice": 200,
+            "rating": 4.8,
+            "description": "Rich Milk Sweet",
+            "img": "../src/assets/Images/Madhya Pradesh_Mawa Bati.png"
+            },
+            {
+            "id": 905,
+            "name": "Khoya Jalebi",
+            "price": 320,
+            "originalPrice": 180,
+            "rating": 4.7,
+            "description": "Sweet Crispy Delight",
+            "img": "../src/assets/Images/Madhya Pradesh_Khoya Jalebi.png"
+            },
+            {
+            "id": 906,
+            "name": "Khopra Pak",
+            "price": 250,
+            "originalPrice": 170,
+            "rating": 4.6,
+            "description": "Coconut Sweet Bite",
+            "img": "../src/assets/Images/Madhya Pradesh_Khopra Pak.png"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "img": "src/assets/Images/Maharashtra_Puran Poli.png",
+        "state": "Maharashtra",
+        "foods":
+         [
+            {
+            "id": 1001,
+            "name": "Puran Poli",
+            "price": 350,
+            "originalPrice": 210,
+            "rating": 4.8,
+            "description": "Sweet Stuffed Bread",
+            "img": "../src/assets/Images/Maharashtra_Puran Poli.png"
+            },
+            {
+            "id": 1002,
+            "name": "Modak",
+            "price": 300,
+            "originalPrice": 160,
+            "rating": 4.9,
+            "description": "Lord Ganesha Sweet",
+            "img": "../src/assets/Images/Maharashtra_Modak.png"
+            },
+            {
+            "id": 1003,
+            "name": "Basundi",
+            "price": 430,
+            "originalPrice": 220,
+            "rating": 4.7,
+            "description": "Creamy Milk Dessert",
+            "img": "../src/assets/Images/Maharashtra_Basundi.png"
+            },
+            {
+            "id": 1004,
+            "name": "Misal Pav",
+            "price": 370,
+            "originalPrice": 240,
+            "rating": 4.9,
+            "description": "Spicy Pav Combo",
+            "img": "../src/assets/Images/Maharashtra_Misal Pav.png"
+            },
+            {
+            "id": 1005,
+            "name": "Vada Pav",
+            "price": 200,
+            "originalPrice": 100,
+            "rating": 4.8,
+            "description": "Mumbai Street Burger",
+            "img": "../src/assets/Images/Maharashtra_Vada Pav.png"
+            },
+            {
+            "id": 1006,
+            "name": "Thalipeeth",
+            "price": 400,
+            "originalPrice": 190,
+            "rating": 4.6,
+            "description": "Healthy Multigrain Bread",
+            "img": "../src/assets/Images/Maharashtra_Thalipeeth.png"
+            }
+         ]
+        },
+
+    {
+        "id" : 11,
+        "img" : "src/assets/Images/Jamu&kashmir_Wazwan.png",
+        "state" : "Jamu & kashmir",
+        "foods": 
+        [
+            {
+                "id": 1101,
+                "name": "Rogan Josh",
+                "price": 670,
+                "originalPrice": 500,
+                "rating": 4.9,
+                "description": "Authentic Kashmiri Curry",
+                "img": "../src/assets/Images/Jamu&kashmir_Rogan Josh.png"
+            },
+            {
+                "id": 1102,
+                "name": "Wazwan",
+                "price": 730,
+                "originalPrice": 650,
+                "rating": 4.9,
+                "description": "Royal Feast Platter",
+                "img": "../src/assets/Images/Jamu&kashmir_Wazwan.png"
+            },
+            {
+                "id": 1103,
+                "name": "Madra",
+                "price": 420,
+                "originalPrice": 290,
+                "rating": 4.7,
+                "description": "Traditional Yogurt Curry",
+                "img": "../src/assets/Images/Jamu&kashmir_Madra.png"
+            },
+            {
+                "id": 1104,
+                "name": "Kashmiri Pulao",
+                "price": 510,
+                "originalPrice": 320,
+                "rating": 4.8,
+                "description": "Dry Fruit Rice",
+                "img": "../src/assets/Images/Jamu&kashmir_Kashmiri Pulao.png"
+            },
+            {
+                "id": 1105,
+                "name": "Sund Panjiri",
+                "price": 300,
+                "originalPrice": 220,
+                "rating": 4.6,
+                "description": "Healthy Winter Sweet",
+                "img": "../src/assets/Images/Jamu&kashmir_Sund Panjiri.png"
+            },
+            {
+                "id": 1106,
+                "name": "Kud Patisa",
+                "price": 340,
+                "originalPrice": 200,
+                "rating": 4.7,
+                "description": "Flaky Sugar Sweet",
+                "img": "../src/assets/Images/Jamu&kashmir_Kud Patisa.png"
+            }
+        ]
+    },
+    {
+        "id" : 12,
+        "img" : "src/assets/Images/Nagaland_Naga Ginger Candy.png",
+        "state" : "Nagaland",
+        "foods": 
+        [
+            {
+                "id": 1201,
+                "name": "Smoked Pork",
+                "price": 670,
+                "originalPrice": 500,
+                "rating": 4.8,
+                "description": "Smoky Pork Delight",
+                "img": "../src/assets/Images/Nagaland_Smoked Pork.png"
+            },
+            {
+                "id": 1202,
+                "name": "Axone",
+                "price": 440,
+                "originalPrice": 320,
+                "rating": 4.6,
+                "description": "Fermented Soybean Dish",
+                "img": "../src/assets/Images/Nagaland_Axone.png"
+            },
+            {
+                "id": 1203,
+                "name": "Galho",
+                "price": 470,
+                "originalPrice": 270,
+                "rating": 4.7,
+                "description": "Traditional Rice Porridge",
+                "img": "../src/assets/Images/Nagaland_Galho.png"
+            },
+            {
+                "id": 1204,
+                "name": "Anishi",
+                "price": 330,
+                "originalPrice": 260,
+                "rating": 4.5,
+                "description": "Dried Yam Curry",
+                "img": "src/assets/Images/nag_4.jpeg"
+            },
+            {
+                "id": 1205,
+                "name": "Koat Pitha",
+                "price": 350,
+                "originalPrice": 210,
+                "rating": 4.6,
+                "description": "Sticky Rice Cake",
+                "img": "../src/assets/Images/Nagaland_Koat Pitha.png"
+            },
+            {
+                "id": 1206,
+                "name": "Naga Ginger Candy",
+                "price": 390,
+                "originalPrice": 180,
+                "rating": 4.7,
+                "description": "Spicy Ginger Candy",
+                "img": "../src/assets/Images/Nagaland_Naga Ginger Candy.png"
+            }
+        ]
+    },
+    {
+        "id" : 13,
+        "img" : "src/assets/Images/Assam_Duck Meat Curry.png",
+        "state" : "Assam",
+        "foods":
+        [
+            {
+                "id": 1301,
+                "name": "Masor Tenga",
+                "price": 530,
+                "originalPrice": 340,
+                "rating": 4.8,
+                "description": "Tangy Fish Curry",
+                "img": "../src/assets/Images/Assam_Masor Tenga.png"
+            },
+            {
+                "id": 1302,
+                "name": "Khar",
+                "price": 370,
+                "originalPrice": 240,
+                "rating": 4.7,
+                "description": "Traditional Assamese Dish",
+                "img": "../src/assets/Images/Assam_Khar.png"
+            },
+            {
+                "id": 1303,
+                "name": "Duck Meat Curry",
+                "price": 610,
+                "originalPrice": 430,
+                "rating": 4.8,
+                "description": "Spicy Duck Curry",
+                "img": "../src/assets/Images/Assam_Duck Meat Curry.png"
+            },
+            {
+                "id": 1304,
+                "name": "Til Pitha",
+                "price": 260,
+                "originalPrice": 180,
+                "rating": 4.6,
+                "description": "Sesame Rice Roll",
+                "img": "../src/assets/Images/Assam_Til Pitha.png"
+            },
+            {
+                "id": 1305,
+                "name": "Narikolor Laru",
+                "price": 300,
+                "originalPrice": 150,
+                "rating": 4.7,
+                "description": "Coconut Sweet Balls",
+                "img": "../src/assets/Images/Assam_Narikolor Laru.png"
+            },
+            {
+                "id": 1306,
+                "name": "Xutuli Pitha",
+                "price": 250,
+                "originalPrice": 170,
+                "rating": 4.6,
+                "description": "Traditional Rice Cake",
+                "img": "../src/assets/Images/Assam_Xutuli Pitha.png"
+            }
+        ]
+    },
+
+    {
+        "id" : 14,
+        "img" : "src/assets/Images/Guj_Fafda Jalebi.jpeg",
+        "state" : "Gujrat",
+        "foods": 
+        [
+            {
+                "id": 1401,
+                "name": "Dhokla",
+                "price": 240,
+                "originalPrice": 150,
+                "rating": 4.8,
+                "description": "Soft Steamed Snack",
+                "img": "../src/assets/Images/Guj_Fafda Jalebi.jpeg"
+            },
+            {
+                "id": 1402,
+                "name": "Khandvi",
+                "price": 320,
+                "originalPrice": 180,
+                "rating": 4.7,
+                "description": "Rolled Gram Snack",
+                "img": "../src/assets/Images/Guj_Khandvi.png"
+            },
+            {
+                "id": 1403,
+                "name": "Fafda Jalebi",
+                "price": 430,
+                "originalPrice": 220,
+                "rating": 4.9,
+                "description": "Sweet Crispy Combo",
+                "img": "../src/assets/Images/Guj_Fafda Jalebi.jpeg"
+            },
+            {
+                "id": 1404,
+                "name": "Patra",
+                "price": 330,
+                "originalPrice": 190,
+                "rating": 4.6,
+                "description": "Colocasia Leaf Rolls",
+                "img": "../src/assets/Images/Guj_Patra.jpeg"
+            },
+            {
+                "id": 1405,
+                "name": "Basundi",
+                "price": 290,
+                "originalPrice": 210,
+                "rating": 4.8,
+                "description": "Rich Milk Dessert",
+                "img": "../src/assets/Images/Guj_Basundi.png"
+            },
+            {
+                "id": 1406,
+                "name": "Surati Ghari",
+                "price": 470,
+                "originalPrice": 280,
+                "rating": 4.9,
+                "description": "Traditional Gujarati Sweet",
+                "img": ""
+            }
+        ]
+    }
+]

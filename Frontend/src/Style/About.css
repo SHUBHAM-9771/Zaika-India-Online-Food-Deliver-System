@@ -1,0 +1,259 @@
+:root {
+    --dark: #12312b;
+    --accent: #f76b3b; /* orange button */
+    --muted: rgba(0,0,0,0.55);
+    --card: rgba(255,255,255,0.9);
+}
+
+
+.hero {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    margin-top: 0px;
+}
+
+.poster {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: auto;
+    background-color: #A8E063;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+    display: flex;
+    /* justify-content: ;  */
+    flex-direction: column; 
+    padding: 36px 36px;
+    row-gap: 20px;
+    flex: 1;
+    /* padding: 10px; */
+  }
+
+  .brand {
+    display:flex;
+    flex-direction:column; 
+    gap:6px;
+    margin: 0px;
+}
+
+.brand h1{
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #FF9933, #4e342e);
+    margin:0;
+    font-size:28px;
+    letter-spacing:1px
+}
+
+.brand .sub{
+    font-weight:600;
+    color:#7a2b1f
+}
+
+.tagline{
+    font-size:14px;
+    color:var(--dark);
+    opacity:0.95;
+    margin-top:6px
+}
+
+.cta{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:8px;
+    margin: 0px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 18px;
+    border-radius:999px;
+    /* background:var(--accent); */
+    background-color: #f76b3b;
+    color:white;
+    font-weight:700;
+    text-decoration:none;
+    text-align:center;
+    box-shadow:0 6px 14px rgba(247,107,59,0.28)
+}
+
+.small-info{
+    font-size:13px;
+    color:var(--muted)
+}
+
+.features{
+    display:grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    gap:8px;
+    /* flex-wrap: wrap; */
+    /* margin-top:10px */
+}
+
+.featuret {
+    /* background:var(--card); */
+    background-color: white;
+    padding:8px 10px;
+    border-radius:10px;
+    font-size:13px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05)
+}
+
+.qr-row{
+    display:flex;
+    gap:12px;
+    align-items:center
+}
+
+.qr{
+    width:96px;
+    height:96px;
+    background:#fff;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    font-weight:700;
+    color:var(--muted);font-size:12px
+}
+
+.download{
+    font-size:13px
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.socials img {
+    width: 30px;
+    height: 30px;
+}
+
+.socials-t1 {
+    margin-left: auto;
+    text-align: right;
+    font-size:12px;
+    color:var(--muted); 
+}
+
+.right{
+    padding:36px 30px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    align-items:center;
+    justify-content:center;
+    margin: auto;
+    flex: 1;
+
+}
+
+.collage{
+    width:100%;
+    max-width:520px;
+    background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.4));
+    border-radius:12px;
+    padding:18px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-auto-rows:120px;
+    gap:10px;
+    align-items:stretch
+}
+
+.big{
+    grid-column:1 / span 2;
+    grid-row:1 / span 1;
+    height:220px;
+    border-radius:10px;
+    overflow:hidden;
+    position:relative
+}
+
+.big img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.small{
+    border-radius:10px;
+    overflow:hidden;
+    position:relative
+}
+
+.small img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block
+}
+
+.map-strip{
+    display:flex;
+    gap:10px;
+    align-items: center;
+    margin-top:10px;
+    flex-wrap:wrap
+}
+
+.state{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    background:rgba(255,255,255,0.85);
+    padding:8px 10px;
+    border-radius:999px;
+    font-size:13px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.06)
+}
+
+.state img{
+    width:36px;
+    height:24px;
+    object-fit:cover;
+    border-radius:6px
+}
+
+@media (max-width: 600px) {
+  .poster {
+    flex-direction: column;
+    width: 90%;
+    height: auto; /* ✅ allow poster to expand naturally */
+  }
+
+  .hero {
+    height: auto; /* ✅ make hero adapt to content height */
+    padding: 0px 0; /* optional breathing space */
+  }
+
+  .left, .right {
+    width: auto;
+    padding: 20px;
+  }
+
+  .collage {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
+
+  .socials {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}

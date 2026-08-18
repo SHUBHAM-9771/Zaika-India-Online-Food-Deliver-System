@@ -1,0 +1,205 @@
+/* Main Parent */
+.filter {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+/* Overlay */
+.filter__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal */
+.filter__modal {
+  width: 700px;
+  max-width: 90%;
+  height: 500px;
+
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.filter__header {
+  height: 65px;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.filter__header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.filter__close-btn {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  border-radius: 50%;
+}
+
+.filter__close-btn:hover {
+  background-color: #f3f3f3;
+}
+
+/* Body */
+.filter__body {
+  flex: 1;
+
+  display: flex;
+  overflow: hidden;
+}
+
+/* Left Sidebar */
+.filter__sidebar {
+  width: 220px;
+
+  background-color: #f8f8f8;
+  border-right: 1px solid #eeeeee;
+
+  padding: 20px 0;
+}
+
+.filter__menu-item {
+  margin: 0;
+  padding: 18px 24px;
+
+  font-size: 16px;
+  color: #555;
+
+  cursor: pointer;
+}
+
+.filter__menu-item:hover {
+  background-color: #eeeeee;
+  color: #111;
+}
+
+/* Right Content */
+.filter__content {
+  flex: 1;
+
+  padding: 25px 30px;
+
+  overflow-y: auto;
+}
+
+.filter__heading {
+  margin: 0 0 18px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #333;
+}
+
+/* Options */
+.filter__option {
+  margin-bottom: 18px;
+}
+
+.filter__option label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 16px;
+  color: #444;
+
+  cursor: pointer;
+}
+
+.filter__option input {
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+}
+
+/* Horizontal line */
+.filter__content hr {
+  margin: 25px 0;
+
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+/* Footer */
+.filter__footer {
+  height: 75px;
+
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 15px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+/* Clear Button */
+.filter__clear-btn {
+  padding: 11px 22px;
+
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+
+  background-color: #ffffff;
+  color: #555;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.filter__clear-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Apply Button */
+.filter__apply-btn {
+  padding: 11px 28px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #ff5200;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.filter__apply-btn:hover {
+  background-color: #e64a00;
+}

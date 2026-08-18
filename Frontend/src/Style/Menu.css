@@ -1,0 +1,147 @@
+/* ===========================
+   MENU SECTION
+=========================== */
+
+.menu-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 50px auto;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.menu-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.menu-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ===========================
+   STATE NAME
+=========================== */
+
+.state-name {
+  margin: 18px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.show-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #ff6b00;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.show-btn:hover {
+  background: #e65c00;
+}
+
+/* ===========================
+   PAGINATION
+=========================== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.pagination button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  background: #198754;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination button:hover {
+  background: #146c43;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-image {
+    height: 200px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+  }
+
+  .pagination button {
+    width: 180px;
+  }
+}
