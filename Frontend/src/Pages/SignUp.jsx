@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import "../Style/SignUp.css";
 
@@ -11,6 +11,30 @@ import { PopupContext } from "../Context/PopupContext/PopoupContext";
 export const SignUp = () => {
   const { Signup, setSignup, showRegister, setShowRegister } =
     useContext(PopupContext);
+
+  const [login, setLoging] = useState({
+    email: "",
+    password: "",
+  });
+
+  function handleInput(e) {
+    const { name, value } = e.target;
+    setLoging({
+      ...login,
+      [name]: value,
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    console.log(login);
+
+    setLoging({
+      email: "",
+      password: "",
+    });
+  }
 
   return (
     <div className="overlay">
@@ -43,24 +67,30 @@ export const SignUp = () => {
         {/* Social Links */}
         <div className="link">
           <img src={facebook} alt="Facebook" />
-
           <img src={instagram} alt="Instagram" />
-
           <img src={twitter} alt="Twitter" />
         </div>
 
         {/* Login Form */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="Input">
-            <input type="text" placeholder="Username" />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={login.email}
+              onChange={handleInput}
+            />
           </div>
 
           <div className="Input">
-            <input type="email" placeholder="Email" />
-          </div>
-
-          <div className="Input">
-            <input type="password" placeholder="Password" />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={login.password}
+              onChange={handleInput}
+            />
           </div>
 
           <p className="forget">Forgot your password?</p>

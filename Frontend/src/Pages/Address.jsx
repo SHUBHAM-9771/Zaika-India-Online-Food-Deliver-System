@@ -1,24 +1,24 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "../Style/Address.css";
 
 const Address = () => {
   const [userDetaile, setUserDetails] = useState({
     fullname: "",
-    mbnumber: "",
+    mobnumber: "",
     address: {
-      flatnumber: "",
-      apartmentnumber: "",
-      area: "",
-      landmark: "",
-      city: "",
-      state: "",
+      house: "",
       pincode: "",
+      state: "",
+      city: "",
+      landmark: "",
+      area: "",
     },
   });
   function handleUser(e) {
     const { value, name } = e.target;
 
-    if (name === "fullname" || name === "mbnumber") {
+    if (name === "fullname" || name === "mobnumber") {
       setUserDetails((prev) => ({
         ...prev,
         [name]: value,
@@ -35,9 +35,20 @@ const Address = () => {
     }
   }
 
-  function handleform(e) {
+  async function handleform(e) {
     e.preventDefault();
-    console.log(userDetaile);
+    // console.log(userDetaile);
+    try {
+      let response = await axios.post(
+        "http://localhost:9000/address",
+        userDetaile,
+      );
+      console.log(response.data);
+      console.log(response.data.message);
+    } catch (error) {
+      console.log("ERROR:", error);
+      console.log("SERVER ERROR:", error.response?.data);
+    }
   }
   return (
     <section className="address-section">
@@ -65,10 +76,10 @@ const Address = () => {
               <label htmlFor="mobile">Mobile Number *</label>
               <input
                 type="tel"
-                name="mbnumber"
+                name="mobnumber"
                 id="mobile"
                 placeholder="Enter mobile number"
-                value={userDetaile.mbnumber}
+                value={userDetaile.mobnumber}
                 onChange={handleUser}
               />
             </div>
@@ -80,21 +91,21 @@ const Address = () => {
               <input
                 type="text"
                 id="house"
-                name="address[flatnumber]"
+                name="address[house]"
                 placeholder="e.g. Flat 203, House 12B"
-                value={userDetaile.address.flatnumber}
+                value={userDetaile.address.house}
                 onChange={handleUser}
               />
             </div>
-
             <div className="form-group">
-              <label htmlFor="building">Building / Apartment Name</label>
+              <label htmlFor="pincode">Pincode *</label>
               <input
                 type="text"
-                id="building"
-                name="address[apartmentnumber]"
-                placeholder="e.g. ABC Residency"
-                value={userDetaile.address.apartmentnumber}
+                id="pincode"
+                placeholder="Enter pincode"
+                name="address[pincode]"
+                // maxLength="6"
+                value={userDetaile.address.pincode}
                 onChange={handleUser}
               />
             </div>
@@ -160,63 +171,6 @@ const Address = () => {
               </select>
             </div>
           </div>
-
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="pincode">Pincode *</label>
-              <input
-                type="text"
-                id="pincode"
-                placeholder="Enter pincode"
-                name="address[pincode]"
-                // maxLength="6"
-                value={userDetaile.address.pincode}
-                onChange={handleUser}
-              />
-            </div>
-
-            {/* <div className="form-group">
-              <label>Address Type *</label>
-
-              <div className="address-type">
-                <label>
-                  <input
-                    type="radio"
-                    name="addressType"
-                    value="Home"
-                    defaultChecked
-                  />
-                  Home
-                </label>
-
-                <label>
-                  <input type="radio" name="addressType" value="Work" />
-                  Work
-                </label>
-
-                <label>
-                  <input type="radio" name="addressType" value="Other" />
-                  Other
-                </label>
-              </div>
-            </div> */}
-          </div>
-
-          {/* <div className="form-group full-width">
-            <label htmlFor="instructions">Delivery Instructions</label>
-
-            <textarea
-              id="instructions"
-              placeholder="e.g. Call me before delivery..."
-              maxLength="120"
-            ></textarea>
-          </div>
-
-          <div className="default-address">
-            <input type="checkbox" id="defaultAddress" />
-
-            <label htmlFor="defaultAddress">Set as default address</label>
-          </div> */}
 
           <button type="submit" className="save-address-btn">
             📍 Save Address

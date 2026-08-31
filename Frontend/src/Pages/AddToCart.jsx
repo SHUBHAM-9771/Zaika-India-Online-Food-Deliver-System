@@ -71,7 +71,7 @@ const AddToCart = () => {
 
               <div className="cart-info">
                 <h3>{foodItem.name}</h3>
-
+ 
                 <p className="cart-rating">⭐ {foodItem.rating}</p>
 
                 <p className="cart-price">
