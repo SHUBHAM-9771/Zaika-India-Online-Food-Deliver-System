@@ -1,98 +1,72 @@
-import React, { useContext, useEffect, useState, lazy } from "react";
-import { FoodsContext } from "../Context/FoodsContext/FoodContext";
+// const CostForTwo = lazy(() => import("../Pages/CostForTwo"));
+// const VegNonVeg = lazy(() => import("../Pages/VegNonVeg"));
+// const Filter = lazy(() => import("../Pages/Filter"));
+// const Rating = lazy(() => import("../Pages/Rating"));
+// const SortBy = lazy(() => import("../Pages/SortBy"));
+
 import { useNavigate, useParams } from "react-router-dom";
-
-const CostForTwo = lazy(() => import("../Pages/CostForTwo"));
-const VegNonVeg = lazy(() => import("../Pages/VegNonVeg"));
-const Filter = lazy(() => import("../Pages/Filter"));
-const Rating = lazy(() => import("../Pages/Rating"));
-const SortBy = lazy(() => import("../Pages/SortBy"));
-
+import { useEffect, useState } from "react";
+import { getStatefood } from "../services/Statefood";
 import "../Style/FoodCart.css";
 
 const FoodsCart = () => {
-  const [filterfood, setFilterFood] = useState([]);
-  const [cost, setCost] = useState(false);
-  const [category, setCategory] = useState(false);
-  const [allFilter, setallfilter] = useState(false);
-  const [rating, setRating] = useState(false);
-  const [sortBy, setSortBy] = useState(false);
-
-  const food = useContext(FoodsContext);
-  const { state } = useParams();
+  const { _id } = useParams();
   const navigation = useNavigate();
+  const [statefood, setStatefood] = useState([]);
 
-  // Find selected state
-  const SelectedFood = food.find((item) =>
-    item.state.toLowerCase().includes(state.toLowerCase()),
-  );
+  const result = statefood?.data?.foods.filter((item) => {
+    return item.stateid === _id;
+  });
 
-  // Store selected state's food
   useEffect(() => {
-    if (SelectedFood) {
-      setFilterFood(SelectedFood.foods);
+    async function getStateFood() {
+      try {
+        let response = await getStatefood();
+        setStatefood(response);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }, [SelectedFood]);
-
-  // Filter handlers
-
-  function handleSort() {
-    setSortBy(!sortBy);
-  }
-
-  function handleallfilter() {
-    setallfilter(!allFilter);
-  }
-
-  function handleCost() {
-    setCost(!cost);
-  }
-
-  function handleCategory() {
-    setCategory(!category);
-  }
-
-  function handleRating() {
-    setRating(!rating);
-  }
+    getStateFood();
+  }, []);
 
   return (
     <section className="foods-container">
       {/* Modals */}
 
-      {sortBy && (
+      {/* {sortBy && (
         <SortBy
           setSortBy={setSortBy}
           SelectedFood={SelectedFood}
           setFilterFood={setFilterFood}
         />
-      )}
+      )} */}
 
-      {rating && (
+      {/* {rating && (
         <Rating
           setRating={setRating}
           SelectedFood={SelectedFood}
           setFilterFood={setFilterFood}
         />
-      )}
+      )} */}
 
-      {allFilter && <Filter setallfilter={setallfilter} />}
+      {/* {allFilter && <Filter setallfilter={setallfilter} />} */}
 
-      {cost && (
+      {/* {cost && (
         <CostForTwo
           setCost={setCost}
           SelectedFood={SelectedFood}
           setFilterFood={setFilterFood}
         />
-      )}
+      )} */}
 
-      {category && (
+      {/* {category && (
         <VegNonVeg
           setCategory={setCategory}
           SelectedFood={SelectedFood}
           setFilterFood={setFilterFood}
         />
-      )}
+      )} */}
 
       {/* Header */}
 
@@ -105,7 +79,7 @@ const FoodsCart = () => {
       {/* Filter Buttons */}
 
       <div className="filter-btns">
-        <button onClick={handleallfilter}>Filter</button>
+        {/* <button onClick={handleallfilter}>Filter</button>
 
         <button onClick={handleSort}>Sort By</button>
 
@@ -113,7 +87,7 @@ const FoodsCart = () => {
 
         <button onClick={handleCategory}>Veg/Non-Veg</button>
 
-        <button onClick={handleCost}>Cost for Two</button>
+        <button onClick={handleCost}>Cost for Two</button> */}
       </div>
 
       <h2 className="title">Restaurants to Explore</h2>
@@ -121,27 +95,22 @@ const FoodsCart = () => {
       {/* Food List */}
 
       <div className="foods-grid">
-        {filterfood?.map((item) => (
-          <div className="food-card" key={item.id}>
-            <img src={item.img} alt={item.name} className="food-image" />
+        {result?.map((food) => (
+          <div className="food-card" key={food._id}>
+            <img src="" alt="" className="food-image" />
 
             <div className="food-info">
-              <h3>{item.name}</h3>
+              <h3>{food.foodname}</h3>
 
-              <p className="price">
-                ₹{item.price}
-                <span>₹{item.originalPrice}</span>
-              </p>
+              <p className="price">₹{food.price}</p>
 
-              <p className="rating">⭐ {item.rating}</p>
+              <p className="rating">⭐{food.rating} </p>
 
-              <p className="desc">{item.description}</p>
+              <p className="desc">{food.description}</p>
 
               <button
                 className="border-2"
-                onClick={() =>
-                  navigation(`/foodCart/${SelectedFood.state}/${item.name}`)
-                }
+                onClick={() => navigation(`/foodCart/${food._id}`)}
               >
                 Show items
               </button>

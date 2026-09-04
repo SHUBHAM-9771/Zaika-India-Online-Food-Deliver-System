@@ -54,12 +54,12 @@ function App() {
         },
 
         {
-          path: "/foodsCart/:state",
+          path: "/foodsCart/:_id",
           element: <FoodsCart />,
         },
 
         {
-          path: "/foodCart/:state/:foods",
+          path: "/foodCart/:_id",
           element: <FoodCart />,
         },
         {

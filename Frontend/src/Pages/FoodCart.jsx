@@ -1,98 +1,76 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { FoodsContext } from "../Context/FoodsContext/FoodContext";
-import { CartContext } from "../Context/CartContext/CartContext";
+import { getStatefoodItem } from "../services/FoodItem";
 import "../Style/Carts.css";
+import { CartContext } from "../Context/CartContext/CartContext";
 
 const FoodCart = () => {
-  const food = useContext(FoodsContext);
-  // Cart Context
   const { item, setItem } = useContext(CartContext);
-
-  const { state, foods } = useParams();
-
-  const [selectedfood, setSelectedfood] = useState([]);
-  const [itemfilter, setitemFilter] = useState("");
-  const [category, setCategory] = useState([]);
-
-  // =========================
-  // Find State
-  // =========================
-
-  const result = useMemo(() => {
-    return food?.find((item) => item.state === state);
-  }, [food, state]);
-
-  // =========================
-  // Find Food
-  // =========================
-
-  const result1 = useMemo(() => {
-    return result?.foods?.filter((item) => item.name === foods);
-  }, [result, foods]);
-
-  // =========================
-  // Get Food Data
-  // =========================
-
-  const data = result1?.[0];
-
-  // =========================
-  // Get Food Items
-  // =========================
-
-  const items = result1?.[0]?.items || [];
-
-  // =========================
-  // Store Food Items
-  // =========================
+  console.log(item);
+  const { _id } = useParams();
+  const [foodItem, setFoodItem] = useState([]);
+  const [filterFood, setFilterFood] = useState([]);
+  const [isClicked, setisClicked] = useState(null);
 
   useEffect(() => {
-    setSelectedfood(items);
-  }, [items]);
-
-  // =========================
-  // Filter Food
-  // =========================
-
-  const filterdata = useMemo(() => {
-    if (itemfilter === "") {
-      return selectedfood;
+    async function getFoodItem() {
+      try {
+        let response = await getStatefoodItem();
+        setFoodItem(response);
+      } catch (error) {
+        console.log(error);
+      }
     }
+    getFoodItem();
+  }, []);
 
-    return selectedfood.filter(
-      (item) => item.foodType === itemfilter || item.bestsellers === itemfilter,
-    );
-  }, [selectedfood, itemfilter]);
-
-  // =========================
-  // Update Category
-  // =========================
-
+  let selectedFoodItem = foodItem?.data?.foodItem.filter((item) => {
+    return item.foodId === _id;
+  });
+  //Automatically show all items
   useEffect(() => {
-    setCategory(filterdata);
-  }, [filterdata]);
+    setFilterFood(selectedFoodItem);
+  }, [foodItem, _id]);
 
-  console.log("filterdata =", filterdata);
-  console.log("category =", category);
-
-  function itemsadd(foodItem) {
-    let alreadyExist = item.find((ele) => {
-      return ele.id === foodItem.id;
+  function handlePureveg(foodTypes) {
+    let result = selectedFoodItem.filter((item) => {
+      return item.itemTypes === foodTypes;
     });
-
-    if (alreadyExist) {
-      return;
-    }
-    setItem((prev) => [
-      ...prev,
-      {
-        ...foodItem,
-        quantity: 1,
-      },
-    ]);
+    setFilterFood(result);
   }
 
+  function handleNonVeg(foodTypes) {
+    let result = selectedFoodItem.filter((item) => {
+      return item.itemTypes === foodTypes;
+    });
+
+    setFilterFood(result);
+  }
+
+  function handleALL() {
+    setFilterFood(selectedFoodItem);
+  }
+
+  //
+  function itemsadd(foodItem) {
+    console.log(isClicked);
+    setItem((prev) => {
+      let result = prev.find((item) => {
+        return item._id === foodItem._id;
+      });
+
+      if (!result) {
+        let newItem = {
+          ...foodItem,
+          quantity: foodItem.quantity + 1,
+        };
+        return [...prev, newItem];
+      }
+      return prev;
+    });
+
+    setisClicked(foodItem._id);
+  }
   return (
     <div className="food-box">
       {/* Header */}
@@ -100,7 +78,7 @@ const FoodCart = () => {
       <div className="food-header">
         <h2>Food Box</h2>
 
-        <img src={data?.img} alt={data?.state} />
+        {/* <img src="" alt="" /> */}
 
         <div className="rating">⭐ 4.5</div>
       </div>
@@ -116,16 +94,16 @@ const FoodCart = () => {
       <div className="food-filter-buttons">
         <button
           className="food-filterbtn"
-          onClick={() => setitemFilter("nonveg")}
+          onClick={() => handleNonVeg("nonveg")}
         >
           Non Veg
         </button>
 
-        <button className="food-filterbtn" onClick={() => setitemFilter("veg")}>
+        <button className="food-filterbtn" onClick={() => handlePureveg("veg")}>
           Pure Veg
         </button>
 
-        <button className="food-filterbtn" onClick={() => setitemFilter("")}>
+        <button className="food-filterbtn" onClick={() => handleALL("")}>
           All
         </button>
 
@@ -142,12 +120,12 @@ const FoodCart = () => {
       {/* Food List */}
 
       <div className="food-list">
-        {category.map((item) => (
-          <div className="food-card" key={item.id}>
+        {filterFood?.map((item) => (
+          <div className="food-card" key={item._id}>
             {/* Food Details */}
 
             <div className="food-details">
-              <h3>{item.name}</h3>
+              <h3>{item.foodname}</h3>
 
               <p>Price: ₹{item.price}</p>
 
@@ -161,9 +139,17 @@ const FoodCart = () => {
             {/* Food Image */}
 
             <div className="food-image-container">
-              <img src={item.img} alt={item.name} className="food-image" />
+              <img
+                src={item.image}
+                alt={item.foodname}
+                className="food-image"
+              />
 
-              <button className="add-btn" onClick={() => itemsadd(item)}>
+              <button
+                className="add-btn"
+                onClick={() => itemsadd(item)}
+                disabled={isClicked === item._id}
+              >
                 ADD
               </button>
             </div>

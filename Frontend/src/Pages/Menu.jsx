@@ -1,18 +1,33 @@
 // import { Outlet } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useState, useEffect } from "react";
+import { getstate } from "../services/State";
 import "../Style/Menu.css";
-import { FoodsContext } from "../Context/FoodsContext/FoodContext";
+// import { FoodsContext } from "../Context/FoodsContext/FoodContext";
 import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const navigation = useNavigate();
-  const { state, page, setPage } = useContext(FoodsContext);
-  console.log(state);
+  const [state, setState] = useState([]);
+  const [page, setPage] = useState(0);
+  console.log(page);
 
-  // let limit = 4;
-  // const [skip, setSkip] = useState(0);
+  // console.log("items", item);
+  let limit = 4;
 
-  // const result = food.slice(skip, skip + limit);
+  async function getStates() {
+    try {
+      let response = await getstate(page, limit);
+      setState(response.data.states);
+      setPage(response.data.page);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getStates();
+  }, [page]);
 
   function handleNext() {
     setPage((prev) => {
@@ -42,7 +57,7 @@ const Menu = () => {
 
             <button
               className="show-btn"
-              onClick={() => navigation(`/foodsCart/${element.state}`)}
+              onClick={() => navigation(`/foodsCart/${element._id}`)}
             >
               {element.state}
             </button>

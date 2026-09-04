@@ -75,6 +75,7 @@
                 }
             ]
             },
+
             {
                 "id": 102,
                 "name": "Khaja",
@@ -151,6 +152,7 @@
                     }
                 ]
             },
+
             {
                 "id": 103,
                 "name": "Dal Chawal",
@@ -235,6 +237,7 @@
                     }
                 ]
             },
+
             {
                 "id": 104,
                 "name": "Thekua",
@@ -300,7 +303,8 @@
                     "img": "/Thekua_item6.png"
                     } 
                 ]
-            },     
+            },  
+
             {
                 "id": 106,
                 "name": "Makhana Kheer",
@@ -376,6 +380,7 @@
                     }
                 ]
             },
+
             {
                 "id": 107,
                 "name": "Jalebi",
@@ -451,6 +456,7 @@
                     }
                 ]
             },
+            
             {
             "id": 108,
             "name": "Champaran Muttan",
@@ -987,6 +993,7 @@
             }
         ]
     },
+
     {
         "id" : 3, 
         "img" : "src/assets/Images/food_Amritsari Fish.png",
@@ -1585,6 +1592,7 @@
             }
         ]
     },
+
     {
         "id": 5,
         "img": "/src/assets/Images/del_Chole Bhature.jpeg",
@@ -2062,6 +2070,7 @@
             }
         ]
     },
+
     {
         "id": 6,
         "img": "src/assets/Images/temil_Tirunelveli Halwa.png",
@@ -3013,6 +3022,7 @@
             }
         ]
     },
+
     {
         "id": 8,
         "img": "src/assets/Images/ker_1.jpeg",
@@ -3075,6 +3085,7 @@
             }
          ]
     },
+
     {
         "id": 9,
         "img": "src/assets/Images/Madhya Pradesh_Poha Jalebi.png",
@@ -3137,6 +3148,7 @@
             }
         ]
     },
+
     {
         "id": 10,
         "img": "src/assets/Images/Maharashtra_Puran Poli.png",
@@ -3198,7 +3210,7 @@
             "img": "../src/assets/Images/Maharashtra_Thalipeeth.png"
             }
          ]
-        },
+    },
 
     {
         "id" : 11,
@@ -3262,6 +3274,7 @@
             }
         ]
     },
+
     {
         "id" : 12,
         "img" : "src/assets/Images/Nagaland_Naga Ginger Candy.png",
@@ -3324,6 +3337,7 @@
             }
         ]
     },
+
     {
         "id" : 13,
         "img" : "src/assets/Images/Assam_Duck Meat Curry.png",
