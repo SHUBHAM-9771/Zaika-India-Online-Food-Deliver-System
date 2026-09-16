@@ -10,6 +10,7 @@ const FoodCart = () => {
   const { _id } = useParams();
   const [foodItem, setFoodItem] = useState([]);
   const [filterFood, setFilterFood] = useState([]);
+  console.log(filterFood);
   const [isClicked, setisClicked] = useState(null);
 
   useEffect(() => {

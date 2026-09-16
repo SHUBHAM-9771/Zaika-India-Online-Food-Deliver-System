@@ -105,7 +105,7 @@ const AddToCart = () => {
 
           <div className="bill-row">
             <span>Delivery Fee</span>
-            <span>₹ {diliveryCharge}</span>
+            <span>₹ {deliveryCharge}</span>
           </div>
 
           <hr />

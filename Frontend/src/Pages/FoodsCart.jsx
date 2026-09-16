@@ -8,11 +8,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getStatefood } from "../services/Statefood";
 import "../Style/FoodCart.css";
+import CostForTwo from "../Pages/CostForTwo";
 
 const FoodsCart = () => {
   const { _id } = useParams();
   const navigation = useNavigate();
   const [statefood, setStatefood] = useState([]);
+  console.log(statefood);
+  const [costfortwo, setCostForTwo] = useState(false);
+  const [forditem, setfoodItem] = useState([]);
 
   const result = statefood?.data?.foods.filter((item) => {
     return item.stateid === _id;
@@ -22,13 +26,23 @@ const FoodsCart = () => {
     async function getStateFood() {
       try {
         let response = await getStatefood();
+
         setStatefood(response);
+
+        setfoodItem(result);
       } catch (error) {
         console.log(error);
       }
     }
     getStateFood();
-  }, []);
+  }, [result]);
+
+  // useEffect(() => {
+  //   function xyz() {
+  //     setfoodItem(result);
+  //   }
+  //   xyz();
+  // }, [result]);
 
   return (
     <section className="foods-container">
@@ -60,14 +74,9 @@ const FoodsCart = () => {
         />
       )} */}
 
-      {/* {category && (
-        <VegNonVeg
-          setCategory={setCategory}
-          SelectedFood={SelectedFood}
-          setFilterFood={setFilterFood}
-        />
-      )} */}
-
+      {costfortwo && (
+        <CostForTwo setCostForTwo={setCostForTwo} result={result} />
+      )}
       {/* Header */}
 
       <div className="foods-header">
@@ -85,9 +94,12 @@ const FoodsCart = () => {
 
         <button onClick={handleRating}>Rating</button>
 
-        <button onClick={handleCategory}>Veg/Non-Veg</button>
+        <button onClick={handleCategory}>Veg/Non-Veg</button> */}
 
-        <button onClick={handleCost}>Cost for Two</button> */}
+        {/* <button onClick={() => handleCostForTwo}>Cost for Two</button> */}
+        <button onClick={() => setCostForTwo((prev) => (prev ? false : true))}>
+          Cost for Two
+        </button>
       </div>
 
       <h2 className="title">Restaurants to Explore</h2>
@@ -95,9 +107,9 @@ const FoodsCart = () => {
       {/* Food List */}
 
       <div className="foods-grid">
-        {result?.map((food) => (
+        {forditem?.map((food) => (
           <div className="food-card" key={food._id}>
-            <img src="" alt="" className="food-image" />
+            <img src={food.image} alt={food.foodname} className="food-image" />
 
             <div className="food-info">
               <h3>{food.foodname}</h3>
