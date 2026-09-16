@@ -3,11 +3,11 @@ import mongoose from "mongoose";
 const foodItemSchema = new mongoose.Schema({
   foodId: {
     type: mongoose.Types.ObjectId,
-    ref: "Statefood",
+    ref: "statefoods",
     required: true,
   },
 
-  name: {
+  foodname: {
     type: String,
     trim: true,
     required: true,

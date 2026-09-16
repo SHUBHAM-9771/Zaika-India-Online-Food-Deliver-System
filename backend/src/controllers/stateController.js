@@ -2,18 +2,23 @@ import State from "../models/state.js";
 
 export const handlestate = async (req, res) => {
   try {
-    const { state, image } = req.body;
-    console.log(req.body);
+    const { state } = req.body;
 
-    // step 1 check field
-    if (!state || !image) {
+    // Multer gives the uploaded file in req.file
+    if (!state || !req.file) {
       return res.status(400).json({
         success: false,
-        message: "All field are required",
+        message: "State and image are required",
       });
     }
 
-    // Step 2 state is exist
+    // Get the filename/path from the uploaded file
+    const image = req.file.filename;
+
+    console.log("Body:", req.body);
+    console.log("File:", req.file);
+
+    // Check if state already exists
     const existstate = await State.findOne({ state });
 
     if (existstate) {
@@ -24,28 +29,27 @@ export const handlestate = async (req, res) => {
       });
     }
 
-    // step 3 create new state
+    // Create new state
     const newstate = await State.create({
       state,
       image,
     });
 
-    // step 4 response
-    res.status(201).json({
+    return res.status(201).json({
       success: true,
       message: "State is successfully created",
       state: newstate,
     });
   } catch (error) {
     console.log(error);
-    res.status(500).json({
+
+    return res.status(500).json({
       success: false,
-      message: "unable to create State",
+      message: "Unable to create state",
       error: error.message,
     });
   }
 };
-
 export const getStates = async (req, res) => {
   try {
     let page = Number(req.query.page) || 1;

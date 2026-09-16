@@ -2,17 +2,18 @@ import FoodItem from "../models/foodsItem.js";
 
 export const handlefoodItem = async (req, res) => {
   try {
-    const { foodId, name, price, itemTypes, quantity, discription, image } =
+    const { foodId, foodname, price, itemTypes, quantity, discription } =
       req.body;
 
+    console.log(req.body);
     if (
       !foodId ||
-      !name ||
+      !foodname ||
       price === undefined ||
       !itemTypes ||
       quantity === undefined ||
       !discription ||
-      !image
+      !req.file
     ) {
       return res.status(400).json({
         success: false,
@@ -20,19 +21,21 @@ export const handlefoodItem = async (req, res) => {
       });
     }
 
-    const existinFoodItem = await FoodItem.findOne({ name });
+    const image = req.file.filename;
+
+    const existinFoodItem = await FoodItem.findOne({ foodname });
 
     if (existinFoodItem) {
       return res.status(400).json({
         success: false,
-        message: "FiidItem is already exists",
+        message: "FoodItem is already exists",
         foodItem: existinFoodItem,
       });
     }
 
     const newFoodItem = await FoodItem.create({
       foodId,
-      name,
+      foodname,
       price,
       itemTypes,
       quantity,

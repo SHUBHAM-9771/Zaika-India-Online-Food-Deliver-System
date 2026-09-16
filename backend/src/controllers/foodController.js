@@ -2,18 +2,20 @@ import Statefood from "../models/foods.js";
 
 export const handlefoods = async (req, res) => {
   try {
-    const { stateId, foodname, price, rating, foodtype, description, image } =
+    const { stateid, foodname, price, rating, foodtype, description } =
       req.body;
+
+    console.log(req.body);
 
     // Step 2 check all field are required
     if (
-      !stateId ||
+      !stateid ||
       !foodname ||
       price === undefined ||
       rating === undefined ||
       !foodtype ||
       !description ||
-      !image
+      !req.file
     ) {
       return res.status(400).json({
         success: false,
@@ -22,18 +24,20 @@ export const handlefoods = async (req, res) => {
     }
 
     // step 3 Check existing food in same state
-    const existingfoodState = await Statefood.findOne({ stateId, foodname });
+    const existingfoodState = await Statefood.findOne({ stateid, foodname });
     if (existingfoodState) {
       return res.status(400).json({
         success: false,
-        message: "this food already exists in the state",
+        message: "This food already exists in the state",
         foods: existingfoodState,
       });
     }
 
+    const image = req.file.filename;
+
     // create food
     const newStatefood = await Statefood.create({
-      stateId,
+      stateid,
       foodname,
       price,
       rating,

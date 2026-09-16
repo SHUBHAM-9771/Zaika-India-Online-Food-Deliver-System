@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const foodSchema = new mongoose.Schema({
-  stateId: {
-    type: mongoose.Types.ObjectId,
-    ref: "State",
+  stateid: {
+    type: mongoose.Types.ObjectId, 
+    ref: "states",
     required: true,
   },
   foodname: {

@@ -14,6 +14,7 @@ const app = express();
 
 app.use(
   cors({
+    origin: "http://localhost:5174",
     origin: "http://localhost:5173",
   }),
 );
@@ -27,9 +28,9 @@ connectDB();
 // Routes
 app.use(AuthRouter);
 app.use(AddressRouter);
-app.use(stateRouter);
-app.use(statefoodRouter);
-app.use(foodItemRouter);
+app.use(stateRouter, express.static("upload"));
+app.use(statefoodRouter, express.static("upload"));
+app.use(foodItemRouter, express.static("upload"));
 
 const PORT = process.env.PORT;
 
