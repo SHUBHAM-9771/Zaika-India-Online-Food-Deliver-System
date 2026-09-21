@@ -34,6 +34,7 @@ export const handlestate = async (req, res) => {
       state,
       image,
     });
+    console.log("SAVED STATE:", newstate);
 
     return res.status(201).json({
       success: true,
