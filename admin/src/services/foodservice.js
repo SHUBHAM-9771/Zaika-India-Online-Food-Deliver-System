@@ -6,7 +6,9 @@ export const getstatefood = () => {
 };
 
 // create state food
-export const greatestatefood = (statefood) => {
+export const createstatefood = (statefood) => {
+  console.log("Sending statefood:", statefood);
+
   return axiosInstance.post("/statefoods", statefood);
 };
 

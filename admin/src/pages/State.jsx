@@ -8,18 +8,18 @@ import {
 
 const State = () => {
   const [states, setStates] = useState([]);
-  console.log(states);
+
   const [state, setstate] = useState({
     state: "",
-    image: "",
+    image: null,
   });
 
   function handleInput(e) {
-    const { name, value } = e.target;
+    const { name, value, files } = e.target;
 
     setstate({
       ...state,
-      [name]: value,
+      [name]: name === "image" ? files[0] : value,
     });
   }
 
@@ -27,15 +27,27 @@ const State = () => {
     e.preventDefault();
 
     try {
-      const response = await createstate(state);
+      const formData = new FormData();
+
+      formData.append("state", state.state);
+
+      if (state.image) {
+        formData.append("image", state.image);
+      }
+
+      for (let [key, value] of formData.entries()) {
+        console.log(key, value);
+      }
+      const response = await createstate(formData);
 
       console.log("SUCCESS:", response.data);
-      console.log("Data:", response.data.state);
 
       setstate({
         state: "",
-        image: "",
+        image: null,
       });
+
+      await handleGetState();
     } catch (error) {
       console.log("Error:", error);
       console.log("Status:", error.response?.status);
@@ -46,20 +58,23 @@ const State = () => {
   async function handleGetState() {
     try {
       const response = await getstate();
+
       console.log("GET:", response.data);
 
-      setStates(response.data.states);
+      setStates(response.data?.states || []);
     } catch (error) {
       console.log(error);
     }
   }
+
   useEffect(() => {
     handleGetState();
   }, []);
 
   async function handleDelete(id) {
     try {
-      let response = await deletefood(id);
+      const response = await deletefood(id);
+
       console.log(response.data);
 
       await handleGetState();
@@ -70,15 +85,22 @@ const State = () => {
 
   async function handleUpdate(id) {
     try {
-      let selectedState = states.find((item) => item._id === id);
-      console.log(selectedState);
+      const selectedState = states.find((item) => item._id === id);
 
-      setstate({
-        state: selectedState.state,
-        image: selectedState.image,
-      });
+      if (!selectedState) return;
 
-      let response = await updatestate(id, state);
+      console.log("Selected State:", selectedState);
+
+      const updateData = new FormData();
+
+      updateData.append("state", selectedState.state);
+
+      if (selectedState.image) {
+        updateData.append("image", selectedState.image);
+      }
+
+      const response = await updatestate(id, updateData);
+
       console.log(response.data);
 
       await handleGetState();
@@ -88,88 +110,170 @@ const State = () => {
   }
 
   return (
-    <div>
-      {/* Header */}
-      <div>
-        <h1>State Management</h1>
-        <h2>Add and manage food state</h2>
-      </div>
+    <div className="min-h-screen bg-gray-100 px-4 py-8">
+      <div className="mx-auto max-w-6xl">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-800">State Management</h1>
 
-      {/* Add State */}
-      <div>
-        <h2>Add New State</h2>
-
-        <form onSubmit={handleState}>
-          <div>
-            <label>State Name</label>
-
-            <input
-              type="text"
-              placeholder="State"
-              name="state"
-              value={state.state}
-              onChange={handleInput}
-            />
-          </div>
-
-          <div>
-            <label>Image URL</label>
-
-            <input
-              type="text"
-              placeholder="Image URL"
-              name="image"
-              value={state.image}
-              onChange={handleInput}
-            />
-          </div>
-
-          <div>
-            <button type="submit">Add State</button>
-          </div>
-        </form>
-      </div>
-
-      {/* All State */}
-      <div>
-        <div>
-          <h1>All States</h1>
-          <span>3 States</span>
+          <p className="mt-1 text-sm text-gray-500">
+            Add and manage food states
+          </p>
         </div>
 
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>Image</th>
-                <th>State</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
+        {/* Add State Card */}
+        <div className="mb-8 rounded-xl bg-white p-6 shadow-md">
+          <h2 className="mb-6 text-xl font-semibold text-gray-800">
+            Add New State
+          </h2>
 
-            <tbody>
-              {states?.map((state) => (
-                <tr key={state._id}>
-                  <td>
-                    <img src={state.image} alt={state.state} width="80" />
-                  </td>
+          <form onSubmit={handleState}>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {/* State Name */}
+              <div>
+                <label
+                  htmlFor="state"
+                  className="mb-2 block text-sm font-medium text-gray-700"
+                >
+                  State Name
+                </label>
 
-                  <td>
-                    <strong>{state.state}</strong>
-                  </td>
+                <input
+                  type="text"
+                  id="state"
+                  placeholder="Enter state name"
+                  name="state"
+                  value={state.state}
+                  onChange={handleInput}
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                />
+              </div>
 
-                  <td>
-                    <button onClick={() => handleUpdate(state._id)}>
-                      Edit
-                    </button>
-                    <button onClick={() => handleDelete(state._id)}>
-                      Delete
-                    </button>
-                  </td>
+              {/* Image */}
+              <div>
+                <label
+                  htmlFor="image"
+                  className="mb-2 block text-sm font-medium text-gray-700"
+                >
+                  State Image
+                </label>
+
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  accept="image/*"
+                  onChange={handleInput}
+                  className="w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm text-gray-600 file:mr-4 file:rounded-md file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-sm file:font-medium file:text-blue-700 hover:file:bg-blue-100"
+                />
+              </div>
+            </div>
+
+            {/* Submit */}
+            <div className="mt-6">
+              <button
+                type="submit"
+                className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              >
+                Add State
+              </button>
+            </div>
+          </form>
+        </div>
+
+        {/* All States Card */}
+        <div className="overflow-hidden rounded-xl bg-white shadow-md">
+          {/* Table Header */}
+          <div className="flex items-center justify-between border-b border-gray-200 px-6 py-5">
+            <div>
+              <h2 className="text-xl font-semibold text-gray-800">
+                All States
+              </h2>
+
+              <p className="mt-1 text-sm text-gray-500">
+                Manage your available states
+              </p>
+            </div>
+
+            <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
+              {states.length} States
+            </span>
+          </div>
+
+          {/* Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-gray-50 text-xs uppercase text-gray-500">
+                <tr>
+                  <th className="px-6 py-4 font-semibold">Image</th>
+
+                  <th className="px-6 py-4 font-semibold">State</th>
+
+                  <th className="px-6 py-4 font-semibold">Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody className="divide-y divide-gray-200">
+                {states?.map((item) => (
+                  <tr key={item._id} className="transition hover:bg-gray-50">
+                    {/* Image */}
+                    <td className="px-6 py-4">
+                      {item.image ? (
+                        <img
+                          src={item.image}
+                          alt={item.state}
+                          className="h-16 w-20 rounded-lg object-cover shadow-sm"
+                        />
+                      ) : (
+                        <div className="flex h-16 w-20 items-center justify-center rounded-lg bg-gray-100 text-xs text-gray-400">
+                          No Image
+                        </div>
+                      )}
+                    </td>
+
+                    {/* State */}
+                    <td className="px-6 py-4">
+                      <span className="font-semibold text-gray-800">
+                        {item.state}
+                      </span>
+                    </td>
+
+                    {/* Actions */}
+                    <td className="px-6 py-4">
+                      <div className="flex gap-2">
+                        <button
+                          type="button"
+                          onClick={() => handleUpdate(item._id)}
+                          className="rounded-md bg-yellow-100 px-4 py-2 text-xs font-semibold text-yellow-700 transition hover:bg-yellow-200"
+                        >
+                          Edit
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => handleDelete(item._id)}
+                          className="rounded-md bg-red-100 px-4 py-2 text-xs font-semibold text-red-700 transition hover:bg-red-200"
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+
+                {states.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan="3"
+                      className="px-6 py-10 text-center text-sm text-gray-400"
+                    >
+                      No states found.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -177,189 +281,3 @@ const State = () => {
 };
 
 export default State;
-// import React, { useState } from "react";
-// import { createstate } from "../services/stateservice";
-// import "../Style/State.css";
-
-// const State = () => {
-//   const [state, setState] = useState({
-//     state: "",
-//     image: "",
-//   });
-
-//   // Temporary states for UI
-//   const [states, setStates] = useState([
-//     {
-//       _id: 1,
-//       state: "Bihar",
-//       image: "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
-//     },
-//     {
-//       _id: 2,
-//       state: "Uttar Pradesh",
-//       image: "https://images.unsplash.com/photo-1609766418204-94aae0ecfdfc",
-//     },
-//     {
-//       _id: 3,
-//       state: "Rajasthan",
-//       image: "https://images.unsplash.com/photo-1477587458883-47145ed94245",
-//     },
-//   ]);
-
-//   function handleInput(e) {
-//     const { name, value } = e.target;
-
-//     setState({
-//       ...state,
-//       [name]: value,
-//     });
-//   }
-
-//   async function handleState(e) {
-//     e.preventDefault();
-
-//     try {
-//       const response = await createstate(state);
-
-//       console.log("SUCCESS:", response.data);
-
-//       setStates([
-//         ...states,
-//         {
-//           _id: Date.now(),
-//           state: state.state,
-//           image: state.image,
-//         },
-//       ]);
-
-//       setState({
-//         state: "",
-//         image: "",
-//       });
-//     } catch (error) {
-//       console.log("ERROR:", error.response?.data || error);
-//     }
-//   }
-
-//   function handleEdit(item) {
-//     setState({
-//       state: item.state,
-//       image: item.image,
-//     });
-//   }
-
-//   function handleDelete(id) {
-//     setStates(states.filter((item) => item._id !== id));
-//   }
-
-//   return (
-//     <div className="state-container">
-//       {/* Heading */}
-//       <div className="state-header">
-//         <h1>State Management</h1>
-//         <p>Add and manage food states</p>
-//       </div>
-
-//       {/* Add State Form */}
-//       <div className="state-form-card">
-//         <h2>Add New State</h2>
-
-//         <form onSubmit={handleState}>
-//           <div className="form-group">
-//             <label>State Name</label>
-
-//             <input
-//               type="text"
-//               placeholder="Enter state name"
-//               name="state"
-//               value={state.state}
-//               onChange={handleInput}
-//             />
-//           </div>
-
-//           <div className="form-group">
-//             <label>Image URL</label>
-
-//             <input
-//               type="text"
-//               placeholder="https://example.com/image.jpg"
-//               name="image"
-//               value={state.image}
-//               onChange={handleInput}
-//             />
-//           </div>
-
-//           {/* Image Preview */}
-//           {state.image && (
-//             <div className="image-preview">
-//               <p>Image Preview</p>
-
-//               <img src={state.image} alt="Preview" />
-//             </div>
-//           )}
-
-//           <button className="add-btn" type="submit">
-//             Add State
-//           </button>
-//         </form>
-//       </div>
-
-//       {/* All States */}
-//       <div className="states-card">
-//         <div className="states-title">
-//           <h2>All States</h2>
-
-//           <span>{states.length} States</span>
-//         </div>
-
-//         <div className="table-wrapper">
-//           <table>
-//             <thead>
-//               <tr>
-//                 <th>Image</th>
-//                 <th>State</th>
-//                 <th>Actions</th>
-//               </tr>
-//             </thead>
-
-//             <tbody>
-//               {states.map((item) => (
-//                 <tr key={item._id}>
-//                   <td>
-//                     <img
-//                       className="state-image"
-//                       src={item.image}
-//                       alt={item.state}
-//                     />
-//                   </td>
-
-//                   <td>
-//                     <strong>{item.state}</strong>
-//                   </td>
-
-//                   <td>
-//                     <button
-//                       className="edit-btn"
-//                       onClick={() => handleEdit(item)}
-//                     >
-//                       Edit
-//                     </button>
-
-//                     <button
-//                       className="delete-btn"
-//                       onClick={() => handleDelete(item._id)}
-//                     >
-//                       Delete
-//                     </button>
-//                   </td>
-//                 </tr>
-//               ))}
-//             </tbody>
-//           </table>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default State;
