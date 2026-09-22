@@ -68,7 +68,7 @@ const FoodItem = () => {
         itemTypes: "",
         quantity: "",
         discription: "",
-        image: null,
+        image: "",
       });
     } catch (error) {
       console.log(error);

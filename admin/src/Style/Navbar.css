@@ -1,0 +1,121 @@
+.navbar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   Logo
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================
+   Menu
+========================= */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* =========================
+   Dropdown
+========================= */
+
+.dropdown {
+  position: relative;
+}
+
+/* State select */
+
+.State-select {
+  min-width: 130px;
+  padding: 10px 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: transparent;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+
+  cursor: pointer;
+  outline: none;
+}
+
+.State-select:hover {
+  color: #ff6b35;
+}
+
+.State-select:focus {
+  outline: none;
+}
+
+/* =========================
+   List Item Button
+========================= */
+
+.dropdown button {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: transparent;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  color: #ff6b35;
+  background-color: #f5f5f5;
+}
+
+/* =========================
+   Sign Up
+========================= */
+
+.signup {
+  margin-left: 40px;
+
+  padding: 10px 22px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: #ff6b35;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.signup:hover {
+  background-color: #e85a2a;
+}

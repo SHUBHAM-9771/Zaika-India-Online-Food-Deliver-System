@@ -182,99 +182,97 @@ const State = () => {
         </div>
 
         {/* All States Card */}
-        <div className="overflow-hidden rounded-xl bg-white shadow-md">
-          {/* Table Header */}
-          <div className="flex items-center justify-between border-b border-gray-200 px-6 py-5">
-            <div>
-              <h2 className="text-xl font-semibold text-gray-800">
-                All States
-              </h2>
+        {/* <div className="overflow-hidden rounded-xl bg-white shadow-md"> */}
+        {/* Table Header */}
+        {/* <div className="flex items-center justify-between border-b border-gray-200 px-6 py-5">
+          <div>
+            <h2 className="text-xl font-semibold text-gray-800">All States</h2>
 
-              <p className="mt-1 text-sm text-gray-500">
-                Manage your available states
-              </p>
-            </div>
-
-            <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
-              {states.length} States
-            </span>
+            <p className="mt-1 text-sm text-gray-500">
+              Manage your available states
+            </p>
           </div>
 
-          {/* Table */}
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-gray-50 text-xs uppercase text-gray-500">
-                <tr>
-                  <th className="px-6 py-4 font-semibold">Image</th>
-
-                  <th className="px-6 py-4 font-semibold">State</th>
-
-                  <th className="px-6 py-4 font-semibold">Actions</th>
-                </tr>
-              </thead>
-
-              <tbody className="divide-y divide-gray-200">
-                {states?.map((item) => (
-                  <tr key={item._id} className="transition hover:bg-gray-50">
-                    {/* Image */}
-                    <td className="px-6 py-4">
-                      {item.image ? (
-                        <img
-                          src={item.image}
-                          alt={item.state}
-                          className="h-16 w-20 rounded-lg object-cover shadow-sm"
-                        />
-                      ) : (
-                        <div className="flex h-16 w-20 items-center justify-center rounded-lg bg-gray-100 text-xs text-gray-400">
-                          No Image
-                        </div>
-                      )}
-                    </td>
-
-                    {/* State */}
-                    <td className="px-6 py-4">
-                      <span className="font-semibold text-gray-800">
-                        {item.state}
-                      </span>
-                    </td>
-
-                    {/* Actions */}
-                    <td className="px-6 py-4">
-                      <div className="flex gap-2">
-                        <button
-                          type="button"
-                          onClick={() => handleUpdate(item._id)}
-                          className="rounded-md bg-yellow-100 px-4 py-2 text-xs font-semibold text-yellow-700 transition hover:bg-yellow-200"
-                        >
-                          Edit
-                        </button>
-
-                        <button
-                          type="button"
-                          onClick={() => handleDelete(item._id)}
-                          className="rounded-md bg-red-100 px-4 py-2 text-xs font-semibold text-red-700 transition hover:bg-red-200"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-
-                {states.length === 0 && (
-                  <tr>
-                    <td
-                      colSpan="3"
-                      className="px-6 py-10 text-center text-sm text-gray-400"
-                    >
-                      No states found.
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
+          <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
+            {states.length} States
+          </span>
         </div>
+
+         Table 
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-gray-50 text-xs uppercase text-gray-500">
+              <tr>
+                <th className="px-6 py-4 font-semibold">Image</th>
+
+                <th className="px-6 py-4 font-semibold">State</th>
+
+                <th className="px-6 py-4 font-semibold">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody className="divide-y divide-gray-200">
+              {states?.map((item) => (
+                <tr key={item._id} className="transition hover:bg-gray-50">
+                  Image
+                  <td className="px-6 py-4">
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={item.state}
+                        className="h-16 w-20 rounded-lg object-cover shadow-sm"
+                      />
+                    ) : (
+                      <div className="flex h-16 w-20 items-center justify-center rounded-lg bg-gray-100 text-xs text-gray-400">
+                        No Image
+                      </div>
+                    )}
+                  </td>
+
+                  State
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-800">
+                      {item.state}
+                    </span>
+                  </td>
+
+                  Actions
+                  <td className="px-6 py-4">
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => handleUpdate(item._id)}
+                        className="rounded-md bg-yellow-100 px-4 py-2 text-xs font-semibold text-yellow-700 transition hover:bg-yellow-200"
+                      >
+                        Edit
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleDelete(item._id)}
+                        className="rounded-md bg-red-100 px-4 py-2 text-xs font-semibold text-red-700 transition hover:bg-red-200"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+
+              {states.length === 0 && (
+                <tr>
+                  <td
+                    colSpan="3"
+                    className="px-6 py-10 text-center text-sm text-gray-400"
+                  >
+                    No states found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div> */}
+        {/* </div>  */}
       </div>
     </div>
   );
