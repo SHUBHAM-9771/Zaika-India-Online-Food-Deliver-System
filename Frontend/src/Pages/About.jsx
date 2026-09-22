@@ -6,19 +6,19 @@ import "../Style/About.css";
 import { ThemeContext } from "../Context/TheamContext/ThemeContext";
 
 // Food Images
-import food_3 from "../assets/Images/food_Litti Chokha.png";
-import food_1 from "../assets/Images/food_1.png";
-import AmritsariFish from "../assets/Images/food_Amritsari Fish.png";
-import food_4 from "../assets/Images/food_4.png";
+// import food_3 from "../assets/Images/food_Litti Chokha.png";
+// import food_1 from "../assets/Images/food_1.png";
+// import AmritsariFish from "../assets/Images/food_Amritsari Fish.png";
+// import food_4 from "../assets/Images/food_4.png";
 
-import dalchawal from "../assets/Images/bih_dal chawal.jpeg";
-import food3 from "../assets/Images/food_Amritsari Fish.png";
-import food2 from "../assets/Images/ben_Rosogolla.jpeg";
+// import dalchawal from "../assets/Images/bih_dal chawal.jpeg";
+// import food3 from "../assets/Images/food_Amritsari Fish.png";
+// import food2 from "../assets/Images/ben_Rosogolla.jpeg";
 
-// Social Images
-import facebook from "../assets/Images/facebook.png";
-import instagram from "../assets/Images/instagram.png";
-import twitter from "../assets/Images/twitter.png";
+// // Social Images
+// import facebook from "../assets/Images/facebook.png";
+// import instagram from "../assets/Images/instagram.png";
+// import twitter from "../assets/Images/twitter.png";
 
 const About = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -82,15 +82,15 @@ const About = () => {
 
           <div className="socials">
             <Link to="#">
-              <img src={facebook} loading="lazy" alt="Facebook" />
+              {/* <img src="" loading="lazy" alt="Facebook" /> */}
             </Link>
 
             <Link to="#">
-              <img src={instagram} loading="lazy" alt="Instagram" />
+              {/* <img src={instagram} loading="lazy" alt="Instagram" /> */}
             </Link>
 
             <Link to="#">
-              <img src={twitter} loading="lazy" alt="Twitter" />
+              {/* <img src={twitter} loading="lazy" alt="Twitter" /> */}
             </Link>
 
             <div className="socials-t1">Join 10k+ food lovers</div>
@@ -105,17 +105,17 @@ const About = () => {
           <div className="collage">
             {/* Hero Image - Don't Lazy Load */}
             <div className="big" style={{ background: "#eee" }}>
-              <img src={dalchawal} alt="Dal Chawal" />
+              {/* <img src={dalchawal} alt="Dal Chawal" /> */}
             </div>
 
             {/* Lazy Loaded Images */}
 
             <div className="small">
-              <img src={food2} loading="lazy" alt="Rosogolla" />
+              {/* <img src={food2} loading="lazy" alt="Rosogolla" /> */}
             </div>
 
             <div className="small">
-              <img src={food3} loading="lazy" alt="Amritsari Fish" />
+              {/* <img src={food3} loading="lazy" alt="Amritsari Fish" /> */}
             </div>
           </div>
 
@@ -123,22 +123,22 @@ const About = () => {
 
           <div className="map-strip" aria-hidden="true">
             <div className="state">
-              <img src={food_1} loading="lazy" alt="Punjab Paratha" />
+              {/* <img src={food_1} loading="lazy" alt="Punjab Paratha" /> */}
               Paratha
             </div>
 
             <div className="state">
-              <img src={food_4} loading="lazy" alt="Karnataka Dosa" />
+              {/* <img src={food_4} loading="lazy" alt="Karnataka Dosa" /> */}
               Dosa
             </div>
 
             <div className="state">
-              <img src={AmritsariFish} loading="lazy" alt="Amritsari Fish" />
+              {/* <img src={AmritsariFish} loading="lazy" alt="Amritsari Fish" /> */}
               Fish
             </div>
 
             <div className="state">
-              <img src={food_3} loading="lazy" alt="Bihar Litti" />
+              {/* <img src={food_3} loading="lazy" alt="Bihar Litti" /> */}
               Litti
             </div>
           </div>

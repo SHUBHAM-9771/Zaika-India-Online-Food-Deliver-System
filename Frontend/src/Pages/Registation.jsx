@@ -171,9 +171,9 @@ import "../Style/SignUp.css";
 import { useContext, useState } from "react";
 import { PopupContext } from "../Context/PopupContext/PopoupContext";
 import axios from "axios";
-import facebook from "../assets/Images/facebook.png";
-import twitter from "../assets/Images/twitter.png";
-import instagram from "../assets/Images/instagram.png";
+// import facebook from "../assets/Images/facebook.png";
+// import twitter from "../assets/Images/twitter.png";
+// import instagram from "../assets/Images/instagram.png";
 
 const Registation = () => {
   const { showRegister, setShowRegister } = useContext(PopupContext);
@@ -229,9 +229,9 @@ const Registation = () => {
         </div>
 
         <div className="link">
-          <img src={facebook} alt="Facebook" />
+          {/* <img src={facebook} alt="Facebook" />
           <img src={instagram} alt="Instagram" />
-          <img src={twitter} alt="Twitter" />
+          <img src={twitter} alt="Twitter" /> */}
         </div>
 
         <form onSubmit={handleSubmit}>

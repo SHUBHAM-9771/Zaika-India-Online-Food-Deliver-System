@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 
 import "../Style/SignUp.css";
 
-import instagram from "../assets/Images/instagram.png";
-import facebook from "../assets/Images/facebook.png";
-import twitter from "../assets/Images/twitter.png";
+// import instagram from "../assets/Images/instagram.png";
+// import facebook from "../assets/Images/facebook.png";
+// import twitter from "../assets/Images/twitter.png";
 
 import { PopupContext } from "../Context/PopupContext/PopoupContext";
 
@@ -66,9 +66,9 @@ export const SignUp = () => {
 
         {/* Social Links */}
         <div className="link">
-          <img src={facebook} alt="Facebook" />
-          <img src={instagram} alt="Instagram" />
-          <img src={twitter} alt="Twitter" />
+          <img src="" alt="Facebook" />
+          <img src="" alt="Instagram" />
+          <img src="" alt="Twitter" />
         </div>
 
         {/* Login Form */}

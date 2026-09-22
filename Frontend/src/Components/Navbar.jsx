@@ -2,7 +2,7 @@ import "../Style/Navbar.css";
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-import logo from "../assets/Images/logo.png";
+// import logo from "../assets/Images/logo.png";
 import { SignUp } from "../Pages/SignUp";
 import Registation from "../Pages/Registation";
 
@@ -37,7 +37,7 @@ const Navbar = () => {
       <nav className="cointaine">
         {/* Logo */}
         <div className="logo">
-          <img src={logo} loading="lazy" alt="Zaika India" />
+          {/* <img src={logo} loading="lazy" alt="Zaika India" /> */}
         </div>
 
         {/* Navigation */}

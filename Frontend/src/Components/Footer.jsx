@@ -1,8 +1,8 @@
 import "../Style/Footer.css";
 
-import facebook from "../assets/Images/facebook.png";
-import twitter from "../assets/Images/twitter.png";
-import instagram from "../assets/Images/instagram.png";
+// import facebook from "../assets/Images/facebook.png";
+// import twitter from "../assets/Images/twitter.png";
+// import instagram from "../assets/Images/instagram.png";
 
 const Footer = () => {
   return (
@@ -20,17 +20,11 @@ const Footer = () => {
 
         {/* Social Media */}
         <div className="logo">
-          <div>
-            <img src={facebook} alt="facebook" />
-          </div>
+          <div>{/* <img src={facebook} alt="facebook" /> */}</div>
 
-          <div>
-            <img src={twitter} alt="twitter" />
-          </div>
+          <div>{/* <img src={twitter} alt="twitter" /> */}</div>
 
-          <div>
-            <img src={instagram} alt="instagram" />
-          </div>
+          <div>{/* <img src={instagram} alt="instagram" /> */}</div>
         </div>
       </div>
 
