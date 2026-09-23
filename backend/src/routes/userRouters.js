@@ -3,7 +3,7 @@ import {
   getProfile,
   handlelogin,
   handleRegistaion,
-} from "../controllers/authController.js";
+} from "../controllers/userController.js";
 import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
