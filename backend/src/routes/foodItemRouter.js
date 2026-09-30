@@ -6,12 +6,18 @@ import {
   deletefoodItems,
 } from "../controllers/itemController.js";
 import upload from "../middleware/MulterMiddleware.js";
+import AuthMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.post("/foodItem", upload.single("image"), handlefoodItem);
+router.post(
+  "/foodItem",
+  AuthMiddleware,
+  upload.single("image"),
+  handlefoodItem,
+);
 router.get("/getfoodItem", getfoodItem);
-router.put("/food-items/:id", updatefoodItems);
-router.delete("/food-item/:id", deletefoodItems);
+router.put("/food-items/:id", AuthMiddleware, updatefoodItems);
+router.delete("/food-item/:id", AuthMiddleware, deletefoodItems);
 
 export default router;

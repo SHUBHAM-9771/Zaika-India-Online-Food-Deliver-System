@@ -3,5 +3,5 @@ import { createAdminRegistration } from "../controllers/AuthAdminRegistationCont
 
 const router = express.Router();
 
-router.post("/create", createAdminRegistration);
+router.post("/registration", createAdminRegistration);
 export default router;

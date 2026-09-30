@@ -4,7 +4,7 @@ const AdminRegistrationSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Name fiels is required"],
+      required: [true, "Name field is required"],
       trim: true,
     },
     email: {
@@ -12,12 +12,18 @@ const AdminRegistrationSchema = new mongoose.Schema(
       required: [true, "Email field is required"],
       trim: true,
       unique: true,
+      lowercase: true,
     },
 
     password: {
       type: String,
       required: [true, "Password is required"],
       minlength: [6, "Password must be at least 6 charecter"],
+    },
+    role: {
+      type: String,
+      enum: ["admin", "superadmin"],
+      default: "admin",
     },
   },
   { timestamps: true },

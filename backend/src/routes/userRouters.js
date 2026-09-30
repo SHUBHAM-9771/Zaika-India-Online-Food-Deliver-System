@@ -4,12 +4,11 @@ import {
   handlelogin,
   handleRegistaion,
 } from "../controllers/userController.js";
-import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 router.post("/register", handleRegistaion);
-router.post("/login", handlelogin);
-router.get("/profile", authMiddleware, getProfile);
+// router.post("/login", handlelogin);
+// router.get("/profile", authMiddleware, getProfile);
 
 export default router;
