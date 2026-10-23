@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Style/State.css";
+import { createstate } from "../servises/state";
 
 const State = () => {
   const [state, setState] = useState({
@@ -7,27 +8,54 @@ const State = () => {
     image: null,
   });
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const { name, value, files, type } = e.target;
 
     setState((prev) => ({
       ...prev,
       [name]: type === "file" ? files[0] : value,
     }));
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(state);
 
-    setState({
-      state: "",
-      image: null,
-    });
+    const form = e.currentTarget;
 
-    // Reset file input after submission
-    e.target.reset();
-  }
+    try {
+      const formData = new FormData();
+      formData.append("state", state.state);
+
+      if (state.image) {
+        formData.append("image", state.image);
+      }
+
+      // Check FormData before sending
+      for (const [key, value] of formData.entries()) {
+        console.log(key, value);
+      }
+
+      const response = await createstate(formData);
+
+      console.log("Server response:", response.data);
+
+      alert("State successfully added!");
+
+      setState({
+        state: "",
+        image: null,
+      });
+
+      form.reset();
+    } catch (error) {
+      console.error(
+        "Error submitting state:",
+        error.response?.data || error.message,
+      );
+
+      alert("Data send nahi hua. Console mein error check karein.");
+    }
+  };
 
   return (
     <main className="state-page">

@@ -1,8 +1,9 @@
 import State from "../models/state.js";
-import AuthMiddleware from "../middleware/authMiddleware.js";
+// import AuthMiddleware from "../middleware/authMiddleware.js";
 
 export const handlestate = async (req, res) => {
   try {
+    console.log(req.body);
     const { state } = req.body;
     console.log("Logged-in admin:", req.user);
 
