@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../Style/CostForTwo.css";
 
-const CostForTwo = ({ setCostForTwo, result }) => {
+const CostForTwo = ({ setCostForTwo, result, setFilteredFoods }) => {
   const [selectData, setSelectData] = useState({
     lessthan: false,
     greaterthan: false,
@@ -13,72 +13,73 @@ const CostForTwo = ({ setCostForTwo, result }) => {
   function handleCost(e) {
     const { name, value, checked } = e.target;
 
-    console.log(name);
-    console.log(value);
-    console.log(checked);
-
-    setSelectData((prev) => ({
-      ...prev,
+    setSelectData({
+      lessthan: false,
+      greaterthan: false,
+      inbetween: false,
       [name]: checked,
-    }));
+    });
   }
 
-  // function handleCost(e) {
-  //   const { name, checked } = e.target;
+  function createPricefilter(filters) {
+    return function (data) {
+      const { lessthan, greaterthan, inbetween } = filters;
 
-  //   setSelectData((prev) => ({
-  //     ...prev,
-  //     [name]: checked,
-  //   }));
-  // }
+      if (!lessthan && !greaterthan && !inbetween) {
+        return data;
+      }
+      return data.filter((item) => {
+        return (
+          (lessthan && item.price <= 100) ||
+          (greaterthan && item.price > 100) ||
+          (inbetween && item.price > 200 && item.price <= 300)
+        );
+      });
+    };
+  }
+
+  function handleApply() {
+    let data = [...result];
+    let costfilter = createPricefilter(selectData);
+    let filter = costfilter(data);
+    console.log(filter);
+    setFilteredFoods(filter);
+    setCostForTwo(false);
+  }
+
+  function clearfilter() {
+    setSelectData({
+      lessthan: false,
+      greaterthan: false,
+      inbetween: false,
+    });
+
+    setCostForTwo(false);
+    setFilteredFoods(result);
+  }
 
   // function createPricefilter(filters) {
-  //   return function (item) {
+  //   return function inner(foodItem) {
   //     const { lessthan, greaterthan, inbetween } = filters;
 
-  //     if (!lessthan && !inbetween && !greaterthan) {
+  //     if (!lessthan && !greaterthan && !inbetween) {
   //       return true;
   //     }
 
   //     return (
-  //       (lessthan && item.price <= 200) ||
-  //       (inbetween && item.price >= 100 && item.price <= 200) ||
-  //       (greaterthan && item.price > 200)
+  //       (lessthan && foodItem.price <= 100) ||
+  //       (greaterthan && foodItem.price >= 100) ||
+  //       (inbetween && foodItem.price >= 500 && foodItem.price <= 600)
   //     );
   //   };
   // }
 
-  // function handleApply() {
-  //   const data = [...SelectedFood.foods];
-
-  //   const filter = data.filter(createPricefilter(selectData));
-
-  //   setFilterFood(filter);
-  //   setCost(false);
+  // function ApplyFilter() {
+  //   const foodItem = [...result];
+  //   const filterFunction = createPricefilter(selectData);
+  //   const filteredFood = foodItem.filter(filterFunction);
+  //   console.log(filteredFood);
   // }
-
-  function createPricefilter(filters) {
-    return function inner(foodItem) {
-      const { lessthan, greaterthan, inbetween } = filters;
-
-      if (!lessthan && !greaterthan && !inbetween) {
-        return true;
-      }
-
-      return (
-        (lessthan && foodItem.price <= 100) ||
-        (greaterthan && foodItem.price >= 100) ||
-        (inbetween && foodItem.price >= 500 && foodItem.price <= 600)
-      );
-    };
-  }
-
-  function ApplyFilter() {
-    const foodItem = [...result];
-    const filterFunction = createPricefilter(selectData);
-    const filteredFood = foodItem.filter(filterFunction);
-    console.log(filteredFood);
-  }
 
   return (
     <div className="cost-filter">
@@ -132,20 +133,24 @@ const CostForTwo = ({ setCostForTwo, result }) => {
               onChange={handleCost}
             />
 
-            <span>Rs. 500 - Rs. 600</span>
+            <span>Rs. 200- Rs. 300</span>
           </label>
         </div>
 
         {/* Footer */}
         <div className="cost-filter__footer">
-          <button type="button" className="cost-filter__clear-btn">
+          <button
+            type="button"
+            className="cost-filter__clear-btn"
+            onClick={clearfilter}
+          >
             Clear Filters
           </button>
 
           <button
             type="button"
             className="cost-filter__apply-btn"
-            onClick={() => ApplyFilter()}
+            onClick={handleApply}
           >
             Apply
           </button>

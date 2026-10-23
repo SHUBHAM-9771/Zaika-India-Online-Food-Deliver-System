@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { CartContext } from "./CartContext";
+import React, { createContext, useEffect, useReducer } from "react";
+import { cartReducer } from "../../reducer/useReducer";
+export const CartContext = createContext();
 
-const CartProvider = ({ children }) => {
-  const [item, setItem] = useState(() => {
-    const SaveCart = localStorage.getItem("cart");
-    return SaveCart ? JSON.parse(SaveCart) : [];
-  });
-  console.log("item", item);
+const getInitialCart = () => {
+  try {
+    const saveCart = localStorage.getItem("cart");
+    return saveCart ? JSON.parse(saveCart) : [];
+  } catch (error) {
+    console.error("Error reading cart:", error);
+    return [];
+  }
+};
 
+export const CartProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(cartReducer, [], getInitialCart);
+  console.log("CartProvider", state);
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(item));
-  }, [item]);
-
+    localStorage.setItem("cart", JSON.stringify(state));
+  }, [state]);
   return (
-    <CartContext.Provider value={{ item, setItem }}>
+    <CartContext.Provider value={{ state, dispatch }}>
       {children}
     </CartContext.Provider>
   );
 };
 
-export default CartProvider;
+// export const useCart = useContext(CartContext);

@@ -1,7 +1,10 @@
-import React, { lazy } from "react";
+import React from "react";
 
-const Menu = lazy(() => import("../Pages/Menu"));
-const About = lazy(() => import("../Pages/About"));
+import About from "../Pages/About";
+import Menu from "../Pages/Menu";
+
+// const Menu = lazy(() => import("../Pages/Menu"));
+// const About = lazy(() => import("../Pages/About"));
 
 const Home = () => {
   return (

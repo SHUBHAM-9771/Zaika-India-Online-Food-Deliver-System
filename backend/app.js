@@ -9,6 +9,7 @@ import statefoodRouter from "./src/routes/statefoodRouter.js";
 import foodItemRouter from "./src/routes/foodItemRouter.js";
 import adminloginRouter from "./src/routes/adminloginRoute.js";
 import adminregRouter from "./src/routes/adminregRoute.js";
+import orderRoutes from "./src/routes/orderRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -23,17 +24,20 @@ app.use(
 // ! MiddleWare
 app.use(express.json());
 
+app.use("/uploads", express.static("uplode"));
+
 //  ! Database connection
 connectDB();
 
 // Routes
 app.use(AuthRouter);
 app.use(AddressRouter);
-app.use(stateRouter, express.static("upload"));
-app.use(statefoodRouter, express.static("upload"));
-app.use(foodItemRouter, express.static("upload"));
+app.use(stateRouter);
+app.use(statefoodRouter);
+app.use(foodItemRouter);
 app.use(adminloginRouter);
 app.use(adminregRouter);
+app.use(orderRoutes);
 const PORT = process.env.PORT;
 
 app.listen(PORT, (err) => {

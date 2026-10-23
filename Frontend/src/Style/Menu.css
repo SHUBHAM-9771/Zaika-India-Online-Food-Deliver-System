@@ -11,7 +11,7 @@
 .heading {
   text-align: center;
   font-size: 2rem;
-  color: #2c3e50;
+  color: var(--bg-color);
   margin-bottom: 40px;
 }
 
@@ -30,7 +30,7 @@
 =========================== */
 
 .menu-card {
-  background: #ffffff;
+  background: var(--card-color);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
@@ -61,7 +61,7 @@
 .state-name {
   margin: 18px 0;
   font-size: 24px;
-  color: #333;
+  color: var(--text-color);
 }
 
 /* ===========================
@@ -72,8 +72,8 @@
   padding: 12px 25px;
   border: none;
   border-radius: 8px;
-  background: #ff6b00;
-  color: white;
+  background: var(--bg-color);
+  color: var(--text-color);
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
@@ -99,8 +99,8 @@
   padding: 12px 30px;
   border: none;
   border-radius: 8px;
-  background: #198754;
-  color: white;
+  background: var(--bg-color);
+  color: var(--text-color);
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;

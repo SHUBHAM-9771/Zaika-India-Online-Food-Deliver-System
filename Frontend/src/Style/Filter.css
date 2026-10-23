@@ -9,7 +9,7 @@
 .filter__overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.4);
 
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@
   max-width: 90%;
   height: 500px;
 
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   border-radius: 12px;
   overflow: hidden;
 
@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .filter__header h3 {
@@ -64,7 +64,7 @@
 }
 
 .filter__close-btn:hover {
-  background-color: #f3f3f3;
+  background-color: var(--bg-color);
 }
 
 /* Body */
@@ -80,7 +80,7 @@
   width: 220px;
 
   background-color: #f8f8f8;
-  border-right: 1px solid #eeeeee;
+  border-right: 1px solid var(--border-color);
 
   padding: 20px 0;
 }
@@ -90,13 +90,13 @@
   padding: 18px 24px;
 
   font-size: 16px;
-  color: #555;
+  color: var(--text-color);
 
   cursor: pointer;
 }
 
 .filter__menu-item:hover {
-  background-color: #eeeeee;
+  background-color: var(--bg-color);
   color: #111;
 }
 
@@ -115,7 +115,7 @@
   font-size: 14px;
   font-weight: 700;
 
-  color: #333;
+  color: var(--text-color);
 }
 
 /* Options */
@@ -129,7 +129,7 @@
   gap: 12px;
 
   font-size: 16px;
-  color: #444;
+  color: var(--text-color);
 
   cursor: pointer;
 }
@@ -146,7 +146,7 @@
   margin: 25px 0;
 
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid var(--border-color);
 }
 
 /* Footer */
@@ -161,18 +161,18 @@
 
   gap: 15px;
 
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid var(--border-color);
 }
 
 /* Clear Button */
 .filter__clear-btn {
   padding: 11px 22px;
 
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
 
-  background-color: #ffffff;
-  color: #555;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
   font-size: 14px;
   font-weight: 600;
@@ -181,7 +181,7 @@
 }
 
 .filter__clear-btn:hover {
-  background-color: #f5f5f5;
+  background-color: var(--bg-color);
 }
 
 /* Apply Button */
@@ -191,8 +191,8 @@
   border: none;
   border-radius: 8px;
 
-  background-color: #ff5200;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
   font-size: 14px;
   font-weight: 600;

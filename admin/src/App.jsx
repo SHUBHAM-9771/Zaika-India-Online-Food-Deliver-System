@@ -1,3 +1,47 @@
+// import React from "react";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import State from "./pages/State";
+// import StateFood from "./pages/StateFood";
+// import FoodItem from "./pages/FoodItem";
+// import PageLayout from "./Layout/PageLayout";
+// import ListItem from "./pages/ListItem";
+
+// const App = () => {
+//   const router = createBrowserRouter([
+//     {
+//       path: "/",
+//       element: <PageLayout />,
+//       children: [
+//         {
+//           path: "state",
+//           element: <State />,
+//         },
+//         {
+//           path: "state-food",
+//           element: <StateFood />,
+//         },
+
+//         {
+//           path: "state-food-item",
+//           element: <FoodItem />,
+//         },
+
+//         {
+//           path: "listItems",
+//           element: <ListItem />,
+//         },
+//       ],
+//     },
+//   ]);
+//   return (
+//     <>
+//       <RouterProvider router={router}></RouterProvider>
+//     </>
+//   );
+// };
+
+// export default App;
+
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import State from "./pages/State";
@@ -5,6 +49,9 @@ import StateFood from "./pages/StateFood";
 import FoodItem from "./pages/FoodItem";
 import PageLayout from "./Layout/PageLayout";
 import ListItem from "./pages/ListItem";
+import SignUp from "./pages/SignUp";
+import ProtectRoute from "./protectRoute/ProtectRoute";
+import Registation from "./pages/Registation";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -13,22 +60,35 @@ const App = () => {
       element: <PageLayout />,
       children: [
         {
-          path: "state",
-          element: <State />,
+          path: "login",
+          element: <SignUp />,
         },
         {
-          path: "state-food",
-          element: <StateFood />,
+          path: "registation",
+          element: <Registation />,
         },
+        {
+          path : "/",
+          element: <ProtectRoute />,
+          children: [
+            {
+              path: "state",
+              element: <State />,
+            },
+            {
+              path: "state-food",
+              element: <StateFood />,
+            },
+            {
+              path: "state-food-item",
+              element: <FoodItem />,
+            },
 
-        {
-          path: "state-food-item",
-          element: <FoodItem />,
-        },
-
-        {
-          path: "listItems",
-          element: <ListItem />,
+            {
+              path: "listItems",
+              element: <ListItem />,
+            },
+          ],
         },
       ],
     },

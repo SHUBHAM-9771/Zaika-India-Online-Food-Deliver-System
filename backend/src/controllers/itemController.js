@@ -2,13 +2,21 @@ import FoodItem from "../models/foodsItem.js";
 
 export const handlefoodItem = async (req, res) => {
   try {
-    const { foodId, foodname, price, itemTypes, quantity, discription } =
-      req.body;
+    const {
+      foodId,
+      foodname,
+      price,
+      rating,
+      itemTypes,
+      quantity,
+      discription,
+    } = req.body;
 
     console.log(req.body);
     if (
       !foodId ||
       !foodname ||
+      !rating ||
       price === undefined ||
       !itemTypes ||
       quantity === undefined ||
@@ -37,6 +45,7 @@ export const handlefoodItem = async (req, res) => {
       foodId,
       foodname,
       price,
+      rating,
       itemTypes,
       quantity,
       discription,
@@ -61,7 +70,8 @@ export const handlefoodItem = async (req, res) => {
 
 export const getfoodItem = async (req, res) => {
   try {
-    const foodItem = await FoodItem.find();
+    const foodItem = await FoodItem.find().populate("foodId");
+    console.log(foodItem);
 
     if (foodItem.length === 0) {
       return res.status(200).json({

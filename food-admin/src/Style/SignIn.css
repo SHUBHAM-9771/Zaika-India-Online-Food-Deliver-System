@@ -1,0 +1,181 @@
+/* Sign In Section */
+.signin-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Parent */
+.signin-parent {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Sign In Card */
+.signin-card {
+  width: 100%;
+  padding: 30px;
+  background-color: var(--cartForm-color);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.signin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.signin-header p {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* Close Button */
+.signin-close {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.signin-close:hover {
+  background-color: var(--cartdelete-color);
+  color: #ffffff;
+  border-color: var(--cartdelete-color);
+}
+
+/* Form */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Input Group */
+.signin-input-group {
+  width: 100%;
+}
+
+.signin-input-group input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 15px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.signin-input-group input::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.signin-input-group input:focus {
+  border-color: var(--pributton-color);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* Submit Button */
+.signin-submit {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.signin-submit button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--pributton-color);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.signin-submit button:hover {
+  background-color: var(--button-hover);
+}
+
+.signin-submit button:active {
+  transform: scale(0.98);
+}
+
+.signin-submit button:focus-visible,
+.signin-close:focus-visible {
+  outline: 2px solid var(--pributton-color);
+  outline-offset: 3px;
+}
+
+/* Registration Footer */
+.signin-footer {
+  margin-top: 4px;
+  text-align: center;
+}
+
+.signin-footer p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.signin-footer a {
+  margin-left: 4px;
+  color: var(--pributton-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signin-footer a:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .signin-section {
+    padding: 16px;
+  }
+
+  .signin-card {
+    padding: 22px 18px;
+    border-radius: 12px;
+  }
+
+  .signin-header p {
+    font-size: 24px;
+  }
+
+  .signin-input-group input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .signin-submit button {
+    padding: 12px;
+  }
+}

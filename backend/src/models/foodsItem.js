@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const foodItemSchema = new mongoose.Schema({
   foodId: {
     type: mongoose.Types.ObjectId,
-    ref: "statefoods",
+    ref: "Statefood",
     required: true,
   },
 
@@ -19,6 +19,11 @@ const foodItemSchema = new mongoose.Schema({
     required: true,
   },
 
+  rating: {
+    type: Number,
+    required: true,
+  },
+
   itemTypes: {
     type: String,
     required: true,
@@ -27,7 +32,7 @@ const foodItemSchema = new mongoose.Schema({
   quantity: {
     type: Number,
     required: true,
-    default: 0,
+    default: 1,
   },
 
   description: {

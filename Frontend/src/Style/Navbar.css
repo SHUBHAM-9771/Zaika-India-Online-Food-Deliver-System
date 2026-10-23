@@ -1,67 +1,66 @@
- * {
-    margin: 0;
-    padding : 0;
- }
-
- 
-.cointaine{
-    position: sticky;
-    top:0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:2px solid;
-    padding: 10px 0;
-    padding-right: 20px;
-    z-index:999;
-     background:#FFE0B2;
-    border-color:#FFB300;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.logo img{
-    width:50px;
-    height:50px;
+.cointaine {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid;
+  padding: 10px 0;
+  padding-right: 20px;
+  z-index: 999;
+  background: var(--bg-color);
+  border-color: var(--border-color);
+  color: var(--text-color);
 }
 
-.nav-link{
-    display:flex;
-    gap:20px;
+.logo img {
+  width: 50px;
+  height: 50px;
 }
 
-.nav-link li{
-    list-style:none;
-    cursor:pointer;
-    transition:.3s;
+.nav-link {
+  display: flex;
+  gap: 20px;
 }
 
-.nav-button{
-    display:flex;
-    gap:10px;
+.nav-link li {
+  list-style: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.darks{
-    width:35px;
-    height:35px;
-    border: 2px solid orange;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:18px;
-    background:transparent;
+.nav-button {
+  display: flex;
+  gap: 10px;
 }
 
-.log{
-    width:90px;
-    height:35px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    color:white;
-    font-weight:bold;
+.darks {
+  width: 35px;
+  height: 35px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  background: transparent;
 }
 
+.log {
+  width: 90px;
+  height: 35px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: bold;
+}
 
 @media screen and (max-width: 600px) {
-    .cointaine {
+  .cointaine {
     flex-direction: row;
     align-items: center;
     padding: 10px;
@@ -90,18 +89,13 @@
     align-items: center;
   }
 
- 
-
   .log {
     width: 50px;
     height: 25px;
     font-size: 8px;
-    margin-right: 20px; 
+    margin-right: 20px;
     border: 2px solid black;
   }
-
-
-
 
   .user-icon {
     width: 30px;
@@ -111,9 +105,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;               
-    border: none;             
-    background-color: #eee;   
+    padding: 0;
+    border: none;
+    background-color: #eee;
     cursor: pointer;
-   }
+  }
 }

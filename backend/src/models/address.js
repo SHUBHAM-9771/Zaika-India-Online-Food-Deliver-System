@@ -2,6 +2,12 @@ import mongoose from "mongoose";
 
 const UserAddressSchema = new mongoose.Schema(
   {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
+
     fullname: {
       type: String,
       trim: true,
@@ -18,7 +24,7 @@ const UserAddressSchema = new mongoose.Schema(
       house: {
         type: String,
         trim: true,
-        required: [true, "House no is required"],
+        required: [true, "House is required"],
       },
 
       area: {

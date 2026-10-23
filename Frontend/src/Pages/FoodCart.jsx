@@ -1,76 +1,72 @@
-import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getStatefoodItem } from "../services/FoodItem";
+import { useEffect, useState } from "react";
 import "../Style/Carts.css";
-import { CartContext } from "../Context/CartContext/CartContext";
+import { getStatefoodItem } from "../services/FoodItem";
 
 const FoodCart = () => {
-  const { item, setItem } = useContext(CartContext);
-  console.log(item);
   const { _id } = useParams();
-  const [foodItem, setFoodItem] = useState([]);
-  const [filterFood, setFilterFood] = useState([]);
-  console.log(filterFood);
-  const [isClicked, setisClicked] = useState(null);
+  const [item, setItem] = useState([]);
+  const [allItems, setAllItems] = useState([]);
+
+  function getfoodItemsTypes(itemtypes) {
+    return function () {
+      if (itemtypes === "all" || itemtypes === "best") {
+        return allItems;
+      } else {
+        return allItems.filter((food) => {
+          return food.itemTypes === itemtypes;
+        });
+      }
+    };
+  }
+
+  function handleItems(itemtypes) {
+    console.log(itemtypes);
+    const filterfunction = getfoodItemsTypes(itemtypes);
+
+    // Returned function ko call karna zaroori hai
+    const filteredItems = filterfunction();
+    setItem(filteredItems);
+  }
+
+  async function getfoodItem() {
+    try {
+      let response = await getStatefoodItem();
+      console.log(response);
+
+      let foodItem = response?.data?.foodItem;
+
+      let result = foodItem.filter((item) => {
+        return item.foodId?._id?.toString() === _id;
+      });
+      setItem(result);
+      setAllItems(result);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
-    async function getFoodItem() {
-      try {
-        let response = await getStatefoodItem();
-        setFoodItem(response);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getFoodItem();
+    getfoodItem();
   }, []);
 
-  let selectedFoodItem = foodItem?.data?.foodItem.filter((item) => {
-    return item.foodId === _id;
-  });
-  //Automatically show all items
-  useEffect(() => {
-    setFilterFood(selectedFoodItem);
-  }, [foodItem, _id]);
+  function addfoodItems(item) {
+    try {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  function handlePureveg(foodTypes) {
-    let result = selectedFoodItem.filter((item) => {
-      return item.itemTypes === foodTypes;
-    });
-    setFilterFood(result);
-  }
-
-  function handleNonVeg(foodTypes) {
-    let result = selectedFoodItem.filter((item) => {
-      return item.itemTypes === foodTypes;
-    });
-
-    setFilterFood(result);
-  }
-
-  function handleALL() {
-    setFilterFood(selectedFoodItem);
-  }
-
-  //
-  function itemsadd(foodItem) {
-    console.log(isClicked);
-    setItem((prev) => {
-      let result = prev.find((item) => {
-        return item._id === foodItem._id;
+      let exist = cart.find((items) => {
+        return items._id === item._id;
       });
 
-      if (!result) {
-        let newItem = {
-          ...foodItem,
-          quantity: foodItem.quantity + 1,
-        };
-        return [...prev, newItem];
+      if (!exist) {
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+      } else {
+        alert("This items all ready store in localstorage");
       }
-      return prev;
-    });
-
-    setisClicked(foodItem._id);
+    } catch (error) {
+      console.error("Error adding food item :", error);
+    }
   }
   return (
     <div className="food-box">
@@ -79,7 +75,13 @@ const FoodCart = () => {
       <div className="food-header">
         <h2>Food Box</h2>
 
-        {/* <img src="" alt="" /> */}
+        {item.length > 0 && item[0].foodId?.image && (
+          <img
+            src={`http://localhost:9000/uploads/${item[1].foodId.image}`}
+            alt={item[0].foodId.foodname || "State food"}
+            className="statefood-image"
+          />
+        )}
 
         <div className="rating">⭐ 4.5</div>
       </div>
@@ -95,23 +97,20 @@ const FoodCart = () => {
       <div className="food-filter-buttons">
         <button
           className="food-filterbtn"
-          onClick={() => handleNonVeg("nonveg")}
+          onClick={() => handleItems("nonveg")}
         >
           Non Veg
         </button>
 
-        <button className="food-filterbtn" onClick={() => handlePureveg("veg")}>
+        <button className="food-filterbtn" onClick={() => handleItems("veg")}>
           Pure Veg
         </button>
 
-        <button className="food-filterbtn" onClick={() => handleALL("")}>
+        <button className="food-filterbtn" onClick={() => handleItems("all")}>
           All
         </button>
 
-        <button
-          className="food-filterbtn"
-          onClick={() => setitemFilter("best")}
-        >
+        <button className="food-filterbtn" onClick={() => handleItems("best")}>
           Best Sellers
         </button>
       </div>
@@ -121,36 +120,33 @@ const FoodCart = () => {
       {/* Food List */}
 
       <div className="food-list">
-        {filterFood?.map((item) => (
-          <div className="food-card" key={item._id}>
+        {item?.map((items) => (
+          <div className="food-card" key={items._id}>
             {/* Food Details */}
 
             <div className="food-details">
-              <h3>{item.foodname}</h3>
+              <h3>{items.foodname}</h3>
 
-              <p>Price: ₹{item.price}</p>
+              <p>Price: {items.price} </p>
 
-              <p>Rating: ⭐ {item.rating}</p>
+              <p>Rating:{items.rating} ⭐ </p>
 
-              <p>Description: {item.description}</p>
-
-              <p>Weight: {item.weight || "N/A"}</p>
+              <p>Description: </p>
             </div>
 
             {/* Food Image */}
 
             <div className="food-image-container">
               <img
-                src={item.image}
-                alt={item.foodname}
+                src={`http://localhost:9000/uploads/${items.image}`}
+                alt={items.foodname}
+                onError={(e) => {
+                  console.log("Image URL:", e.currentTarget.src);
+                }}
                 className="food-image"
               />
 
-              <button
-                className="add-btn"
-                onClick={() => itemsadd(item)}
-                disabled={isClicked === item._id}
-              >
+              <button className="add-btn" onClick={() => addfoodItems(items)}>
                 ADD
               </button>
             </div>

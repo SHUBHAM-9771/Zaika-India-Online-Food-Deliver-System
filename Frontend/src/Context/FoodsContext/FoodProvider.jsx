@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import { FoodsContext } from "./FoodContext";
-// import FoodData from "../../Data/FoodData.json";
 import axios from "axios";
 
 const FoodProvider = ({ children }) => {
   const [state, setState] = useState([]);
   const [page, setPage] = useState(0);
   console.log(page);
-
-  // console.log("items", item);
 
   async function getStates() {
     try {

@@ -2,20 +2,21 @@ import "../Style/Navbar.css";
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-// import logo from "../assets/Images/logo.png";
+import logo from "../../public/logo.png";
 import { SignUp } from "../Pages/SignUp";
 import Registation from "../Pages/Registation";
 
 import { ThemeContext } from "../Context/TheamContext/ThemeContext";
 import { PopupContext } from "../Context/PopupContext/PopoupContext";
+import { CartContext } from "../Context/CartContext/CartProvider";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { theme, setTheme } = useContext(ThemeContext);
+  const { state } = useContext(CartContext);
 
-  const { Signup, setSignup, showRegister, setShowRegister } =
+  const { Signup, setSignup, showRegister, setShowRegister, user, LogoutUser } =
     useContext(PopupContext);
-
-  const navigation = useNavigate();
 
   // Theme
   function handleTheme() {
@@ -24,12 +25,23 @@ const Navbar = () => {
 
   // Login popup
   function handleSignUp() {
+    if (user) {
+      LogoutUser();
+      setSignup(false);
+      setShowRegister(false);
+      navigate("/");
+      return;
+    }
     setSignup((prev) => !prev);
   }
 
-  //AddToCart popup
-  function handleAddToCart() {
-    setAddCart((prev) => !prev);
+  function handleAddtoCart() {
+    if (!state || state.length === 0) {
+      alert("Your cart is empty");
+      return;
+    } else {
+      navigate("/AddToCart");
+    }
   }
 
   return (
@@ -37,7 +49,7 @@ const Navbar = () => {
       <nav className="cointaine">
         {/* Logo */}
         <div className="logo">
-          {/* <img src={logo} loading="lazy" alt="Zaika India" /> */}
+          <img src={logo} loading="lazy" alt="Zaika India" />
         </div>
 
         {/* Navigation */}
@@ -53,21 +65,16 @@ const Navbar = () => {
 
         {/* Buttons */}
         <div className="nav-button">
-          <NavLink
-            to="/AddToCart"
-            type="button"
-            className="log"
-            onClick={() => navigation("/AddToCart")}
-          >
+          <button type="button" className="log" onClick={handleAddtoCart}>
             AddToCart
-          </NavLink>
+          </button>
 
           <button type="button" className="darks" onClick={handleTheme}>
             {theme === "light" ? "🌙" : "☀️"}
           </button>
 
           <button type="button" className="log" onClick={handleSignUp}>
-            SignUp
+            {user || "SignUp"}
           </button>
         </div>
       </nav>

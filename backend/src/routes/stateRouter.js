@@ -11,7 +11,7 @@ import AuthMiddleware from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 router.post("/state", AuthMiddleware, upload.single("image"), handlestate);
-router.get("/getAllState", AuthMiddleware, getStates);
+router.get("/getAllState", getStates);
 router.put("/state-food/:id", AuthMiddleware, updateState);
 router.delete("/state-foods/:id", AuthMiddleware, deleteState);
 

@@ -1,0 +1,171 @@
+/* Main Page */
+.statefood-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px 30px;
+  /* background-color: var(--bg-color); */
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Card */
+.statefood-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: var(--cartForm-color);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.statefood-title {
+  margin-bottom: 25px;
+  color: var(--text-color);
+  font-size: 27px;
+  text-align: center;
+}
+
+/* Form */
+.statefood-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Input Group */
+.statefood-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.statefood-group label {
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Inputs and Textarea */
+.statefood-group input,
+.statefood-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 15px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.statefood-group input:focus,
+.statefood-group textarea:focus {
+  border-color: var(--pributton-color);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.statefood-group input::placeholder,
+.statefood-group textarea::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.statefood-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Price and Rating Row */
+.statefood-row {
+  display: flex;
+  gap: 16px;
+}
+
+.statefood-row .statefood-group {
+  flex: 1;
+}
+
+/* File Input */
+.statefood-group input[type="file"] {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.statefood-group input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--sidebar-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Submit Button */
+.statefood-submit {
+  width: 100%;
+  margin-top: 5px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--pributton-color);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.statefood-submit:hover {
+  background-color: var(--button-hover);
+}
+
+.statefood-submit:active {
+  transform: scale(0.98);
+}
+
+.statefood-submit:focus-visible {
+  outline: 2px solid var(--pributton-color);
+  outline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .statefood-page {
+    padding: 85px 14px 24px;
+    align-items: flex-start;
+  }
+
+  .statefood-card {
+    padding: 22px 18px;
+    border-radius: 12px;
+  }
+
+  .statefood-title {
+    font-size: 23px;
+  }
+
+  .statefood-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .statefood-group input,
+  .statefood-group textarea {
+    font-size: 14px;
+  }
+}

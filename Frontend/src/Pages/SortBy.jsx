@@ -1,55 +1,46 @@
 import React, { useState } from "react";
 import "../Style/SortBy.css";
 
-const SortBy = ({ setSortBy, SelectedFood, setFilterFood }) => {
-  const [selectedSort, setSelectedSort] = useState({
-    default: false,
-    rating: false,
-    deliveryTime: false,
-    lowToHigh: false,
-    highToLow: false,
-  });
+const SortBy = ({ setSortBy, result, setFilteredFoods }) => {
+  const [selectedSort, setSelectedSort] = useState("");
 
   function handleSort(e) {
-    const { name, checked } = e.target;
+    setSelectedSort(e.target.value);
+  }
 
-    setSelectedSort((prev) => ({
-      ...prev,
-      [name]: checked,
-    }));
+  // Closure
+  function createSortBy(selectedSort) {
+    return function (data) {
+      switch (selectedSort) {
+        case "default":
+          return data;
+
+        case "rating":
+          return [...data].sort((a, b) => b.rating - a.rating);
+
+        case "lowToHigh":
+          return [...data].sort((a, b) => b.price - a.price);
+
+        case "highTolow":
+          return [...data].sort((a, b) => a.price - b.price);
+
+        default:
+          return data;
+      }
+    };
   }
 
   function handleSortBy() {
-    const data = [...SelectedFood.foods];
+    const data = [...result];
 
-    let filterSortBy = data;
+    const sortFunction = createSortBy(selectedSort);
+    const sortedData = sortFunction(data);
 
-    if (selectedSort.default) {
-      filterSortBy = data;
-    }
+    console.log("Final sorted data:", sortedData);
 
-    if (selectedSort.rating) {
-      filterSortBy = data.sort((a, b) => {
-        return b.rating - a.rating;
-      });
-    }
-
-    if (selectedSort.lowToHigh) {
-      filterSortBy = data.sort((a, b) => {
-        return a.price - b.price;
-      });
-    }
-
-    if (selectedSort.highToLow) {
-      filterSortBy = data.sort((a, b) => {
-        return b.price - a.price;
-      });
-    }
-
-    setFilterFood(filterSortBy);
+    setFilteredFoods(sortedData);
     setSortBy(false);
   }
-
   return (
     <section className="sort-filter">
       <div className="sort-filter__overlay">
@@ -76,7 +67,7 @@ const SortBy = ({ setSortBy, SelectedFood, setFilterFood }) => {
                   type="radio"
                   name="sort"
                   id="default"
-                  checked={selectedSort.default}
+                  value="default"
                   onChange={handleSort}
                 />
                 Default
@@ -84,18 +75,20 @@ const SortBy = ({ setSortBy, SelectedFood, setFilterFood }) => {
             </div>
 
             {/* Delivery Time */}
-            <div className="sort-filter__option">
+            {/* <div className="sort-filter__option">
               <label htmlFor="deliveryTime">
                 <input
                   type="radio"
                   name="sort"
                   id="deliveryTime"
+                  value="lowToHigh"
+                  checked={selectedSort=== "lowToHigh"}
                   checked={selectedSort.deliveryTime}
                   onChange={handleSort}
                 />
                 Delivery Time
               </label>
-            </div>
+            </div> */}
 
             {/* Rating */}
             <div className="sort-filter__option">
@@ -104,7 +97,7 @@ const SortBy = ({ setSortBy, SelectedFood, setFilterFood }) => {
                   type="radio"
                   name="sort"
                   id="rating"
-                  checked={selectedSort.rating}
+                  value="rating"
                   onChange={handleSort}
                 />
                 Rating
@@ -118,7 +111,7 @@ const SortBy = ({ setSortBy, SelectedFood, setFilterFood }) => {
                   type="radio"
                   name="sort"
                   id="lowToHigh"
-                  checked={selectedSort.lowToHigh}
+                  value="lowToHigh"
                   onChange={handleSort}
                 />
                 Cost : Low to High
@@ -132,7 +125,7 @@ const SortBy = ({ setSortBy, SelectedFood, setFilterFood }) => {
                   type="radio"
                   name="sort"
                   id="highToLow"
-                  checked={selectedSort.highToLow}
+                  value="highToLow"
                   onChange={handleSort}
                 />
                 Cost : High to Low
@@ -143,7 +136,7 @@ const SortBy = ({ setSortBy, SelectedFood, setFilterFood }) => {
           {/* Footer */}
           <div className="sort-filter__footer">
             <button
-              onClick={handleSortBy}
+              onClick={() => handleSortBy(selectedSort)}
               type="button"
               className="sort-filter__apply-btn"
             >

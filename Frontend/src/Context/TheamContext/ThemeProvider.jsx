@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 import { Children } from "react";
 
@@ -11,15 +11,22 @@ import { Children } from "react";
 const ThemeProvider = ({ children }) => {
   // console.log(children.type.name);
   // console.log(Children.count(children));
-  const items = Children.toArray(children);
+  // const items = Children.toArray(children);
 
   // console.log(items);
 
   //   step 3
   // we use useState to store the theme state,
   // this state will shared with multiple child components through ThemeContext.provide
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
   // console.log(theme);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  });
   return (
     // Step 4
     // ThemeContext.Provider is a built-in React component.

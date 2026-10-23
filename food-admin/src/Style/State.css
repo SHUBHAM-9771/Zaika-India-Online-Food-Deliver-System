@@ -1,0 +1,145 @@
+/* Main Page */
+.state-page {
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 100px 20px 30px;
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Form Card */
+.state-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background-color: var(--cartForm-color);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Title */
+.state-title {
+  margin-bottom: 25px;
+  color: var(--text-color);
+  font-size: 26px;
+  text-align: center;
+}
+
+/* Form */
+.state-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Group */
+.state-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.state-form-group label {
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Text and File Inputs */
+.state-form-group input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.state-form-group input:focus {
+  border-color: var(--pributton-color);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* File Input */
+.state-form-group input[type="file"] {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.state-form-group input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--sidebar-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Submit Button */
+.state-submit-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--pributton-color);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.state-submit-btn:hover {
+  background-color: var(--button-hover);
+}
+
+.state-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.state-submit-btn:focus-visible {
+  outline: 2px solid var(--pributton-color);
+  outline-offset: 3px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .state-page {
+    padding: 85px 15px 20px;
+  }
+
+  .state-card {
+    padding: 22px 18px;
+    border-radius: 12px;
+  }
+
+  .state-title {
+    font-size: 23px;
+  }
+
+  .state-form-group input {
+    font-size: 14px;
+  }
+
+  .state-submit-btn {
+    padding: 12px;
+  }
+}

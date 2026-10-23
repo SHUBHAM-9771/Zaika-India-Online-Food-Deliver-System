@@ -55,7 +55,6 @@ export const handlestate = async (req, res) => {
 };
 export const getStates = async (req, res) => {
   try {
-    req.user;
     let page = Number(req.query.page) || 1;
     let limit = Number(req.query.limit) || 4;
 

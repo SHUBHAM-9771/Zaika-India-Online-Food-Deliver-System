@@ -58,7 +58,7 @@ export const loginAdmin = async (req, res) => {
 
     // step 5 :- Generet JWT token
     const token = jwt.sign(paylod, process.env.JWT_SECRET, {
-      expiresIn: "2d",
+      expiresIn: "15m",
     });
 
     console.log("Generate Token", token);
@@ -75,6 +75,32 @@ export const loginAdmin = async (req, res) => {
     res.status(500).json({
       success: false,
       message: error.message,
+    });
+  }
+};
+
+export const gethandle = async (req, res) => {
+  try {
+    let admin = await AdminRegistration.findOne({});
+
+    if (!admin) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid email",
+      });
+    }
+
+    if (admin) {
+      return res.status(201).json({
+        success: true,
+        message: "login successfully",
+        admin: admin,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Server error",
     });
   }
 };

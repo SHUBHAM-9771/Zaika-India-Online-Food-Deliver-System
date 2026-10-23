@@ -10,10 +10,10 @@
   margin: 30px auto;
   padding: 25px;
 
-  border: 2px solid #222;
+  border: 2px solid var(--border-color);
   border-radius: 8px;
 
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 /* Header */
@@ -35,7 +35,7 @@
   object-fit: fill;
 
   /* border-radius: 50%; */
-  border: 2px solid #ddd;
+  border: 2px solid var(--border-color);
 }
 
 /* Rating */
@@ -57,7 +57,7 @@
 
   padding: 0 45px 0 15px;
 
-  border: 1px solid #777;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
 
   font-size: 16px;
@@ -86,16 +86,16 @@
 .food-filterbtn {
   padding: 8px 15px;
 
-  border: 1px solid #555;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
 
-  background-color: white;
+  background-color: var(--bg-color);
 
   cursor: pointer;
 }
 
 .food-filterbtn:hover {
-  background-color: #eee;
+  background-color: var(--bg-color);
 }
 
 /* Food List */
@@ -120,7 +120,7 @@
 
   padding: 20px;
 
-  border: 2px solid #555;
+  border: 2px solid var(--border-color);
   border-radius: 8px;
 }
 
@@ -173,12 +173,12 @@
 
   padding: 7px 15px;
 
-  background-color: white;
+  background-color: var(--bg-color);
 
-  border: 1px solid green;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
 
-  color: green;
+  color: var(--text-color);
   font-weight: bold;
 
   cursor: pointer;
@@ -187,6 +187,6 @@
 }
 
 .add-btn:hover {
-  background-color: green;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }

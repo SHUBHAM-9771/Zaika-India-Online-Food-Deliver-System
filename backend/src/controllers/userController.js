@@ -14,8 +14,6 @@ export const handleRegistaion = async (req, res) => {
       });
     }
 
-    // console.log("Req Body", req.body);
-
     // step 2
     const existing = await User.findOne({ email });
 
@@ -26,15 +24,16 @@ export const handleRegistaion = async (req, res) => {
       });
     }
 
-    // step 3
-
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // step 3 :- to hasing password
+    const passwordhashing = await bcrypt.hash(password, 10);
 
     const newUser = await User.create({
       username,
       email,
-      password: hashedPassword,
+      password: passwordhashing,
     });
+
+    console.log(newUser);
 
     if (!newUser) {
       return res.status(400).json({
@@ -74,9 +73,6 @@ export const handlelogin = async (req, res) => {
 
     // Step 2
     const user = await User.findOne({ email });
-    console.log("Email is found", user);
-
-    console.log("Email is found", user);
 
     if (!user) {
       return res.status(404).json({
@@ -85,40 +81,69 @@ export const handlelogin = async (req, res) => {
       });
     }
 
-    // Step 4
+    // step  3 : Compare password
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      return res.status(401).json({
+      return res.status(400).json({
         success: false,
-        message: "Invalid email or password",
+        message: "invalid password",
       });
     }
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    const payload = {
+      email: user.email,
+      _id: user._id,
+      role: user.role,
+    };
+
+    const token = jwt.sign(payload, process.env.JWT_SECRETUser, {
       expiresIn: "1d",
     });
+
+    console.log(token);
 
     return res.status(200).json({
       success: true,
       message: "Login successful",
       token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: "UserIS is not match",
+      message: "User is not match",
       error: error.message,
     });
   }
 };
 
-export const getProfile = (req, res) => {
-  console.log("User:", req.user);
+export const gethandle = async (req, res) => {
+  try {
+    let user = await User.find({});
+    console.log("userId", user);
 
-  res.status(200).json({
-    success: true,
-    message: "Profile accessed successfully",
-    user: req.user,
-  });
+    if (!user) {
+      return res.status(401).json({
+        success: true,
+        message: "Invalid email & Passwprd",
+      });
+    }
+
+    res.status(201).json({
+      success: true,
+      message: "Login SuccessFully",
+      user: user,
+    });
+  } catch (error) {
+    return res.status().json({
+      success: false,
+      message: "Invalid userId and Password",
+    });
+  }
 };

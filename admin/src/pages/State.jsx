@@ -7,8 +7,6 @@ import {
 } from "../services/stateservice";
 
 const State = () => {
-  const [states, setStates] = useState([]);
-
   const [state, setstate] = useState({
     state: "",
     image: null,
@@ -25,6 +23,7 @@ const State = () => {
 
   async function handleState(e) {
     e.preventDefault();
+    localStorage.removeItem(AdminToken);
 
     try {
       const formData = new FormData();
@@ -46,66 +45,10 @@ const State = () => {
         state: "",
         image: null,
       });
-
-      await handleGetState();
     } catch (error) {
       console.log("Error:", error);
       console.log("Status:", error.response?.status);
       console.log("Data:", error.response?.data);
-    }
-  }
-
-  async function handleGetState() {
-    try {
-      const response = await getstate();
-
-      console.log("GET:", response.data);
-
-      setStates(response.data?.states || []);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    handleGetState();
-  }, []);
-
-  async function handleDelete(id) {
-    try {
-      const response = await deletefood(id);
-
-      console.log(response.data);
-
-      await handleGetState();
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function handleUpdate(id) {
-    try {
-      const selectedState = states.find((item) => item._id === id);
-
-      if (!selectedState) return;
-
-      console.log("Selected State:", selectedState);
-
-      const updateData = new FormData();
-
-      updateData.append("state", selectedState.state);
-
-      if (selectedState.image) {
-        updateData.append("image", selectedState.image);
-      }
-
-      const response = await updatestate(id, updateData);
-
-      console.log(response.data);
-
-      await handleGetState();
-    } catch (error) {
-      console.log(error);
     }
   }
 

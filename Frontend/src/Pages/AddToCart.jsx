@@ -1,125 +1,171 @@
-import React, { useContext } from "react";
-import { useState } from "react";
+import React, { useContext, useMemo } from "react";
+import { CartContext } from "../Context/CartContext/CartProvider";
+import { useNavigate } from "react-router-dom";
 import "../Style/AddToCart.css";
-import { CartContext } from "../Context/CartContext/CartContext";
 
 const AddToCart = () => {
-  const { item, setItem } = useContext(CartContext);
-  console.log(item);
+  const { state, dispatch } = useContext(CartContext);
+  const navigate = useNavigate();
 
-  function handleIncrement(id) {
-    console.log(id);
-    setItem((prev) =>
-      prev.map((item) =>
-        item._id === id ? { ...item, quantity: item.quantity + 1 } : item,
-      ),
-    );
+  const total = useMemo(() => {
+    return state.reduce((acc, curr) => {
+      return acc + curr.price * curr.quantity;
+    }, 0);
+  }, [state]);
+
+  const taxRate = 18;
+  const totaltax = (total * taxRate) / 100;
+  const DeleveryCharge = total + totaltax < 500 ? 40 : 0;
+  const totalAmount = total + totaltax + DeleveryCharge;
+
+  function handleAddress() {
+    if (!state || state.length === 0) {
+      alert("your cart is empty:");
+      return;
+    }
+
+    const CheckoutDetails = [
+      {
+        items: state,
+        subtotal: total,
+        taxRate,
+        totaltax,
+        DeleveryCharge,
+        totalAmount,
+      },
+    ];
+
+    localStorage.setItem("cartdetails", JSON.stringify(CheckoutDetails));
+    navigate("/address");
   }
 
-  function handleDecriment(id) {
-    setItem((prev) =>
-      prev.map((item) =>
-        item._id === id
-          ? { ...item, quantity: item.quantity > 0 ? item.quantity - 1 : 0 }
-          : item,
-      ),
-    );
-  }
-
-  function handleRemove(id) {
-    setItem((prev) => prev.filter((item) => item._id !== id));
-  }
-
-  //===============================================
-  // Caluculate Item Price
-  let itemTotal = item.reduce((acc, item) => {
-    return acc + item.price * item.quantity;
-  }, 0);
-  console.log("TotalPrice", itemTotal);
-  //==============================================
-
-  //=======================================================
-  let deliveryCharge = itemTotal < 500 ? 40 : 0;
-  //=========================================================
-
-  //===================================================
-  // calculate Total Price
-  let totalPrice = itemTotal + deliveryCharge;
-
-  console.log(totalPrice);
-  //===================================================
   return (
-    <section className="cart-page">
-      <div className="cart-container">
-        {/* Header */}
-        <div className="cart-header">
-          <h2>🛒 Your Cart</h2>
-          <span>{item.length}</span>
-        </div>
+    <div className="cart-page">
+      <header className="cart-container">
+        <h1 className="cart-title">Your Cart</h1>
 
-        {/* Cart Item */}
-        <div className="cart-item">
-          {item.map((items) => {
-            return (
-              <div className="cart-item" key={items._id}>
-                <img src={items.image} alt="" />
-                <div className="cart-info">
-                  <h3>aaaaa</h3>
+        <main className="cart-layout">
+          {/* Cart Items */}
+          <section className="cart-items-section">
+            <div className="cart-items-box">
+              {state?.map((item) => (
+                <div className="cart-item" key={item._id}>
+                  <img
+                    src={item.image}
+                    alt={item.foodname}
+                    className="cart-item-image"
+                  />
 
-                  <p className="cart-rating">⭐ {items.rating}</p>
+                  <div className="cart-item-details">
+                    <h2 className="cart-item-name">{item.foodname}</h2>
 
-                  <p className="cart-price">{items.price}</p>
+                    <p className="cart-item-description">{item.description}</p>
 
-                  <div className="quantity">
-                    <button onClick={() => handleDecriment(`${items._id}`)}>
+                    <p className="cart-item-price">
+                      ₹ {item.price * item.quantity}
+                    </p>
+                  </div>
+
+                  {/* Quantity Controls */}
+                  <div className="cart-quantity-controls">
+                    <button
+                      type="button"
+                      className="quantity-btn"
+                      aria-label="Decrease quantity"
+                      onClick={() =>
+                        dispatch({
+                          type: "DECREMENT",
+                          payload: item._id,
+                        })
+                      }
+                    >
                       -
                     </button>
 
-                    <span>{items.quantity}</span>
+                    <span className="quantity-value">{item.quantity}</span>
 
-                    <button onClick={() => handleIncrement(`${items._id}`)}>
+                    <button
+                      type="button"
+                      className="quantity-btn quantity-btn-add"
+                      aria-label="Increase quantity"
+                      onClick={() =>
+                        dispatch({
+                          type: "INCREMENT",
+                          payload: item._id,
+                        })
+                      }
+                    >
                       +
+                    </button>
+
+                    <button
+                      type="button"
+                      className="remove-item-btn"
+                      aria-label="Remove item"
+                      onClick={() =>
+                        dispatch({
+                          type: "REMOVE_FROM_CART",
+                          payload: item._id,
+                        })
+                      }
+                    >
+                      X
                     </button>
                   </div>
                 </div>
+              ))}
 
-                <button
-                  className="remove-btn"
-                  onClick={() => handleRemove(`${items._id}`)}
-                >
-                  Remove
-                </button>
+              {state.length === 0 && (
+                <p className="empty-cart">Your cart is empty.</p>
+              )}
+            </div>
+          </section>
+
+          {/* Order Summary */}
+          <aside className="order-summary">
+            <h2 className="summary-title">Order Summary</h2>
+
+            <div className="summary-details">
+              <div className="summary-row">
+                <p>Subtotal</p>
+                <p className="summary-value">₹ {total.toFixed(2)}</p>
               </div>
-            );
-          })}
-        </div>
 
-        {/* Bill */}
-        <div className="bill">
-          <h3>Bill Details</h3>
+              <div className="summary-row">
+                <p>Tax &amp; Fees</p>
+                <p className="summary-value">₹ {totaltax.toFixed(2)}</p>
+              </div>
 
-          <div className="bill-row">
-            <span>Item Total</span>
-            <span>₹ {itemTotal}</span>
-          </div>
+              <div className="summary-row">
+                <p>Delivery Fee</p>
+                <p className="delivery-value">
+                  {DeleveryCharge === 0 ? "Free" : `₹ ${DeleveryCharge}`}
+                </p>
+              </div>
 
-          <div className="bill-row">
-            <span>Delivery Fee</span>
-            <span>₹ {deliveryCharge}</span>
-          </div>
+              <div className="summary-total">
+                <div className="summary-row">
+                  <p>Total</p>
+                  <p>₹ {totalAmount.toFixed(2)}</p>
+                </div>
+              </div>
 
-          <hr />
+              <button
+                type="button"
+                className="checkout-btn"
+                onClick={handleAddress}
+              >
+                Proceed to Checkout
+              </button>
 
-          <div className="bill-row total">
-            <span>Total</span>
-            <span>₹{totalPrice}</span>
-          </div>
-        </div>
-
-        {/* Order Button */}
-        <button>PLACE PRE-ORDER</button>
-      </div>
-    </section>
+              <p className="summary-note">
+                Taxes and fees included in the total shown.
+              </p>
+            </div>
+          </aside>
+        </main>
+      </header>
+    </div>
   );
 };
 

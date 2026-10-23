@@ -1,65 +1,66 @@
 import React, { useState } from "react";
 import "../Style/Rating.css";
 
-const Rating = ({ setRating, SelectedFood, setFilterFood }) => {
+const Rating = ({ setRating, result, setFilteredFoods }) => {
+  console.log(result);
   const [selectedRating, setSelectedRating] = useState({
     all: false,
     four: false,
     fourFive: false,
   });
 
-  // Handle checkbox
+  console.log(selectedRating);
+
   function handleRating(e) {
     const { name, checked } = e.target;
 
-    setSelectedRating((prev) => ({
-      ...prev,
-      [name]: checked,
-    }));
-  }
-
-  // Create rating filter
-  function createRatingfilter(filter) {
-    return function (item) {
-      const { all, four, fourFive } = filter;
-
-      // No filter selected
-      if (!all && !four && !fourFive) {
-        return true;
+    setSelectedRating((prev) => {
+      if (name === "all") {
+        return {
+          all: checked,
+          four: false,
+          fourFive: false,
+        };
       }
 
-      return (
-        (all && item.rating >= 3.0 && item.rating <= 5.0) ||
-        (four && item.rating <= 4.5) ||
-        (fourFive && item.rating >= 4.5)
-      );
+      return {
+        ...prev,
+        all: false,
+        [name]: checked,
+      };
+    });
+  }
+
+  function createRatingfilter(filter) {
+    return function (result) {
+      if (filter.all || (!filter.four && !filter.fourFive)) {
+        return result;
+      }
+
+      return result.filter((item) => {
+        return (
+          (filter.four && item.rating <= 4.3) ||
+          (filter.fourFive && item.rating > 4.3)
+        );
+      });
     };
   }
 
-  // Apply filter
   function handleApply() {
-    const data = [...SelectedFood.foods];
-
-    const filterRating = data.filter(createRatingfilter(selectedRating));
-
-    setFilterFood(filterRating);
+    let Ratingfilter = createRatingfilter(selectedRating);
+    let filter = Ratingfilter(result);
+    setFilteredFoods(filter);
     setRating(false);
   }
 
-  // Clear filter
+  // clear all check box
   function handleClear() {
-    const data = [...SelectedFood.foods];
-
     setSelectedRating({
       all: false,
       four: false,
       fourFive: false,
     });
-
-    setFilterFood(data);
-    setRating(false);
   }
-
   return (
     <section className="rating-filter">
       {/* Overlay */}
@@ -72,8 +73,8 @@ const Rating = ({ setRating, SelectedFood, setFilterFood }) => {
 
             <button
               type="button"
-              onClick={() => setRating(false)}
               className="rating-filter__close-btn"
+              onClick={() => setRating(false)}
             >
               ✕
             </button>
@@ -105,7 +106,7 @@ const Rating = ({ setRating, SelectedFood, setFilterFood }) => {
                   checked={selectedRating.four}
                   onChange={handleRating}
                 />
-                &nbsp;Ratings 4.0+
+                &nbsp;Ratings below of 4.3
               </label>
             </div>
 
@@ -119,7 +120,7 @@ const Rating = ({ setRating, SelectedFood, setFilterFood }) => {
                   checked={selectedRating.fourFive}
                   onChange={handleRating}
                 />
-                &nbsp;Ratings 4.5+
+                &nbsp;Ratings 4.3+
               </label>
             </div>
           </div>
@@ -136,8 +137,8 @@ const Rating = ({ setRating, SelectedFood, setFilterFood }) => {
 
             <button
               type="button"
-              onClick={handleApply}
               className="rating-filter__btn"
+              onClick={handleApply}
             >
               Apply
             </button>

@@ -1,128 +1,140 @@
-// const CostForTwo = lazy(() => import("../Pages/CostForTwo"));
-// const VegNonVeg = lazy(() => import("../Pages/VegNonVeg"));
-// const Filter = lazy(() => import("../Pages/Filter"));
-// const Rating = lazy(() => import("../Pages/Rating"));
-// const SortBy = lazy(() => import("../Pages/SortBy"));
-
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { getStatefood } from "../services/Statefood";
 import "../Style/FoodCart.css";
 import CostForTwo from "../Pages/CostForTwo";
+// import Filter from "../Pages/Filter";
+import Rating from "../Pages/Rating";
+import SortBy from "../Pages/SortBy";
 
 const FoodsCart = () => {
   const { _id } = useParams();
-  const navigation = useNavigate();
-  const [statefood, setStatefood] = useState([]);
-  console.log(statefood);
-  const [costfortwo, setCostForTwo] = useState(false);
-  const [forditem, setfoodItem] = useState([]);
+  const navigate = useNavigate();
 
-  const result = statefood?.data?.foods.filter((item) => {
-    return item.stateid === _id;
-  });
+  const [statefood, setStatefood] = useState([]);
+
+  const [costfortwo, setCostForTwo] = useState(false);
+  // const [filter, setFilter] = useState(false);
+  const [rating, setRating] = useState(false);
+  const [sortBy, setSortBy] = useState(false);
+
+  const [filteredFoods, setFilteredFoods] = useState(null);
 
   useEffect(() => {
-    async function getStateFood() {
+    let cancelled = false;
+
+    async function fetchStateFood() {
       try {
-        let response = await getStatefood();
+        const response = await getStatefood();
 
-        setStatefood(response);
-
-        setfoodItem(result);
+        if (!cancelled) {
+          setStatefood(response);
+        }
       } catch (error) {
-        console.log(error);
+        if (!cancelled) {
+          console.error("Failed to fetch state foods:", error);
+        }
       }
     }
-    getStateFood();
-  }, [result]);
 
-  // useEffect(() => {
-  //   function xyz() {
-  //     setfoodItem(result);
-  //   }
-  //   xyz();
-  // }, [result]);
+    fetchStateFood();
 
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const result = useMemo(() => {
+    return (statefood?.data?.foods ?? []).filter(
+      (item) => item.stateid === _id,
+    );
+  }, [statefood, _id]);
+
+  // Display original data until a filter is applied
+  const displayedFoods = filteredFoods ?? result;
   return (
     <section className="foods-container">
-      {/* Modals */}
-
-      {/* {sortBy && (
-        <SortBy
-          setSortBy={setSortBy}
-          SelectedFood={SelectedFood}
-          setFilterFood={setFilterFood}
-        />
-      )} */}
-
-      {/* {rating && (
-        <Rating
-          setRating={setRating}
-          SelectedFood={SelectedFood}
-          setFilterFood={setFilterFood}
-        />
-      )} */}
-
-      {/* {allFilter && <Filter setallfilter={setallfilter} />} */}
-
-      {/* {cost && (
-        <CostForTwo
-          setCost={setCost}
-          SelectedFood={SelectedFood}
-          setFilterFood={setFilterFood}
-        />
-      )} */}
-
       {costfortwo && (
-        <CostForTwo setCostForTwo={setCostForTwo} result={result} />
+        <CostForTwo
+          setCostForTwo={setCostForTwo}
+          result={result}
+          setFilteredFoods={setFilteredFoods}
+        />
       )}
-      {/* Header */}
 
+      {/* {filter && (
+        <Filter
+          filter={filter}
+          setFilter={setFilter}
+          result={result}
+          setFilteredFoods={setFilteredFoods}
+        />
+      )} */}
+      {rating && (
+        <Rating
+          rating={rating}
+          setRating={setRating}
+          result={result}
+          setFilteredFoods={setFilteredFoods}
+        />
+      )}
+      {sortBy && (
+        <SortBy
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          result={result}
+          setFilteredFoods={setFilteredFoods}
+        />
+      )}
       <div className="foods-header">
         <p>
           Explore a wide variety of Bihar state Food to satisfy your craving
         </p>
       </div>
 
-      {/* Filter Buttons */}
+      <div className="filter-btns1">
+        {/* <div className="filter-btns">
+          <button onClick={() => setFilter((prev) => !prev)}>Filter</button>
+        </div> */}
 
-      <div className="filter-btns">
-        {/* <button onClick={handleallfilter}>Filter</button>
+        <div className="filter-btns">
+          <button onClick={() => setSortBy((prev) => !prev)}>SortBy</button>
+        </div>
 
-        <button onClick={handleSort}>Sort By</button>
+        <div className="filter-btns">
+          <button onClick={() => setRating((prev) => !prev)}>Rating</button>
+        </div>
 
-        <button onClick={handleRating}>Rating</button>
-
-        <button onClick={handleCategory}>Veg/Non-Veg</button> */}
-
-        {/* <button onClick={() => handleCostForTwo}>Cost for Two</button> */}
-        <button onClick={() => setCostForTwo((prev) => (prev ? false : true))}>
-          Cost for Two
-        </button>
+        <div className="filter-btns">
+          <button onClick={() => setCostForTwo((prev) => !prev)}>
+            Cost for Two
+          </button>
+        </div>
       </div>
 
       <h2 className="title">Restaurants to Explore</h2>
 
-      {/* Food List */}
-
       <div className="foods-grid">
-        {forditem?.map((food) => (
+        {displayedFoods.map((food) => (
           <div className="food-card" key={food._id}>
-            <img src={food.image} alt={food.foodname} className="food-image" />
+            <img
+              src={`http://localhost:9000/uploads/${food.image}`}
+              alt={food.foodname}
+              onError={(e) => {
+                console.log("Image URL:", e.currentTarget.src);
+              }}
+              className="food-image"
+            />
 
             <div className="food-info">
               <h3>{food.foodname}</h3>
-
               <p className="price">₹{food.price}</p>
-
-              <p className="rating">⭐{food.rating} </p>
-
+              <p className="rating">⭐ {food.rating}</p>
               <p className="desc">{food.description}</p>
 
               <button
                 className="border-2"
-                onClick={() => navigation(`/foodCart/${food._id}`)}
+                onClick={() => navigate(`/foodCart/${food._id}`)}
               >
                 Show items
               </button>

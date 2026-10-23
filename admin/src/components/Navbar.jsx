@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import react, { useContext, useState } from "react";
 import "../Style/Navbar.css";
+import { PopupContext } from "../context/PopupContext";
 const Navbar = () => {
-  const navigate = useNavigate();
+  const { loggedIn, setLoggedIn, adminName, setAdminName } =
+    useContext(PopupContext);
 
+  const navigate = useNavigate();
   function handleStateChange(e) {
     const value = e.target.value;
 
@@ -10,6 +14,11 @@ const Navbar = () => {
       navigate(value);
     }
   }
+
+  // function handleLogout() {
+  //   setLoggedIn(false);
+  //   setAdminName("");
+  // }
   return (
     <nav className="navbar">
       {/* Logo */}
@@ -44,7 +53,20 @@ const Navbar = () => {
       </div>
 
       {/* Right side */}
-      <button className="signup">Sign Up</button>
+
+      {loggedIn ? (
+        <button className="signup" type="button">
+          {adminName}
+        </button>
+      ) : (
+        <button
+          className="signup"
+          type="button"
+          onClick={() => navigate("/login")}
+        >
+          Sign Up
+        </button>
+      )}
     </nav>
   );
 };

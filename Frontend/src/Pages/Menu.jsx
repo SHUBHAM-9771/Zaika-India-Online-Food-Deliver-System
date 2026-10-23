@@ -1,15 +1,12 @@
-// import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getstate } from "../services/State";
 import "../Style/Menu.css";
-// import { FoodsContext } from "../Context/FoodsContext/FoodContext";
 import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const navigation = useNavigate();
   const [state, setState] = useState([]);
   const [page, setPage] = useState(0);
-  console.log(page);
 
   // console.log("items", item);
   let limit = 4;

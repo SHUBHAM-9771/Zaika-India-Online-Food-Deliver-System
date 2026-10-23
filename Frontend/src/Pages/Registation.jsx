@@ -171,12 +171,12 @@ import "../Style/SignUp.css";
 import { useContext, useState } from "react";
 import { PopupContext } from "../Context/PopupContext/PopoupContext";
 import axios from "axios";
-// import facebook from "../assets/Images/facebook.png";
-// import twitter from "../assets/Images/twitter.png";
-// import instagram from "../assets/Images/instagram.png";
+import Instagram from "../../public/instagram.png";
+import Facebook from "../../public/facebook.png";
+import Twitter from "../../public/twitter.png";
 
 const Registation = () => {
-  const { showRegister, setShowRegister } = useContext(PopupContext);
+  const { setShowRegister } = useContext(PopupContext);
 
   const [userData, setUserData] = useState({
     username: "",
@@ -197,7 +197,7 @@ const Registation = () => {
     e.preventDefault();
 
     const response = await axios.post(
-      "http://localhost:9000/register",
+      "http://localhost:9000/userRegistation",
       userData,
     );
 
@@ -210,13 +210,17 @@ const Registation = () => {
       email: "",
       password: "",
     });
+
+    setShowRegister(false);
   }
 
   return (
     <div className="popup1">
       <div className="reg-popup">
         <div className="popup-content1">
-          <span className="close-btn">&times;</span>
+          <span className="close-btn" onClick={() => setShowRegister(false)}>
+            &times;
+          </span>
 
           <h2>Create your account</h2>
 
@@ -229,9 +233,9 @@ const Registation = () => {
         </div>
 
         <div className="link">
-          {/* <img src={facebook} alt="Facebook" />
-          <img src={instagram} alt="Instagram" />
-          <img src={twitter} alt="Twitter" /> */}
+          <img src={Facebook} alt="Facebook" />
+          <img src={Instagram} alt="Instagram" />
+          <img src={Twitter} alt="Twitter" />
         </div>
 
         <form onSubmit={handleSubmit}>
