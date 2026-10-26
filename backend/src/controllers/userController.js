@@ -141,7 +141,7 @@ export const gethandle = async (req, res) => {
       user: user,
     });
   } catch (error) {
-    return res.status().json({
+    return res.status(500).json({
       success: false,
       message: "Invalid userId and Password",
     });

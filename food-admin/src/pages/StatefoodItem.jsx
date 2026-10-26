@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createStatefoodItem } from "../servises/statefoodItem";
-import "../Style/StatefoodItem.css";
+import "../Style/StateFoodItem.css";
 const StatefoodItem = () => {
   const [statefoodItem, setStatefoodItem] = useState({
     foodId: "",
