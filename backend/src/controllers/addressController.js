@@ -77,12 +77,16 @@ export const getAddresses = async (req, res) => {
   }
 };
 
+
+import mongoose from "mongoose";
+import UserAddress from "../models/UserAddress.js";
+
 export const updateAddress = async (req, res) => {
   try {
-    // step 1 : URL se address ID lena
+    // Step 1: URL se address ID lena
     const { id } = req.params;
 
-    //step2 : ID validate karna
+    // Step 2: ID validate karna
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({
         success: false,
@@ -90,7 +94,7 @@ export const updateAddress = async (req, res) => {
       });
     }
 
-    // step3 : sirf allowed fields define karna
+    // Step 3: Allowed fields
     const allowedfields = [
       "fullname",
       "mobnumber",
@@ -102,64 +106,68 @@ export const updateAddress = async (req, res) => {
       "address.area",
     ];
 
-    //step 4 : Empty update object banana
+    // Step 4: Empty update object
     const updateDate = {};
 
-    // step 5 request me bheji gayi fields select karo
-    for (let field of allowedfields) {
+    // Step 5: Sirf bheji gayi allowed fields select karna
+    for (const field of allowedfields) {
       if (field === "fullname" || field === "mobnumber") {
         if (req.body[field] !== undefined) {
           updateDate[field] = req.body[field];
-        } else if (field.startsWith("address.")) {
-          const nestedfield = field.split(".")[1];
-          if (req.body.address?.[nestedfield] !== undefined) {
-            updateDate[field] = req.body.address[nestedfield];
-          }
+        }
+      } else if (field.startsWith("address.")) {
+        const nestedfield = field.split(".")[1];
+
+        if (req.body.address?.[nestedfield] !== undefined) {
+          updateDate[field] = req.body.address[nestedfield];
         }
       }
     }
 
+    // Step 6: Koi valid field nahi mili
     if (Object.keys(updateDate).length === 0) {
-      return res.status(401).json({
+      return res.status(400).json({
         success: false,
-        message: "No valid field provided for updated",
+        message: "No valid fields provided for update",
       });
     }
 
-    // step 7 update address
+    // Step 7: Address update karna
     const address = await UserAddress.findOneAndUpdate(
       {
         _id: id,
-        UserId: req.user.id,
+        UserId: req.user.id, // Schema aur auth middleware se verify karo
       },
       {
         $set: updateDate,
       },
       {
         new: true,
-        runValidation: true,
-      },
+        runValidators: true,
+      }
     );
 
-    // step 8  address nahi mila
+    // Step 8: Address nahi mila
     if (!address) {
       return res.status(404).json({
-        success: true,
-        message: "address not found",
+        success: false,
+        message: "Address not found",
       });
     }
 
-    // step 9 Success responce
+    // Step 9: Success response
     return res.status(200).json({
       success: true,
-      message: "address update Successfully",
-      address: address,
+      message: "Address updated successfully",
+      address,
     });
   } catch (error) {
-    console.log(error);
-    res.status(500).json({
+    console.error("Update address error:", error);
+
+    return res.status(500).json({
       success: false,
-      message: "failed to updated address",
+      message: "Failed to update address",
     });
   }
 };
+

@@ -119,6 +119,25 @@ export const updateOrderStatus = async (req, res) => {
     console.log("id", id);
     console.log("status", orderStatus);
 
+    // step 1 Order ID validate karo
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid OrderId",
+      });
+    }
+
+    // step 2 Allowed field
+    const allowedStatuses = ["Pending", "Confirmed", "Delivered", "Cancelled"];
+
+    // step3 check allowed validation
+    if (!allowedStatuses.includes(orderStatus)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid Order status",
+      });
+    }
+
     const updatedOrder = await UserOrder.findByIdAndUpdate(
       id,
       {
@@ -133,8 +152,6 @@ export const updateOrderStatus = async (req, res) => {
         message: "Order not found",
       });
     }
-
-    console.log("Updated orderStatus:", updatedOrder.orderStatus);
 
     return res.status(200).json({
       success: true,
